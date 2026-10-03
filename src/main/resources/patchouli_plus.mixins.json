@@ -1,0 +1,20 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.tortugolen.patchouliplus.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "patchouli_plus.refmap.json",
+  "mixins": [
+    "BookMixin",
+    "WordMixin",
+    "TextLayouterMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  }
+}

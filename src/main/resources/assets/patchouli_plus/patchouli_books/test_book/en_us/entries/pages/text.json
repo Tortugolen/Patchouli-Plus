@@ -1,0 +1,54 @@
+{
+  "name": "Text",
+  "icon": "minecraft:writable_book",
+  "category": "patchouli_plus:pages",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli_plus:text",
+      "title": "Max Extension",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit animi id est laborum.",
+      "separator": true
+    },
+    {
+      "type": "patchouli_plus:text",
+      "title": "",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit animi id est laborum.",
+      "separator": false
+    },
+    {
+      "type": "patchouli_plus:text",
+      "title": "Max Extension",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit animi id est laborum.",
+      "separator": false
+    },
+    {
+      "type": "patchouli_plus:chapter_start",
+      "title": "Text Values Display"
+    },
+    {
+      "type": "patchouli_plus:text",
+      "title": "[Title]",
+      "text": "[Text]",
+      "separator": true
+    },
+    {
+      "type": "patchouli_plus:text",
+      "title": "",
+      "text": "[Text]",
+      "separator": false
+    },
+    {
+      "type": "patchouli_plus:text",
+      "title": "",
+      "text": "[Text]",
+      "separator": true
+    },
+    {
+      "type": "patchouli_plus:text",
+      "title": "[Title]",
+      "text": "[Text]",
+      "separator": false
+    }
+  ]
+}

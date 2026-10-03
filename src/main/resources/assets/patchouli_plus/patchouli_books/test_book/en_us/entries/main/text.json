@@ -1,0 +1,86 @@
+{
+  "name": "Text",
+  "icon": "minecraft:paper",
+  "category": "patchouli_plus:main",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli_plus:text",
+      "title": "Title",
+      "text": "Text ++",
+      "separator": true
+    },
+    {
+      "type": "patchouli_plus:text",
+      "title": "",
+      "text": "Text ++",
+      "separator": true
+    },
+    {
+      "type": "patchouli_plus:text",
+      "title": "Title",
+      "text": "Text ++",
+      "separator": true
+    },
+    {
+      "type": "patchouli_plus:text",
+      "title": "Title",
+      "text": "Text ++",
+      "separator": false
+    },
+    {
+      "type": "patchouli_plus:text",
+      "title": "Title",
+      "text": "Text ++",
+      "separator": true
+    },
+    {
+      "type": "patchouli_plus:text",
+      "title": "",
+      "text": "Text ++",
+      "separator": false
+    },
+    {
+      "type": "patchouli:multiblock",
+      "title": "Title",
+      "text": "Text ++",
+      "separator": true,
+
+      "name": "Positioning",
+      "multiblock": {
+        "pattern": [
+          ["   N   "," N   N ","       ","N  0  N","       "," N   N ","   N   "],
+          [" XYXYX ","XYXYXYX","YXYXYXY","XYXYXYX","YXYXYXY","XYXYXYX"," XYXYX "]
+        ],
+        "mapping": {
+          "0": "minecraft:calcite",
+          "N": "minecraft:sand",
+          "X": "minecraft:gray_concrete",
+          "Y": "minecraft:white_concrete"
+        },
+        "symmetrical": true
+      }
+    },
+    {
+      "type": "patchouli_plus:multiblock",
+      "title": "Title",
+      "text": "Text ++",
+      "separator": true,
+
+      "name": "Positioning",
+      "multiblock": {
+        "pattern": [
+          ["   N   "," N   N ","       ","N  0  N","       "," N   N ","   N   "],
+          [" XYXYX ","XYXYXYX","YXYXYXY","XYXYXYX","YXYXYXY","XYXYXYX"," XYXYX "]
+        ],
+        "mapping": {
+          "0": "minecraft:calcite",
+          "N": "minecraft:sand",
+          "X": "minecraft:gray_concrete",
+          "Y": "minecraft:white_concrete"
+        },
+        "symmetrical": true
+      }
+    }
+  ]
+}

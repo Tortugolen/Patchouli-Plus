@@ -1,0 +1,90 @@
+{
+  "name": "Crafting",
+  "icon": "minecraft:crafting_table",
+  "category": "patchouli_plus:pages",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli_plus:crafting",
+      "title": "One Recipe",
+      "text": "[Text]",
+      "separator": true,
+      "recipes": [
+        "minecraft:diamond_sword"
+      ]
+    },
+    {
+      "type": "patchouli_plus:crafting",
+      "title": "Two Recipes",
+      "text": "",
+      "separator": true,
+      "recipes": [
+        "minecraft:diamond_sword",
+        "minecraft:diamond_pickaxe"
+      ]
+    },
+    {
+      "type": "patchouli_plus:crafting",
+      "title": "One Alternating Recipe",
+      "text": "[Text]",
+      "separator": true,
+      "recipes": [
+        "minecraft:wooden_sword,minecraft:stone_sword,minecraft:iron_sword,minecraft:golden_sword,minecraft:diamond_sword"
+      ]
+    },
+    {
+      "type": "patchouli_plus:crafting",
+      "title": "Two Alternating Recipe",
+      "text": "",
+      "separator": true,
+      "recipes": [
+        "minecraft:wooden_sword,minecraft:stone_sword,minecraft:iron_sword,minecraft:golden_sword,minecraft:diamond_sword",
+        "minecraft:wooden_pickaxe,minecraft:stone_pickaxe,minecraft:iron_pickaxe,minecraft:golden_pickaxe,minecraft:diamond_pickaxe"
+      ]
+    },
+    {
+      "type": "patchouli_plus:chapter_start",
+      "title": "Text Values Display"
+    },
+    {
+      "type": "patchouli_plus:crafting",
+      "title": "[Title]",
+      "text": "",
+      "separator": true,
+      "recipes": [
+        "minecraft:diamond_sword",
+        "minecraft:diamond_pickaxe"
+      ]
+    },
+    {
+      "type": "patchouli_plus:crafting",
+      "title": "",
+      "text": "[Text]",
+      "separator": false,
+      "recipes": [
+        "minecraft:diamond_sword",
+        "minecraft:diamond_pickaxe"
+      ]
+    },
+    {
+      "type": "patchouli_plus:crafting",
+      "title": "",
+      "text": "",
+      "separator": true,
+      "recipes": [
+        "minecraft:diamond_sword",
+        "minecraft:diamond_pickaxe"
+      ]
+    },
+    {
+      "type": "patchouli_plus:crafting",
+      "title": "[Title]",
+      "text": "",
+      "separator": false,
+      "recipes": [
+        "minecraft:diamond_sword",
+        "minecraft:diamond_pickaxe"
+      ]
+    }
+  ]
+}

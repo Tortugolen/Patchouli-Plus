@@ -1,0 +1,25 @@
+{
+  "name": "Smithing",
+  "icon": "minecraft:paper",
+  "category": "patchouli_plus:main",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:smithing",
+      "title": "Title",
+      "recipe": "minecraft:netherite_sword_smithing",
+      "text": "Text ++",
+      "separator": true
+    },
+    {
+      "type": "patchouli_plus:smithing",
+      "title": "Title",
+      "recipe": "minecraft:netherite_sword_smithing",
+      "recipe2": "minecraft:netherite_axe_smithing",
+      "recipe3": "minecraft:netherite_hoe_smithing",
+      "text": "Text ++",
+      "separator": true,
+      "bordered": true
+    }
+  ]
+}

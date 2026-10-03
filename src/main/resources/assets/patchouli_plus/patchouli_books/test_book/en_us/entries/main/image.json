@@ -1,0 +1,57 @@
+{
+  "name": "Image",
+  "icon": "minecraft:paper",
+  "category": "patchouli_plus:main",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:image",
+      "title": "Title",
+      "images": ["patchouli_plus:textures/gui/cult.png"],
+      "text": "Text ++",
+      "separator": false,
+      "border": false
+    },
+    {
+      "type": "patchouli_plus:image",
+      "title": "Title",
+      "images": ["patchouli_plus:textures/gui/cult.png"],
+      "text": "Text ++",
+      "separator": false,
+      "border": false
+    },
+    {
+      "type": "patchouli_plus:image",
+      "title": "Title",
+      "images": ["patchouli_plus:textures/gui/cult.png"],
+      "text": "Text ++",
+      "separator": true,
+      "border": true
+    },
+    {
+      "type": "patchouli_plus:image",
+      "title": "Title",
+      "images": ["patchouli_plus:textures/gui/cult.png"],
+      "text": "Text ++",
+      "separator": true,
+      "border": false
+    },
+    {
+      "type": "patchouli_plus:image",
+      "title": "Title",
+      "images": ["patchouli_plus:textures/gui/cult.png"],
+      "text": "Text ++",
+      "separator": true,
+      "border": true,
+      "border_type": "gold"
+    },
+    {
+      "type": "patchouli_plus:image",
+      "title": "Title",
+      "images": ["patchouli_plus:textures/gui/cult.png"],
+      "text": "Text ++",
+      "separator": true,
+      "border": false
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "name": "Recipes",
+  "icon": "minecraft:paper",
+  "category": "patchouli_plus:main",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli_plus:smelting",
+      "title": "Title",
+      "recipe": "minecraft:iron_ingot_from_smelting_iron_ore",
+      "recipe2": "minecraft:copper_ingot_from_smelting_copper_ore",
+      "recipe3": "minecraft:gold_ingot_from_smelting_gold_ore",
+      "recipe4": "minecraft:charcoal",
+      "text": "Text ++",
+      "separator": true
+    },
+    {
+      "type": "patchouli_plus:smelting",
+      "title": "Title",
+      "recipe": "minecraft:iron_ingot_from_smelting_iron_ore",
+      "recipe2": "minecraft:copper_ingot_from_smelting_copper_ore",
+      "recipe4": "minecraft:charcoal",
+      "text": "Text ++",
+      "separator": true
+    },
+    {
+      "type": "patchouli_plus:simple_recipe",
+      "title": "Title",
+      "input": "minecraft:charcoal",
+      "station": "minecraft:charcoal,minecraft:emerald",
+      "output": "minecraft:emerald",
+      "input3": "minecraft:iron_ingot,gold_ingot,copper_ingot",
+      "station3": "minecraft:charcoal,minecraft:emerald",
+      "output3": "minecraft:emerald,minecraft:charcoal",
+      "text": "Text ++",
+      "separator": true
+    },
+    {
+      "type": "patchouli_plus:simple_recipe",
+      "title": "",
+      "input": "minecraft:charcoal",
+      "station": "minecraft:charcoal,minecraft:emerald",
+      "output": "minecraft:emerald",
+      "input3": "minecraft:iron_ingot,gold_ingot,copper_ingot",
+      "station3": "minecraft:charcoal,minecraft:emerald",
+      "output3": "minecraft:emerald,minecraft:charcoal",
+      "text": "Text ++",
+      "separator": false
+    },
+    {
+      "type": "patchouli_plus:simple_recipe",
+      "title": "",
+      "input": "minecraft:charcoal",
+      "station": "minecraft:charcoal,minecraft:emerald",
+      "output": "minecraft:emerald",
+      "input3": "minecraft:iron_ingot,gold_ingot,copper_ingot",
+      "station3": "minecraft:charcoal,minecraft:emerald",
+      "output3": "minecraft:emerald,minecraft:charcoal",
+      "text": "Text ++",
+      "separator": true
+    },
+    {
+      "type": "patchouli_plus:simple_recipe",
+      "title": "Title",
+      "input": "minecraft:charcoal",
+      "station": "minecraft:charcoal,minecraft:emerald",
+      "output": "minecraft:emerald",
+      "input3": "minecraft:iron_ingot,gold_ingot,copper_ingot",
+      "station3": "minecraft:charcoal,minecraft:emerald",
+      "output3": "minecraft:emerald,minecraft:charcoal",
+      "text": "Text ++",
+      "separator": false
+    }
+  ]
+}

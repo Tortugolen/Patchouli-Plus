@@ -1,0 +1,80 @@
+{
+  "name": "Crafting",
+  "icon": "minecraft:paper",
+  "category": "patchouli_plus:main",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli_plus:crafting",
+      "title": "Title",
+      "recipe": "minecraft:piston",
+      "recipe3": "minecraft:golden_apple",
+      "text": "Text ++",
+      "separator": true
+    },
+    {
+      "type": "patchouli_plus:crafting",
+      "title": "",
+      "recipe": "minecraft:piston",
+      "text": "Text ++",
+      "separator": false
+    },
+    {
+      "type": "patchouli_plus:crafting",
+      "title": "",
+      "recipe": "minecraft:piston",
+      "text": "Text ++",
+      "separator": true
+    },
+    {
+      "type": "patchouli_plus:crafting",
+      "title": "Title",
+      "recipe": "minecraft:piston",
+      "text": "Text ++",
+      "separator": false
+    },
+    {
+      "type": "patchouli_plus:crafting",
+      "title": "Title",
+      "recipe": "minecraft:piston",
+      "recipe2": "minecraft:black_dye",
+      "text": "Text ++",
+      "separator": false
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Title",
+      "recipe": "minecraft:black_dye",
+      "text": "Text",
+      "separator": false
+    },
+    {
+      "type": "patchouli_plus:empty"
+    },
+    {
+      "type": "patchouli_plus:brewing",
+      "title": "Night Vision",
+      "input": "minecraft:potion{Potion:\"minecraft:awkward\"}",
+      "ingredient": "minecraft:golden_carrot",
+      "output": "minecraft:potion{Potion:\"minecraft:night_vision\"}",
+      "separator": true,
+      "text": "Text ++"
+    },
+    {
+      "type": "patchouli_plus:brewing",
+      "recipes": [
+        {
+          "input": "minecraft:potion{Potion:\"minecraft:awkward\"}",
+          "ingredient": "minecraft:golden_carrot",
+          "output": "minecraft:potion{Potion:\"minecraft:night_vision\"}"
+        },
+        {
+          "input": "minecraft:potion{Potion:\"minecraft:night_vision\"}",
+          "ingredient": "minecraft:redstone",
+          "output": "minecraft:potion{Potion:\"minecraft:long_night_vision\"}"
+        }
+      ],
+      "text": "Text ++"
+    }
+  ]
+}

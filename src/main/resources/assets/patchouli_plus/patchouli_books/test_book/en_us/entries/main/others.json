@@ -1,0 +1,156 @@
+{
+  "name": "Others",
+  "icon": "minecraft:paper",
+  "category": "patchouli_plus:main",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:link",
+      "title": "Title",
+      "url": "https://www.curseforge.com/minecraft/mc-mods/jei/files/all?page=1&pageSize=20&version=1.20.1&gameVersionTypeId=1&showAlphaFiles=show",
+      "link_text": "JEI",
+      "text": "Text ++"
+    },
+    {
+      "type": "patchouli_plus:link",
+      "title": "Title",
+      "url": "https://www.curseforge.com/minecraft/mc-mods/jei/files/all?page=1&pageSize=20&version=1.20.1&gameVersionTypeId=1&showAlphaFiles=show",
+      "link_text": "JEI",
+      "text": "Text ++",
+      "separator": true
+    },
+    {
+      "type": "patchouli:relations",
+      "title": "Title",
+      "entries": ["patchouli_plus:main/text"],
+      "text": "Text ++"
+    },
+    {
+      "type": "patchouli_plus:relations",
+      "title": "Title",
+      "entries": ["patchouli_plus:main/text", "patchouli_plus:main/image"],
+      "text": "Text ++",
+      "separator": true
+    },
+    {
+      "type": "patchouli:entity",
+      "title": "Title",
+      "entity": "minecraft:axolotl",
+      "name": "Name",
+      "scale": 0.5625,
+      "text": "Text ++"
+    },
+    {
+      "type": "patchouli_plus:entity",
+      "title": "Title",
+      "entity": "minecraft:axolotl",
+      "scale": 0.5625,
+      "text": "Text ++",
+      "separator": true,
+      "border": false
+    },
+    {
+      "type": "patchouli:quest",
+      "title": "Title",
+      "trigger": "",
+      "text": "Text ++"
+    },
+    {
+      "type": "patchouli_plus:quest",
+      "title": "Title",
+      "trigger": "",
+      "text": "Text ++",
+      "separator": true,
+      "separator2": true
+    },
+    {
+      "type": "patchouli_plus:empty"
+    },
+    {
+      "type": "patchouli_plus:empty",
+      "filler_texture": "default"
+    },
+    {
+      "type": "patchouli_plus:entity",
+      "title": "Title",
+      "entity": "minecraft:axolotl",
+      "scale": 0.5625,
+      "text": "Text ++",
+      "separator": true,
+      "border": true
+    },
+    {
+      "type": "patchouli_plus:image",
+      "title": "Title",
+      "images": ["patchouli_plus:textures/gui/cult.png"],
+      "text": "Text ++",
+      "separator": true,
+      "border": true
+    },
+    {
+      "type": "patchouli_plus:entity",
+      "title": "Title",
+      "entity": "minecraft:axolotl",
+      "scale": 0.5625,
+      "text": "Text ++",
+      "separator": true,
+      "border": true,
+      "rotate": true
+    },
+    {
+      "type": "patchouli_plus:entity",
+      "title": "Title",
+      "entity": "minecraft:axolotl",
+      "scale": 0.5625,
+      "text": "Text ++",
+      "pose": "DISPLAY",
+      "separator": true,
+      "border": true,
+      "rotate": true
+    },
+    {
+      "type": "patchouli_plus:entity",
+      "title": "Title",
+      "entity": "minecraft:axolotl",
+      "scale": 0.5625,
+      "text": "Text ++",
+      "separator": true,
+      "border": false,
+      "rotate": false,
+      "mouse_rotation": true
+    },
+    {
+      "type": "patchouli_plus:entity",
+      "title": "Title",
+      "entity": "minecraft:axolotl",
+      "scale": 1,
+      "text": "Text ++",
+      "pose": "DISPLAY",
+      "separator": true,
+      "border": false,
+      "rotate": false
+    },
+    {
+      "type": "patchouli_plus:entity_projection",
+      "title": "Title",
+      "entity": "minecraft:axolotl",
+      "scale": 1,
+      "text": "Text ++",
+      "pose": "DEFAULT",
+      "separator": true,
+      "border": true,
+      "rotate": false
+    },
+    {
+      "type": "patchouli_plus:entity_projection",
+      "title": "Title",
+      "entity": "minecraft:axolotl",
+      "scale": 1,
+      "text": "Text ++",
+      "pose": "DEFAULT",
+      "separator": true,
+      "border": false,
+      "rotate": false
+    }
+  ]
+}

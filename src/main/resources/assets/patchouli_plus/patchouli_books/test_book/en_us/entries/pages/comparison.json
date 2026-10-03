@@ -1,0 +1,25 @@
+{
+  "name": "Comparison",
+  "icon": "minecraft:comparator",
+  "category": "patchouli_plus:pages",
+  "sortnum": 64,
+  "pages": [
+    {
+      "type": "patchouli:empty"
+    },
+    {
+      "type": "patchouli_plus:empty"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Patchouli",
+      "text": "Text"
+    },
+    {
+      "type": "patchouli_plus:text",
+      "title": "Patchouli ++",
+      "text": "Text",
+      "separator": true
+    }
+  ]
+}

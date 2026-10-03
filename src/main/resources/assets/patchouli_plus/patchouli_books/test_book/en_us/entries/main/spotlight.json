@@ -1,0 +1,71 @@
+{
+  "name": "Spotlight",
+  "icon": "minecraft:paper",
+  "category": "patchouli_plus:main",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli_plus:spotlight",
+      "title": "Title",
+      "item": "minecraft:emerald",
+      "item2": "minecraft:emerald",
+      "item3": "minecraft:emerald",
+      "item4": "minecraft:emerald",
+      "item5": "minecraft:emerald",
+      "text": "Text ++",
+      "separator": false
+    },
+    {
+      "type": "patchouli_plus:double_spotlight",
+      "title": "Title",
+      "item": "minecraft:emerald",
+      "item2": "minecraft:diamond,minecraft:charcoal",
+      "item3": "minecraft:emerald",
+      "item4": "minecraft:diamond",
+      "item5": "minecraft:emerald",
+      "item6": "minecraft:diamond",
+      "item7": "minecraft:diamond",
+      "item8": "minecraft:emerald",
+      "item9": "minecraft:diamond",
+      "item10": "minecraft:diamond",
+      "text": "Text ++",
+      "separator": false
+    },
+    {
+      "type": "patchouli_plus:spotlight",
+      "title": "Title",
+      "item": "minecraft:emerald",
+      "item2": "minecraft:emerald",
+      "item3": "minecraft:emerald",
+      "item4": "minecraft:emerald",
+      "item5": "minecraft:emerald",
+      "text": "Text ++",
+      "separator": false
+    },
+    {
+      "type": "patchouli_plus:far_double_spotlight",
+      "title": "Title",
+      "item": "minecraft:emerald",
+      "item2": "minecraft:diamond,minecraft:charcoal",
+      "item3": "minecraft:emerald",
+      "item4": "minecraft:diamond",
+      "item5": "minecraft:emerald",
+      "item6": "minecraft:diamond",
+      "item7": "minecraft:diamond",
+      "item8": "minecraft:emerald",
+      "item9": "minecraft:diamond",
+      "item10": "minecraft:diamond",
+      "text": "Text ++",
+      "separator": true
+    },
+    {
+      "type": "patchouli_plus:simple_recipe",
+      "title": "Title",
+      "input": "minecraft:emerald",
+      "station": "minecraft:diamond,minecraft:charcoal",
+      "output": "minecraft:emerald",
+      "text": "Text ++",
+      "separator": true
+    }
+  ]
+}
