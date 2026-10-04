@@ -28,8 +28,8 @@ public class PageCraftingPlus extends PageMultiSimpleRecipeRegistry<Recipe<?>> {
             boolean shaped = recipe instanceof ShapedRecipe;
             if (!shaped) {
                 int iconX = recipeX + 63;
-                int iconY = recipeY + 2;
-                graphics.blit(book.craftingTexture, iconX, iconY, 0, 62, 11, 11, 128, 256);
+                int iconY = recipeY + 1;
+                graphics.blit(book.craftingTexture, iconX, iconY, 0, 64, 11, 11, 128, 256);
                 if (parent.isMouseInRelativeRange((double)mouseX, (double)mouseY, iconX, iconY, 11, 11)) {
                     parent.setTooltip(new Component[]{Component.translatable("patchouli.gui.lexicon.shapeless")});
                 }

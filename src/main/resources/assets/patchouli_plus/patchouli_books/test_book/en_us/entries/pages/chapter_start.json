@@ -1,0 +1,16 @@
+{
+  "name": "Chapter Start",
+  "icon": "minecraft:paper",
+  "category": "patchouli_plus:pages",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli_plus:chapter_start",
+      "title": "Chapter Start"
+    },
+    {
+      "type": "patchouli_plus:empty",
+      "filler": false
+    }
+  ]
+}

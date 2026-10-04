@@ -31,7 +31,7 @@ public class PageChapterStartPlus extends BookPage {
         List<FormattedCharSequence> lines = font.split(Component.literal(i18n(title)), (int) (MAX_WIDTH / scale));
 
         int lineHeight = font.lineHeight + 2;
-        int totalHeight = Objects.equals(title, "Text Values Display") ? lines.size() * lineHeight - 2 : lines.size() * lineHeight - 6;
+        int totalHeight = Objects.equals(title, "Text Values Display") ? lines.size() * lineHeight + 8 : lines.size() * lineHeight;
         int startY = -totalHeight / 2;
 
         PoseStack ms = graphics.pose();

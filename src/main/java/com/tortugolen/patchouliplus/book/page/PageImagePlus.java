@@ -16,22 +16,33 @@ public class PageImagePlus extends PageTextPlus {
     transient int index;
     private transient ResourceLocation resolvedBorder;
 
+    protected enum ButtonArrowPosition {
+        TOP_LEFT,
+        TOP_CENTER,
+        TOP_RIGHT,
+//        MIDDLE_LEFT,
+//        MIDDLE_CENTER,
+//        MIDDLE_RIGHT,
+        BOTTOM_LEFT,
+        BOTTOM_CENTER,
+        BOTTOM_RIGHT,
+    }
+
     @SerializedName("border")
     protected boolean border = true;
 
     @SerializedName("border_type")
     protected String borderTexture = null;
 
+    @SerializedName("arrow_position")
+    protected ButtonArrowPosition buttonArrowPosition = ButtonArrowPosition.BOTTOM_RIGHT;
+
     public void onDisplayed(GuiBookEntry parent, int left, int top) {
         super.onDisplayed(parent, left, top);
 
         resolvedBorder = null;
 
-        int x = 90;
-        int y = getY() + 100;
-
-        addButton(new GuiButtonBookArrowSmall(parent, x, y, true, () -> index > 0, this::handleButtonArrow));
-        addButton(new GuiButtonBookArrowSmall(parent, x + 10, y, false, () -> index < images.length - 1, this::handleButtonArrow));
+        drawButtonArrow();
     }
 
     public void render(GuiGraphics graphics, int mouseX, int mouseY, float pticks) {
@@ -49,11 +60,7 @@ public class PageImagePlus extends PageTextPlus {
         }
 
         if (images.length > 1 && border) {
-            int xs = x + 83;
-            int ys = y + 92;
-
-            graphics.fill(xs, ys, xs + 20, ys + 11, 1140850688);
-            graphics.fill(xs - 1, ys - 1, xs + 20, ys + 11, 1140850688);
+            drawButtonArrowBackground(graphics, x, y);
         }
 
         super.render(graphics, mouseX, mouseY, pticks);
@@ -68,12 +75,32 @@ public class PageImagePlus extends PageTextPlus {
         }
     }
 
+    protected void drawButtonArrow() {
+        int x = 0;
+        int y = getY();
+
+        switch (buttonArrowPosition) {
+            case BOTTOM_RIGHT -> {
+                x = x + 90;
+                y = y + 100 - 6;
+            }
+        }
+
+        addButton(new GuiButtonBookArrowSmall(parent, x, y, true, () -> index > 0, this::handleButtonArrow));
+        addButton(new GuiButtonBookArrowSmall(parent, x + 10, y, false, () -> index < images.length - 1, this::handleButtonArrow));
+    }
+
+    protected void drawButtonArrowBackground(GuiGraphics graphics, int x, int y) {
+        int xs = x + 83;
+        int ys = y + 92;
+
+        graphics.fill(xs, ys, xs + 20, ys + 11, 1140850688);
+        graphics.fill(xs - 1, ys - 1, xs + 20, ys + 11, 1140850688);
+    }
+
     @Override
     public int getTextHeight() {
-        if (hasValidTitle() && separator) return 132;
-        else if (hasValidTitle() && !separator) return 120;
-        else if (!hasValidTitle() && separator) return 120;
-        else return 0;
+        return super.getTextHeight() + 106 + 4;
     }
 
     private ResourceLocation getBorderTexture() {

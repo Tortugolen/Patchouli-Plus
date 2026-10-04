@@ -1,0 +1,88 @@
+{
+  "name": "Image",
+  "icon": "minecraft:paper",
+  "category": "patchouli_plus:pages",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli_plus:image",
+      "title": "Without Border",
+      "text": "[Text]",
+      "separator": true,
+      "images": ["patchouli_plus:textures/gui/images/forest.png", "patchouli_plus:textures/gui/images/jungle.png", "patchouli_plus:textures/gui/images/desert.png"],
+      "border": false,
+      "arrow_position": "BOTTOM_RIGHT"
+    },
+    {
+      "type": "patchouli_plus:image",
+      "title": "With Border",
+      "text": "[Text]",
+      "separator": true,
+      "images": ["patchouli_plus:textures/gui/images/forest.png", "patchouli_plus:textures/gui/images/jungle.png", "patchouli_plus:textures/gui/images/desert.png"],
+      "border": true,
+      "arrow_position": "BOTTOM_RIGHT"
+    },
+    {
+      "type": "patchouli_plus:image",
+      "title": "Max Extension",
+      "text": "[Text]",
+      "separator": true,
+      "images": ["patchouli_plus:textures/gui/images/forest.png", "patchouli_plus:textures/gui/images/jungle.png", "patchouli_plus:textures/gui/images/desert.png"],
+      "border": false,
+      "arrow_position": "BOTTOM_RIGHT"
+    },
+    {
+      "type": "patchouli_plus:image",
+      "title": "Max Extension",
+      "text": "[Text]",
+      "separator": true,
+      "images": ["patchouli_plus:textures/gui/images/forest.png", "patchouli_plus:textures/gui/images/jungle.png", "patchouli_plus:textures/gui/images/desert.png"],
+      "border": false,
+      "arrow_position": "BOTTOM_RIGHT"
+    },
+    {
+      "type": "patchouli_plus:empty",
+      "filler": false
+    },
+    {
+      "type": "patchouli_plus:chapter_start",
+      "title": "Text Values Display"
+    },
+    {
+      "type": "patchouli_plus:image",
+      "title": "[Title]",
+      "text": "[Text]",
+      "separator": true,
+      "images": ["patchouli_plus:textures/gui/images/forest.png", "patchouli_plus:textures/gui/images/jungle.png", "patchouli_plus:textures/gui/images/desert.png"],
+      "border": true,
+      "arrow_position": "BOTTOM_RIGHT"
+    },
+    {
+      "type": "patchouli_plus:image",
+      "title": "",
+      "text": "[Text]",
+      "separator": false,
+      "images": ["patchouli_plus:textures/gui/images/forest.png", "patchouli_plus:textures/gui/images/jungle.png", "patchouli_plus:textures/gui/images/desert.png"],
+      "border": true,
+      "arrow_position": "BOTTOM_RIGHT"
+    },
+    {
+      "type": "patchouli_plus:image",
+      "title": "",
+      "text": "[Text]",
+      "separator": true,
+      "images": ["patchouli_plus:textures/gui/images/forest.png", "patchouli_plus:textures/gui/images/jungle.png", "patchouli_plus:textures/gui/images/desert.png"],
+      "border": true,
+      "arrow_position": "BOTTOM_RIGHT"
+    },
+    {
+      "type": "patchouli_plus:image",
+      "title": "[Title]",
+      "text": "[Text]",
+      "separator": false,
+      "images": ["patchouli_plus:textures/gui/images/forest.png", "patchouli_plus:textures/gui/images/jungle.png", "patchouli_plus:textures/gui/images/desert.png"],
+      "border": true,
+      "arrow_position": "BOTTOM_RIGHT"
+    }
+  ]
+}

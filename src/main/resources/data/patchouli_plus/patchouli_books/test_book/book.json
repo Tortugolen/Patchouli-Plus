@@ -5,8 +5,8 @@
   "creative_tab": "minecraft:op_blocks",
   "model": "patchouli:book_purple",
   "book_texture": "patchouli:textures/gui/book_purple.png",
-  "filler_texture": "patchouli:textures/gui/page_filler.png",
-  "crafting_texture": "patchouli:textures/gui/crafting.png",
+  "filler_texture": "patchouli_plus:textures/gui/fillers/cube_page_filler.png",
+  "crafting_texture": "patchouli_plus:textures/gui/crafting_improved.png",
   "crafting_texture_plus": "patchouli_plus:textures/gui/crafting.png",
   "use_resource_pack": true,
 

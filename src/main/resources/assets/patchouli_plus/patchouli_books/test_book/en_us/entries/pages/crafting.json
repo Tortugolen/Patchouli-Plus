@@ -2,7 +2,7 @@
   "name": "Crafting",
   "icon": "minecraft:crafting_table",
   "category": "patchouli_plus:pages",
-  "sortnum": 2,
+  "sortnum": 32,
   "pages": [
     {
       "type": "patchouli_plus:crafting",
@@ -41,6 +41,10 @@
         "minecraft:wooden_sword,minecraft:stone_sword,minecraft:iron_sword,minecraft:golden_sword,minecraft:diamond_sword",
         "minecraft:wooden_pickaxe,minecraft:stone_pickaxe,minecraft:iron_pickaxe,minecraft:golden_pickaxe,minecraft:diamond_pickaxe"
       ]
+    },
+    {
+      "type": "patchouli_plus:empty",
+      "filler": false
     },
     {
       "type": "patchouli_plus:chapter_start",

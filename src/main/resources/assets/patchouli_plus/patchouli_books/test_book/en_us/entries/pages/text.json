@@ -1,25 +1,25 @@
 {
   "name": "Text",
-  "icon": "minecraft:writable_book",
+  "icon": "minecraft:paper",
   "category": "patchouli_plus:pages",
-  "sortnum": 1,
+  "sortnum": 2,
   "pages": [
     {
       "type": "patchouli_plus:text",
       "title": "Max Extension",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit animi id est laborum.",
+      "text": "patchouli_plus.test_book.max_extension_text",
       "separator": true
     },
     {
       "type": "patchouli_plus:text",
       "title": "",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit animi id est laborum.",
+      "text": "patchouli_plus.test_book.max_extension_text",
       "separator": false
     },
     {
       "type": "patchouli_plus:text",
       "title": "Max Extension",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit animi id est laborum.",
+      "text": "patchouli_plus.test_book.max_extension_text",
       "separator": false
     },
     {
