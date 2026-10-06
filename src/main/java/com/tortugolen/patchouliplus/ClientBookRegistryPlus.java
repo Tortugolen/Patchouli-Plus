@@ -26,7 +26,7 @@ public class ClientBookRegistryPlus {
         ClientBookRegistry.INSTANCE.pageTypes.put(new ResourceLocation(PatchouliPlus.MOD_ID, "empty"), PageEmptyPlus.class);
         ClientBookRegistry.INSTANCE.pageTypes.put(new ResourceLocation(PatchouliPlus.MOD_ID, "text"), PageTextPlus.class);
         ClientBookRegistry.INSTANCE.pageTypes.put(new ResourceLocation(PatchouliPlus.MOD_ID, "image"), PageImagePlus.class);
-        ClientBookRegistry.INSTANCE.pageTypes.put(new ResourceLocation(PatchouliPlus.MOD_ID, "quadruple_image"), PageQuadrupleImagePlus.class);
+//        ClientBookRegistry.INSTANCE.pageTypes.put(new ResourceLocation(PatchouliPlus.MOD_ID, "quadruple_image"), PageQuadrupleImagePlus.class);
 
         ClientBookRegistry.INSTANCE.pageTypes.put(new ResourceLocation(PatchouliPlus.MOD_ID, "link"), PageLinkPlus.class);
         ClientBookRegistry.INSTANCE.pageTypes.put(new ResourceLocation(PatchouliPlus.MOD_ID, "quest"), PageQuestPlus.class);
@@ -34,7 +34,7 @@ public class ClientBookRegistryPlus {
         ClientBookRegistry.INSTANCE.pageTypes.put(new ResourceLocation(PatchouliPlus.MOD_ID, "relations"), PageRelationsPlus.class);
 
         ClientBookRegistry.INSTANCE.pageTypes.put(new ResourceLocation(PatchouliPlus.MOD_ID, "entity"), PageEntityPlus.class);
-        ClientBookRegistry.INSTANCE.pageTypes.put(new ResourceLocation(PatchouliPlus.MOD_ID, "entity_projection"), PageEntityProjectionPlus.class);
+//        ClientBookRegistry.INSTANCE.pageTypes.put(new ResourceLocation(PatchouliPlus.MOD_ID, "entity_projection"), PageEntityProjectionPlus.class);
 
         //Spotlight
         ClientBookRegistry.INSTANCE.pageTypes.put(new ResourceLocation(PatchouliPlus.MOD_ID, "spotlight"), PageSpotlightPlus.class);
@@ -52,6 +52,6 @@ public class ClientBookRegistryPlus {
         ClientBookRegistry.INSTANCE.pageTypes.put(new ResourceLocation(PatchouliPlus.MOD_ID, "crafting"), PageCraftingPlus.class);
         ClientBookRegistry.INSTANCE.pageTypes.put(new ResourceLocation(PatchouliPlus.MOD_ID, "smithing"), PageSmithingPlus.class);
 
-        ClientBookRegistry.INSTANCE.pageTypes.put(new ResourceLocation(PatchouliPlus.MOD_ID, "brewing"), PageBrewingPlus.class);
+//        ClientBookRegistry.INSTANCE.pageTypes.put(new ResourceLocation(PatchouliPlus.MOD_ID, "brewing"), PageBrewingPlus.class);
     }
 }
