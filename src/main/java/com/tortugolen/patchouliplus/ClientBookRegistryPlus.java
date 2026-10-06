@@ -30,9 +30,9 @@ public class ClientBookRegistryPlus {
 
         ClientBookRegistry.INSTANCE.pageTypes.put(new ResourceLocation(PatchouliPlus.MOD_ID, "link"), PageLinkPlus.class);
         ClientBookRegistry.INSTANCE.pageTypes.put(new ResourceLocation(PatchouliPlus.MOD_ID, "quest"), PageQuestPlus.class);
-        ClientBookRegistry.INSTANCE.pageTypes.put(new ResourceLocation(PatchouliPlus.MOD_ID, "multiblock"), PageMultiblockPlus.class);
         ClientBookRegistry.INSTANCE.pageTypes.put(new ResourceLocation(PatchouliPlus.MOD_ID, "relations"), PageRelationsPlus.class);
 
+        ClientBookRegistry.INSTANCE.pageTypes.put(new ResourceLocation(PatchouliPlus.MOD_ID, "multiblock"), PageMultiblockPlus.class);
         ClientBookRegistry.INSTANCE.pageTypes.put(new ResourceLocation(PatchouliPlus.MOD_ID, "entity"), PageEntityPlus.class);
 //        ClientBookRegistry.INSTANCE.pageTypes.put(new ResourceLocation(PatchouliPlus.MOD_ID, "entity_projection"), PageEntityProjectionPlus.class);
 

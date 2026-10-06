@@ -1,6 +1,6 @@
 {
   "name": "Comparison",
-  "icon": "minecraft:comparator",
+  "icon": "minecraft:paper",
   "category": "patchouli_plus:pages",
   "sortnum": 64,
   "pages": [
@@ -17,7 +17,7 @@
     },
     {
       "type": "patchouli_plus:text",
-      "title": "Patchouli ++",
+      "title": "Patchouli++",
       "text": "[Text]",
       "separator": true
     },
@@ -34,7 +34,7 @@
     },
     {
       "type": "patchouli_plus:image",
-      "title": "Patchouli ++",
+      "title": "Patchouli++",
       "text": "[Text]",
       "separator": true,
       "images": [
@@ -44,6 +44,124 @@
       ],
       "border": true,
       "arrow_position": "BOTTOM_RIGHT"
+    },
+    {
+      "type": "patchouli:link",
+      "title": "Patchouli",
+      "url": "https://www.curseforge.com/minecraft/mc-mods/patchouli-plus",
+      "link_text": "[Link]",
+      "text": "[Text]"
+    },
+    {
+      "type": "patchouli_plus:link",
+      "title": "Patchouli++",
+      "url": "https://www.curseforge.com/minecraft/mc-mods/patchouli-plus",
+      "link_text": "[Link]",
+      "text": "[Text]",
+      "separator": true
+    },
+    {
+      "type": "patchouli:quest",
+      "title": "Patchouli",
+      "trigger": "",
+      "text": "[Text]"
+    },
+    {
+      "type": "patchouli_plus:quest",
+      "title": "Patchouli++",
+      "trigger": "",
+      "text": "[Text]",
+      "separator": true,
+      "separator2": true
+    },
+    {
+      "type": "patchouli:relations",
+      "title": "Patchouli",
+      "entries": ["patchouli_plus:pages/comparison"],
+      "text": "[Text]"
+    },
+    {
+      "type": "patchouli_plus:relations",
+      "title": "Patchouli++",
+      "entries": ["patchouli_plus:pages/comparison"],
+      "text": "[Text]",
+      "separator": true
+    },
+    {
+      "type": "patchouli:multiblock",
+      "title": "Patchouli",
+      "text": "[Text]",
+      "name": "[Name]",
+      "multiblock": {
+        "pattern": [
+          ["CCCCC", "CCCCC", "CC0CC", "CCCCC", "CCCCC"],
+          ["LPBPL", "PT  P", "H   H", "P   P", "LPDPL"],
+          ["LPPPL", "P   P", "P   P", "P   P", "LPUPL"],
+          ["EPPPW", "EPPPW", "EPPPW", "EPPPW", "EPPPW"],
+          [" EPW ", " EPW ", " EPW ", " EPW ", " EPW "]
+        ],
+        "mapping": {
+          "0": "minecraft:cobblestone",
+          "C": "minecraft:cobblestone",
+          "L": "minecraft:oak_log[axis=y]",
+          "P": "minecraft:oak_planks",
+          "B": "minecraft:glass_pane[east=true,west=true]",
+          "H": "minecraft:glass_pane[north=true,south=true]",
+          "D": "minecraft:oak_door[facing=south,half=lower]",
+          "U": "minecraft:oak_door[facing=south,half=upper]",
+          "T": "minecraft:crafting_table",
+          "E": "minecraft:oak_stairs[facing=east]",
+          "W": "minecraft:oak_stairs[facing=west]"
+        },
+        "symmetrical": true
+      }
+    },
+    {
+      "type": "patchouli_plus:multiblock",
+      "title": "Patchouli++",
+      "text": "[Text]",
+      "separator": true,
+      "name": "[Name]",
+      "multiblock": {
+        "pattern": [
+          ["CCCCC", "CCCCC", "CC0CC", "CCCCC", "CCCCC"],
+          ["LPBPL", "PT  P", "H   H", "P   P", "LPDPL"],
+          ["LPPPL", "P   P", "P   P", "P   P", "LPUPL"],
+          ["EPPPW", "EPPPW", "EPPPW", "EPPPW", "EPPPW"],
+          [" EPW ", " EPW ", " EPW ", " EPW ", " EPW "]
+        ],
+        "mapping": {
+          "0": "minecraft:cobblestone",
+          "C": "minecraft:cobblestone",
+          "L": "minecraft:oak_log[axis=y]",
+          "P": "minecraft:oak_planks",
+          "B": "minecraft:glass_pane[east=true,west=true]",
+          "H": "minecraft:glass_pane[north=true,south=true]",
+          "D": "minecraft:oak_door[facing=south,half=lower]",
+          "U": "minecraft:oak_door[facing=south,half=upper]",
+          "T": "minecraft:crafting_table",
+          "E": "minecraft:oak_stairs[facing=east]",
+          "W": "minecraft:oak_stairs[facing=west]"
+        },
+        "symmetrical": true
+      }
+    },
+    {
+      "type": "patchouli:entity",
+      "title": "Patchouli",
+      "text": "[Text]",
+      "entity": "minecraft:creeper",
+      "name": "[Name]",
+      "scale": 1
+    },
+    {
+      "type": "patchouli_plus:entity",
+      "title": "Patchouli++",
+      "text": "[Text]",
+      "separator": true,
+      "entity": "minecraft:creeper",
+      "scale": 1,
+      "border": true
     }
   ]
 }
