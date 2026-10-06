@@ -25,15 +25,23 @@
       "type": "patchouli:image",
       "title": "Patchouli",
       "text": "[Text]",
-      "images": ["patchouli_plus:textures/gui/images/forest.png", "patchouli_plus:textures/gui/images/jungle.png", "patchouli_plus:textures/gui/images/desert.png"],
-      "border": true,
+      "images": [
+        "patchouli_plus:textures/gui/images/forest.png",
+        "patchouli_plus:textures/gui/images/jungle.png",
+        "patchouli_plus:textures/gui/images/desert.png"
+      ],
+      "border": true
     },
     {
       "type": "patchouli_plus:image",
       "title": "Patchouli ++",
       "text": "[Text]",
       "separator": true,
-      "images": ["patchouli_plus:textures/gui/images/forest.png", "patchouli_plus:textures/gui/images/jungle.png", "patchouli_plus:textures/gui/images/desert.png"],
+      "images": [
+        "patchouli_plus:textures/gui/images/forest.png",
+        "patchouli_plus:textures/gui/images/jungle.png",
+        "patchouli_plus:textures/gui/images/desert.png"
+      ],
       "border": true,
       "arrow_position": "BOTTOM_RIGHT"
     }

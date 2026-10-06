@@ -26,6 +26,7 @@ public class ClientBookRegistryPlus {
         ClientBookRegistry.INSTANCE.pageTypes.put(new ResourceLocation(PatchouliPlus.MOD_ID, "empty"), PageEmptyPlus.class);
         ClientBookRegistry.INSTANCE.pageTypes.put(new ResourceLocation(PatchouliPlus.MOD_ID, "text"), PageTextPlus.class);
         ClientBookRegistry.INSTANCE.pageTypes.put(new ResourceLocation(PatchouliPlus.MOD_ID, "image"), PageImagePlus.class);
+        ClientBookRegistry.INSTANCE.pageTypes.put(new ResourceLocation(PatchouliPlus.MOD_ID, "quadruple_image"), PageQuadrupleImagePlus.class);
 
         ClientBookRegistry.INSTANCE.pageTypes.put(new ResourceLocation(PatchouliPlus.MOD_ID, "link"), PageLinkPlus.class);
         ClientBookRegistry.INSTANCE.pageTypes.put(new ResourceLocation(PatchouliPlus.MOD_ID, "quest"), PageQuestPlus.class);

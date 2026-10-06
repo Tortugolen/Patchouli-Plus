@@ -1,29 +1,30 @@
 modLoader= "javafml" 
 loaderVersion= "${loader_version_range}"
-license= "${mod_license}"
 
-[[mods]] 
-modId= "patchouli_plus"
+[[mods]]
+modId= "${mod_id}"
 version= "${mod_version}"
-displayName= "Patchouli++"
-authors= "Tortugolen"
-description= '''Patchouli Extras'''
+displayName= "${mod_name}"
+logoFile= "${mod_logo_file}"
+authors= "${mod_authors}"
+license= "${mod_license}"
+description= "${mod_description}"
 
-[[dependencies.patchouli_plus]]
+[[dependencies."${mod_id}"]]
 modId= "minecraft"
 mandatory= true
 versionRange= "${minecraft_version_range}"
 ordering= "NONE"
 side= "BOTH"
 
-[[dependencies.patchouli_plus]]
+[[dependencies."${mod_id}"]]
 modId= "forge" 
 mandatory= true 
 versionRange= "${forge_version_range}"
 ordering= "NONE"
 side= "BOTH"
 
-[[dependencies.patchouli_plus]]
+[[dependencies."${mod_id}"]]
 modId= "patchouli"
 mandatory= true
 versionRange= "${patchouli_version_range}"

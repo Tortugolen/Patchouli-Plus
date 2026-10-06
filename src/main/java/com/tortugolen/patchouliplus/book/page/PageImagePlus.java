@@ -14,7 +14,7 @@ import vazkii.patchouli.client.book.gui.button.GuiButtonBookArrowSmall;
 public class PageImagePlus extends PageTextPlus {
     ResourceLocation[] images;
     transient int index;
-    private transient ResourceLocation resolvedBorder;
+    protected transient ResourceLocation resolvedBorder;
 
     protected enum ButtonArrowPosition {
         TOP_LEFT,
@@ -52,11 +52,10 @@ public class PageImagePlus extends PageTextPlus {
         RenderSystem.enableBlend();
         graphics.setColor(1.0F, 1.0F, 1.0F, 1.0F);
         graphics.pose().scale(0.5F, 0.5F, 0.5F);
-        graphics.blit(images[index], x * 2 + 6, y * 2 + 6, 0, 0, 200, 200);
-        graphics.pose().scale(2.0F, 2.0F, 2.0F);
+        drawImages(graphics, x, y);
 
         if (border) {
-            GUIBookPlus.drawCustomBorder(graphics, getBorderTexture(), x, y, 1, 1, 106, 106);
+            drawBorder(graphics, x, y);
         }
 
         if (images.length > 1 && border) {
@@ -75,11 +74,40 @@ public class PageImagePlus extends PageTextPlus {
         }
     }
 
+    protected void drawImages(GuiGraphics graphics, int x, int y) {
+        graphics.blit(images[index], x * 2 + 6, y * 2 + 6, 0, 0, 200, 200);
+        graphics.pose().scale(2.0F, 2.0F, 2.0F);
+    }
+
+    protected void drawBorder(GuiGraphics graphics, int x, int y) {
+        GUIBookPlus.drawCustomBorder(graphics, getBorderTexture(), x, y, 1, 1, 106, 106);
+    }
+
     protected void drawButtonArrow() {
         int x = 0;
         int y = getY();
 
         switch (buttonArrowPosition) {
+            case TOP_LEFT -> {
+                x = x;
+                y = y;
+            }
+            case TOP_CENTER -> {
+                x = x + 45;
+                y = y;
+            }
+            case TOP_RIGHT -> {
+                x = x + 90;
+                y = y;
+            }
+            case BOTTOM_LEFT -> {
+                x = x;
+                y = y + 100 - 6;
+            }
+            case BOTTOM_CENTER -> {
+                x = x + 45;
+                y = y + 100 - 6;
+            }
             case BOTTOM_RIGHT -> {
                 x = x + 90;
                 y = y + 100 - 6;
@@ -91,11 +119,38 @@ public class PageImagePlus extends PageTextPlus {
     }
 
     protected void drawButtonArrowBackground(GuiGraphics graphics, int x, int y) {
-        int xs = x + 83;
-        int ys = y + 92;
+        int bgx = x + 83;
+        int bgy = y + 92;
 
-        graphics.fill(xs, ys, xs + 20, ys + 11, 1140850688);
-        graphics.fill(xs - 1, ys - 1, xs + 20, ys + 11, 1140850688);
+        switch (buttonArrowPosition) {
+            case TOP_LEFT -> {
+                bgx = x;
+                bgy = y;
+            }
+            case TOP_CENTER -> {
+                bgx = x;
+                bgy = y;
+            }
+            case TOP_RIGHT -> {
+                bgx = x;
+                bgy = y;
+            }
+            case BOTTOM_LEFT -> {
+                bgx = x;
+                bgy = y;
+            }
+            case BOTTOM_CENTER -> {
+                bgx = x;
+                bgy = y;
+            }
+            case BOTTOM_RIGHT -> {
+                bgx = x;
+                bgy = y;
+            }
+        }
+
+        graphics.fill(bgx, bgy, bgx + 20, bgy + 11, 1140850688);
+        graphics.fill(bgx - 1, bgy - 1, bgx + 20, bgy + 11, 1140850688);
     }
 
     @Override
@@ -103,7 +158,7 @@ public class PageImagePlus extends PageTextPlus {
         return super.getTextHeight() + 106 + 4;
     }
 
-    private ResourceLocation getBorderTexture() {
+    protected ResourceLocation getBorderTexture() {
         if (resolvedBorder != null) return resolvedBorder;
 
         String bordersFolder = "textures/gui/borders/";
