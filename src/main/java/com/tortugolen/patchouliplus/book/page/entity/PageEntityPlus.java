@@ -146,7 +146,7 @@ public class PageEntityPlus extends PageTextPlus {
                 float height = entity.getBbHeight();
                 float entitySize = Math.max(1.0F, Math.max(width, height));
                 renderScale = 100.0F / entitySize * 0.8F * scale;
-                offset = Math.max(height, entitySize) * 0.5F + extraOffset;
+                offset = Math.max(height, entitySize) * 0.5F + getEntityY() + extraOffset;
             } catch (Exception e) {
                 errored = true;
                 PatchouliAPI.LOGGER.error("Failed to load entity", e);
@@ -170,6 +170,13 @@ public class PageEntityPlus extends PageTextPlus {
             lastMouseX = mouseX;
         }
         wasDown = down;
+    }
+
+    protected float getEntityY() {
+        if (hasValidTitle() && separator) return ((float) 58 / 188);
+        else if (hasValidTitle() && !separator) return ((float) 58 / 188);
+        else if (!hasValidTitle() && separator) return ((float) 58 / 188);
+        else return 58;
     }
 
     protected void drawBorders(GuiGraphics graphics, int x, int y) {

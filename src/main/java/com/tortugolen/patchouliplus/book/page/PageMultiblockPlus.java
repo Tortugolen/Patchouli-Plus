@@ -34,7 +34,6 @@ import vazkii.patchouli.client.base.PersistentData;
 import vazkii.patchouli.client.book.BookContentsBuilder;
 import vazkii.patchouli.client.book.BookEntry;
 import vazkii.patchouli.client.book.LiquidBlockVertexConsumer;
-import vazkii.patchouli.client.book.gui.GuiBook;
 import vazkii.patchouli.client.book.gui.GuiBookEntry;
 import vazkii.patchouli.client.book.gui.button.GuiButtonBookEye;
 import vazkii.patchouli.client.handler.MultiblockVisualizationHandler;
@@ -143,7 +142,7 @@ public class PageMultiblockPlus extends PageTextPlus {
         float scaleY = maxY / (float)sizeY;
         float scale = -Math.min(scaleX, scaleY);
         int xPos = 58;
-        int yPos = getY() + 60;
+        int yPos = getMultiBlockY();
         graphics.pose().pushPose();
         graphics.pose().translate((float)xPos, (float)yPos, 100.0F);
         graphics.pose().scale(scale, scale, scale);
@@ -223,6 +222,13 @@ public class PageMultiblockPlus extends PageTextPlus {
                 }
             }
         }
+    }
+
+    protected int getMultiBlockY() {
+        if (hasValidTitle() && separator) return 53;
+        else if (hasValidTitle() && !separator) return 10;
+        else if (!hasValidTitle() && separator) return 10;
+        else return 60;
     }
 
     private ResourceLocation getBorderTexture() {
