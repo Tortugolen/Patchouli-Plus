@@ -1,12 +1,14 @@
 package com.tortugolen.patchouliplus;
 
-import com.tortugolen.patchouliplus.book.page.*;
-import com.tortugolen.patchouliplus.book.page.entity.PageEntityPlus;
-import com.tortugolen.patchouliplus.book.page.entity.PageEntityProjectionPlus;
-import com.tortugolen.patchouliplus.book.page.recipes.*;
-import com.tortugolen.patchouliplus.book.page.spotlight.PageDoubleSpotlightPlus;
-import com.tortugolen.patchouliplus.book.page.spotlight.PageFarDoubleSpotlightPlus;
-import com.tortugolen.patchouliplus.book.page.spotlight.PageSpotlightPlus;
+import com.tortugolen.patchouliplus.book.page.ChapterStartPlusPage;
+import com.tortugolen.patchouliplus.book.page.EmptyPlusPage;
+import com.tortugolen.patchouliplus.book.page.PageTextPlus;
+import com.tortugolen.patchouliplus.book.page.not.*;
+import com.tortugolen.patchouliplus.book.page.not.entity.PageEntityPlus;
+import com.tortugolen.patchouliplus.book.page.not.recipes.*;
+import com.tortugolen.patchouliplus.book.page.not.spotlight.PageDoubleSpotlightPlus;
+import com.tortugolen.patchouliplus.book.page.not.spotlight.PageFarDoubleSpotlightPlus;
+import com.tortugolen.patchouliplus.book.page.not.spotlight.PageSpotlightPlus;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -22,8 +24,8 @@ public class ClientBookRegistryPlus {
     }
 
     private static void addPageTypes() {
-        ClientBookRegistry.INSTANCE.pageTypes.put(new ResourceLocation(PatchouliPlus.MOD_ID, "chapter_start"), PageChapterStartPlus.class);
-        ClientBookRegistry.INSTANCE.pageTypes.put(new ResourceLocation(PatchouliPlus.MOD_ID, "empty"), PageEmptyPlus.class);
+        ClientBookRegistry.INSTANCE.pageTypes.put(new ResourceLocation(PatchouliPlus.MOD_ID, "chapter_start"), ChapterStartPlusPage.class);
+        ClientBookRegistry.INSTANCE.pageTypes.put(new ResourceLocation(PatchouliPlus.MOD_ID, "empty"), EmptyPlusPage.class);
         ClientBookRegistry.INSTANCE.pageTypes.put(new ResourceLocation(PatchouliPlus.MOD_ID, "text"), PageTextPlus.class);
         ClientBookRegistry.INSTANCE.pageTypes.put(new ResourceLocation(PatchouliPlus.MOD_ID, "image"), PageImagePlus.class);
 //        ClientBookRegistry.INSTANCE.pageTypes.put(new ResourceLocation(PatchouliPlus.MOD_ID, "quadruple_image"), PageQuadrupleImagePlus.class);

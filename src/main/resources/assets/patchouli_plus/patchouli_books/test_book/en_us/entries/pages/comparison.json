@@ -109,8 +109,8 @@
           "T": "minecraft:wall_torch[facing=west]",
           "X": "minecraft:oak_log[axis=x]",
           "Y": "minecraft:oak_log[axis=y]",
-          "L": "minecraft:oak_door[facing=east,half=lower]",
-          "U": "minecraft:oak_door[facing=east,half=upper]",
+          "L": "minecraft:oak_door[facing=east,half=lower,hinge=right]",
+          "U": "minecraft:oak_door[facing=east,half=upper,hinge=right]",
           "G": "minecraft:glass_pane[north=true,south=true]",
           "P": "minecraft:glass_pane[east=true,west=true]",
           "N": "minecraft:oak_stairs[facing=north]",
@@ -148,8 +148,8 @@
           "T": "minecraft:wall_torch[facing=west]",
           "X": "minecraft:oak_log[axis=x]",
           "Y": "minecraft:oak_log[axis=y]",
-          "L": "minecraft:oak_door[facing=east,half=lower]",
-          "U": "minecraft:oak_door[facing=east,half=upper]",
+          "L": "minecraft:oak_door[facing=east,half=lower,hinge=right]",
+          "U": "minecraft:oak_door[facing=east,half=upper,hinge=right]",
           "G": "minecraft:glass_pane[north=true,south=true]",
           "P": "minecraft:glass_pane[east=true,west=true]",
           "N": "minecraft:oak_stairs[facing=north]",
@@ -177,25 +177,6 @@
       "title": "Patchouli++",
       "text": "[Text]",
       "separator": true,
-      "entity": "minecraft:creeper",
-      "scale": 1,
-      "border": true
-    },
-
-    {
-      "type": "patchouli_plus:entity",
-      "title": "Patchouli++",
-      "text": "[Text]",
-      "separator": false,
-      "entity": "minecraft:creeper",
-      "scale": 1,
-      "border": true
-    },
-    {
-      "type": "patchouli_plus:entity",
-      "title": "",
-      "text": "[Text]",
-      "separator": false,
       "entity": "minecraft:creeper",
       "scale": 1,
       "border": true
