@@ -1,0 +1,34 @@
+{
+  "pattern": [
+    ["       ", "       ", "  3E2  ", "  SON  ", "  4W1  ", "       ", "       "],
+    ["       ", " 3EEE2 ", " SEEEN ", " SEEEN ", " SEEEN ", " 4WWW1 ", "       "],
+    ["3EEEEE2", "SOOOOON", "SOOOOON", "SOOOOON", "SOOOOON", "SOOOOON", "4WWWWW1"],
+    ["   T   ", " YCCCY ", " C   C ", " C   C ", " C   C ", " YCCCY ", "       "],
+    ["       ", " YCUCY ", " X   X ", " P   P ", " X   X ", " YCGCY ", "       "],
+    ["       ", " YCLCY ", " C   C ", " C   C ", " C   C ", " YCCCY ", "       "],
+    ["   E   ", " YCCCY ", " COOOC ", " CO0OC ", " COOOC ", " YCCCY ", "       "]
+  ],
+
+  "mapping": {
+    "0": "minecraft:oak_planks",
+    "O": "minecraft:oak_planks",
+    "C": "minecraft:cobblestone",
+    "T": "minecraft:wall_torch[facing=west]",
+    "X": "minecraft:oak_log[axis=x]",
+    "Y": "minecraft:oak_log[axis=y]",
+    "L": "minecraft:oak_door[facing=east,half=lower]",
+    "U": "minecraft:oak_door[facing=east,half=upper]",
+    "G": "minecraft:glass_pane[north=true,south=true]",
+    "P": "minecraft:glass_pane[east=true,west=true]",
+    "N": "minecraft:oak_stairs[facing=north]",
+    "E": "minecraft:oak_stairs[facing=east]",
+    "S": "minecraft:oak_stairs[facing=south]",
+    "W": "minecraft:oak_stairs[facing=west]",
+    "1": "minecraft:oak_stairs[facing=north,shape=outer_left]",
+    "2": "minecraft:oak_stairs[facing=north,shape=outer_right]",
+    "3": "minecraft:oak_stairs[facing=south,shape=outer_left]",
+    "4": "minecraft:oak_stairs[facing=south,shape=outer_right]"
+  },
+
+  "symmetrical": true
+}

@@ -58,7 +58,7 @@
       "title": "Patchouli++",
       "text": "[Text]",
       "separator": true,
-      "border": true,
+      "border": [true, false, false, false],
       "quadruple": true,
       "images": [
         "patchouli_plus:textures/gui/images/forest.png"
@@ -81,6 +81,37 @@
       ],
       "quality": 1,
       "arrow_position": "BOTTOM_RIGHT"
+    },
+    {
+      "type": "patchouli_plus:multiblock",
+      "title": "Patchouli++",
+      "text": "[Text]",
+      "separator": true,
+      "border": false,
+      "name": "[Name]",
+      "multiblock": {
+        "id": "patchouli_plus:plains_house"
+      },
+      "enable_visualize": false,
+      "visualize_button_position": "BOTTOM_CENTER"
+    },
+    {
+      "type": "patchouli_plus:spotlight",
+      "item": {
+        "item": "minecraft:diamond_sword"
+      }
+    },
+    {
+      "type": "patchouli_plus:spotlight",
+      "item": {
+        "item": ["minecraft:diamond_sword"]
+      }
+    },
+    {
+      "type": "patchouli_plus:spotlight",
+      "item": {
+        "item": ["minecraft:diamond_sword", "minecraft:diamond_axe"]
+      }
     }
   ]
 }

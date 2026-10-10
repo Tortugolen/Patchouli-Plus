@@ -1,6 +1,7 @@
 package com.tortugolen.patchouliplus;
 
-import com.tortugolen.patchouliplus.book.page.*;
+import com.tortugolen.patchouliplus.Book.Pages.*;
+import com.tortugolen.patchouliplus.Book.Pages.spotlight.PageSpotlightPlus;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -26,15 +27,14 @@ public class ClientBookRegistryPlus {
         ClientBookRegistry.INSTANCE.pageTypes.put(new ResourceLocation(PatchouliPlus.MOD_ID, "relations"), PageRelationsPlus.class);
 
         ClientBookRegistry.INSTANCE.pageTypes.put(new ResourceLocation(PatchouliPlus.MOD_ID, "multiblock"), PageMultiblockPlus.class);
-//        ClientBookRegistry.INSTANCE.pageTypes.put(new ResourceLocation(PatchouliPlus.MOD_ID, "entity"), PageEntityPlus.class);
-////        ClientBookRegistry.INSTANCE.pageTypes.put(new ResourceLocation(PatchouliPlus.MOD_ID, "entity_projection"), PageEntityProjectionPlus.class);
+        ClientBookRegistry.INSTANCE.pageTypes.put(new ResourceLocation(PatchouliPlus.MOD_ID, "entity"), PageEntityPlus.class);
 
-//        //Spotlight
-//        ClientBookRegistry.INSTANCE.pageTypes.put(new ResourceLocation(PatchouliPlus.MOD_ID, "spotlight"), PageSpotlightPlus.class);
+        //Spotlight
+        ClientBookRegistry.INSTANCE.pageTypes.put(new ResourceLocation(PatchouliPlus.MOD_ID, "spotlight"), PageSpotlightPlus.class);
 //        ClientBookRegistry.INSTANCE.pageTypes.put(new ResourceLocation(PatchouliPlus.MOD_ID, "double_spotlight"), PageDoubleSpotlightPlus.class);
 //        ClientBookRegistry.INSTANCE.pageTypes.put(new ResourceLocation(PatchouliPlus.MOD_ID, "far_double_spotlight"), PageFarDoubleSpotlightPlus.class);
 
-//        //Recipes
+        //Recipes
 //        ClientBookRegistry.INSTANCE.pageTypes.put(new ResourceLocation(PatchouliPlus.MOD_ID, "simple_recipe"), PageSimpleRecipePlus.class);
 //        ClientBookRegistry.INSTANCE.pageTypes.put(new ResourceLocation(PatchouliPlus.MOD_ID, "smelting"), PageSmeltingPlus.class);
 //        ClientBookRegistry.INSTANCE.pageTypes.put(new ResourceLocation(PatchouliPlus.MOD_ID, "blasting"), PageBlastingPlus.class);

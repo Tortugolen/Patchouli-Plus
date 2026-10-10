@@ -80,7 +80,7 @@ sourceSets.main.resources { srcDir 'src/generated/resources' }
 sourceSets {
     main {
         java {
-            exclude 'com/tortugolen/patchouliplus/book/page/not/**'
+            exclude 'com/tortugolen/patchouliplus/Book/Pages/not/**'
         }
     }
 }

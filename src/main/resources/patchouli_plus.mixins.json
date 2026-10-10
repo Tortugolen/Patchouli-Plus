@@ -1,7 +1,7 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "com.tortugolen.patchouliplus.mixin",
+  "package": "com.tortugolen.patchouliplus.Mixin",
   "compatibilityLevel": "JAVA_8",
   "refmap": "patchouli_plus.refmap.json",
   "mixins": [
