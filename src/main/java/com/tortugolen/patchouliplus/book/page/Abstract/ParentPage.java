@@ -1,5 +1,7 @@
 package com.tortugolen.patchouliplus.book.page.Abstract;
 
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
 import com.google.gson.annotations.SerializedName;
 import com.tortugolen.patchouliplus.PatchouliPlus;
 import com.tortugolen.patchouliplus.xplat.IBookPlus;
@@ -11,11 +13,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class ParentPage extends BookPage {
+    protected static final int START_X = 5;
     protected String title;
+    @SerializedName("filler")
+    protected boolean filler = true;
     @SerializedName("separator")
-    protected boolean separator = false;
-    @SerializedName("separator2")
-    protected boolean separator2 = false;
+    protected JsonElement separator;
+    @SerializedName("border")
+    protected JsonElement border;
     @SerializedName("fillers")
     protected String fillerIds = null;
     @SerializedName("separators")
@@ -37,6 +42,34 @@ public abstract class ParentPage extends BookPage {
         if (type == TextureTypes.QUARTER_BORDER) folder = "quarter_border";
         folder = folder + "s/";
         return new ResourceLocation(PatchouliPlus.MOD_ID, "textures/gui/" + folder + id + ".png");
+    }
+
+    protected boolean hasSeparator(int slot) {
+        if (separator == null) return false;
+
+        if (separator.isJsonPrimitive()) return separator.getAsBoolean();
+
+        if (separator.isJsonArray()) {
+            JsonArray array = separator.getAsJsonArray();
+            if (slot >= array.size()) return false;
+            JsonElement item = array.get(slot);
+            return item.isJsonPrimitive() && item.getAsBoolean();
+        }
+        return false;
+    }
+
+    protected boolean hasBorder(int slot) {
+        if (border == null) return true;
+
+        if (border.isJsonPrimitive()) return border.getAsBoolean();
+
+        if (border.isJsonArray()) {
+            JsonArray array = border.getAsJsonArray();
+            if (slot >= array.size()) return true;
+            JsonElement item = array.get(slot);
+            return item.isJsonPrimitive() && item.getAsBoolean();
+        }
+        return true;
     }
 
     protected ResourceLocation getCraftingTexturePlus() {
@@ -75,7 +108,7 @@ public abstract class ParentPage extends BookPage {
         return ids.get(Math.min(Math.max(index, 0), ids.size() - 1));
     }
 
-    private static ResourceLocation getTextureResourceLocation(String id, String folder, String suffix, String defaultName) {
+    protected static ResourceLocation getTextureResourceLocation(String id, String folder, String suffix, String defaultName) {
         if (id != null && !id.isEmpty()) {
             var resources = Minecraft.getInstance().getResourceManager();
             ResourceLocation named = ResourceLocation.tryParse(PatchouliPlus.MOD_ID + ":" + folder + id + suffix);
@@ -91,8 +124,10 @@ public abstract class ParentPage extends BookPage {
         return title != null && !title.isEmpty();
     }
 
-    protected int getSeparatorCount() {
-        return 1;
+    protected int getY() {
+        if (hasValidTitle() && hasSeparator(0)) return 22;
+        else if (!hasValidTitle() && !hasSeparator(0)) return 0;
+        else return 10;
     }
 
     protected int getMaxComponentNumber() {

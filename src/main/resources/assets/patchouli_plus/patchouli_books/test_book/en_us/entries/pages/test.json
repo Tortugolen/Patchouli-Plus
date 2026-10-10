@@ -5,36 +5,82 @@
   "sortnum": 0,
   "pages": [
     {
-      "type": "patchouli:empty"
-    },
-    {
       "type": "patchouli_plus:chapter_start",
-      "title": "[Title]"
-    },
-    {
-      "type": "patchouli:empty"
-    },
-    {
-      "type": "patchouli_plus:empty"
-    },
-    {
-      "type": "patchouli_plus:empty",
-      "fillers": "cube"
-    },
-    {
-      "type": "patchouli_plus:empty",
-      "fillers": ["creeper"]
-    },
-    {
-      "type": "patchouli:text",
-      "title": "Patchouli",
-      "text": "[Text]"
+      "title": "[Title]",
+      "title_position": "TOP"
     },
     {
       "type": "patchouli_plus:text",
       "title": "Patchouli++",
       "text": "[Text]",
       "separator": true
+    },
+    {
+      "type": "patchouli_plus:chapter_start",
+      "title": "[Title]",
+      "title_position": "TOP"
+    },
+    {
+      "type": "patchouli_plus:chapter_start",
+      "title": "[Title]",
+      "title_position": "CENTER"
+    },
+    {
+      "type": "patchouli_plus:empty"
+    },
+    {
+      "type": "patchouli_plus:empty",
+      "fillers": "creeper"
+    },
+    {
+      "type": "patchouli_plus:text",
+      "title": "Patchouli++",
+      "text": "[Text]",
+      "separator": true
+    },
+    {
+      "type": "patchouli_plus:image",
+      "title": "Patchouli++",
+      "text": "[Text]",
+      "separator": true,
+      "border": true,
+      "quadruple": false,
+      "images": [
+        "patchouli_plus:textures/gui/images/forest.png",
+        "patchouli_plus:textures/gui/images/jungle.png",
+        "patchouli_plus:textures/gui/images/desert.png"
+      ],
+      "quality": 1,
+      "arrow_position": "BOTTOM_RIGHT"
+    },
+    {
+      "type": "patchouli_plus:image",
+      "title": "Patchouli++",
+      "text": "[Text]",
+      "separator": true,
+      "border": true,
+      "quadruple": true,
+      "images": [
+        "patchouli_plus:textures/gui/images/forest.png"
+      ],
+      "quality": 1,
+      "arrow_position": "BOTTOM_RIGHT"
+    },
+    {
+      "type": "patchouli_plus:image",
+      "title": "Patchouli++",
+      "text": "[Text]",
+      "separator": true,
+      "border": [true, true, false, true],
+      "quadruple": true,
+      "images": [
+        "patchouli_plus:textures/gui/images/forest.png",
+        "patchouli_plus:textures/gui/images/jungle.png",
+        "",
+        "patchouli_plus:textures/gui/images/desert.png"
+      ],
+      "quality": 1,
+      "arrow_position": "BOTTOM_RIGHT"
     }
   ]
 }

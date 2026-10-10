@@ -77,6 +77,14 @@ mixin {
 
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
+sourceSets {
+    main {
+        java {
+            exclude 'com/tortugolen/patchouliplus/book/page/not/**'
+        }
+    }
+}
+
 repositories {
     maven {
         name = "Parchment"

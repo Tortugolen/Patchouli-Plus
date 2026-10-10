@@ -38,6 +38,11 @@ public abstract class GUIBookPlus extends GuiBook {
         graphics.blit(border, x, y, (float)u, (float)v, w, h, BORDER_TEXTURE_PLUS_WIDTH, BORDER_TEXTURE_PLUS_HEIGHT);
     }
 
+    public static void drawBorderQuarter(GuiGraphics graphics, ResourceLocation border, int x, int y, int u, int v, int w, int h) {
+        graphics.blit(border, x, y, (float)u, (float)v, w, h, BORDER_TEXTURE_PLUS_WIDTH, BORDER_TEXTURE_PLUS_HEIGHT);
+    }
+
+
     public static void drawDefaultPageFiller(GuiGraphics graphics) {
         graphics.blit(new ResourceLocation(PatchouliPlus.MOD_ID, "textures/gui/borders/cube_page_filler.png"), 58 - 64, 78 - 74, 0, 0, 128, 128, 128, 128);
     }
