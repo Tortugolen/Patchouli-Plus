@@ -58,9 +58,11 @@
       "title": "Patchouli++",
       "text": "[Text]",
       "separator": true,
-      "border": [true, false, false, false],
+      "border": true,
       "quadruple": true,
       "images": [
+        "patchouli_plus:textures/gui/images/forest.png",
+        "",
         "patchouli_plus:textures/gui/images/forest.png"
       ],
       "quality": 1,
@@ -97,21 +99,78 @@
     },
     {
       "type": "patchouli_plus:spotlight",
-      "item": {
-        "item": "minecraft:diamond_sword"
-      }
+      "title": "Patchouli++",
+      "text": "[Text]",
+      "separator": true,
+      "link_recipe": false,
+      "item": "minecraft:diamond_sword"
     },
     {
       "type": "patchouli_plus:spotlight",
-      "item": {
-        "item": ["minecraft:diamond_sword"]
-      }
+      "title": "Patchouli++",
+      "text": "[Text]",
+      "separator": true,
+      "item": [
+        ["minecraft:diamond_sword", "minecraft:emerald"], "minecraft:diamond_sword", "minecraft:diamond_sword", "minecraft:diamond_sword",
+        "minecraft:diamond_sword", "minecraft:diamond_sword", "minecraft:diamond_sword", "minecraft:diamond_sword",
+        "minecraft:diamond_sword", "minecraft:diamond_sword", "minecraft:diamond_sword", "minecraft:diamond_sword",
+        "minecraft:diamond_sword", "minecraft:diamond_sword", "minecraft:diamond_sword", "minecraft:diamond_sword",
+        "minecraft:diamond_sword", "minecraft:diamond_sword", "minecraft:diamond_sword", "minecraft:diamond_sword"
+      ],
+      "slots_per_row": 4,
+      "separated": false
     },
     {
       "type": "patchouli_plus:spotlight",
-      "item": {
-        "item": ["minecraft:diamond_sword", "minecraft:diamond_axe"]
-      }
+      "title": "Patchouli++",
+      "text": "[Text]",
+      "separator": true,
+      "item": ["minecraft:diamond_sword", "minecraft:diamond_axe", "minecraft:diamond_sword", "minecraft:diamond_axe", "minecraft:diamond_sword"],
+      "slots_per_row": 3,
+      "separated": true
+    },
+    {
+      "type": "patchouli_plus:spotlight",
+      "title": "Patchouli++",
+      "text": "[Text]",
+      "separator": true,
+      "item": ["minecraft:diamond_sword", "minecraft:diamond_axe", "minecraft:diamond_axe"],
+      "slots_per_row": 4,
+      "separated": true
+    },
+    {
+      "type": "patchouli_plus:recipe",
+      "recipe": [
+        "minecraft:iron_pickaxe",
+        ["minecraft:iron_ingot_from_smelting_raw_iron", "minecraft:iron_ingot_from_blasting_raw_iron"],
+        "minecraft:stone_bricks_from_stone_stonecutting"
+      ]
+    },
+    {
+      "type": "patchouli_plus:recipe",
+      "recipe": [
+        "minecraft:iron_ingot_from_smelting_raw_iron",
+        "minecraft:stone_bricks_from_stone_stonecutting",
+        "minecraft:stone_bricks_from_stone_stonecutting"
+      ]
+    },
+    {
+      "type": "patchouli_plus:recipe",
+      "recipe": [
+        "minecraft:iron_ingot_from_smelting_raw_iron",
+        ["minecraft:diamond_axe", "minecraft:stone_bricks_from_stone_stonecutting"],
+        "minecraft:stone_bricks_from_stone_stonecutting"
+      ]
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Patchouli++",
+      "recipe": "minecraft:diamond_axe"
+    },
+    {
+      "type": "patchouli_plus:recipe",
+      "title": "Patchouli++",
+      "recipe": "minecraft:diamond_axe"
     }
   ]
 }

@@ -1,6 +1,5 @@
-package com.tortugolen.patchouliplus.Mixin;
+package com.tortugolen.patchouliplus.Book.Pages.not;
 
-import com.tortugolen.patchouliplus.Xplat.IWordPlus;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Mutable;
 import org.spongepowered.asm.mixin.Shadow;

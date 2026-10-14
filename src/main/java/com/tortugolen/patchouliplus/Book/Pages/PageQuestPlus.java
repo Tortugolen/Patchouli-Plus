@@ -15,8 +15,8 @@ import vazkii.patchouli.client.book.gui.GuiBookEntry;
 import vazkii.patchouli.common.book.Book;
 
 public class PageQuestPlus extends PageTextPlus {
-    ResourceLocation trigger;
-    transient boolean isManual;
+    protected ResourceLocation trigger;
+    protected transient boolean isManual;
 
     @Override
     public void build(Level level, BookEntry entry, BookContentsBuilder builder, int pageNum) {
@@ -53,11 +53,9 @@ public class PageQuestPlus extends PageTextPlus {
     protected void questButtonClicked(Button button) {
         ResourceLocation res = entry.getId();
         PersistentData.BookData data = PersistentData.data.getBookData(parent.book);
-        if (data.completedManualQuests.contains(res)) {
-            data.completedManualQuests.remove(res);
-        } else {
-            data.completedManualQuests.add(res);
-        }
+
+        if (data.completedManualQuests.contains(res)) data.completedManualQuests.remove(res);
+        else data.completedManualQuests.add(res);
 
         PersistentData.save();
         updateButtonText(button);

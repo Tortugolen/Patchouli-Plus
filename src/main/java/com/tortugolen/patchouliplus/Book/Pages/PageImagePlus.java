@@ -10,14 +10,13 @@ import vazkii.patchouli.client.book.gui.GuiBookEntry;
 import vazkii.patchouli.client.book.gui.button.GuiButtonBookArrowSmall;
 
 public class PageImagePlus extends PageWithBorder {
-    ResourceLocation[] images;
-    ResourceLocation[] imagesToDraw;
-    transient int index;
-    @SerializedName("quality")
+    protected ResourceLocation[] images;
+    protected transient int index;
     protected float quality = 1;
     @SerializedName("arrow_position")
     protected ArrowButtonPosition arrowButtonPosition = ArrowButtonPosition.BOTTOM_RIGHT;
     protected enum ArrowButtonPosition {
+        @SerializedName("top_left")
         TOP_LEFT,
         TOP_CENTER,
         TOP_RIGHT,
@@ -58,15 +57,15 @@ public class PageImagePlus extends PageWithBorder {
         return true;
     }
 
+    @Override
+    protected boolean hasFeature(int slot) {
+        return getImage(slot) != null;
+    }
+
     public void handleButtonArrow(Button button) {
         boolean left = ((GuiButtonBookArrowSmall)button).left;
         if (left) --index;
         else ++index;
-    }
-
-    @Override
-    protected ResourceLocation[] getImagesToDraw() {
-        return imagesToDraw;
     }
 
     protected void drawImages(GuiGraphics graphics, int x, int y) {
@@ -75,8 +74,6 @@ public class PageImagePlus extends PageWithBorder {
         int offset = ((200 - Math.round(200 * Math.max(0.1F, Math.min(1, quality)))) / 2);
         int imageX = x * 2 + 6 + offset;
         int imageY = y * 2 + 6 + offset;
-
-//        graphics.pose().scale(quality, quality, quality);
 
         if (isQuadruple()) {
             if (quadruple) {
@@ -90,8 +87,6 @@ public class PageImagePlus extends PageWithBorder {
         } else {
             graphics.blit(images[index], imageX, imageY, 0, 0, 200, 200);
         }
-
-//        graphics.pose().scale(1 / quality, 1 / quality, 1 / quality);
     }
 
     private void drawQuarterImage(GuiGraphics graphics, ResourceLocation image, int x, int y) {
@@ -104,8 +99,6 @@ public class PageImagePlus extends PageWithBorder {
         if (images == null) return null;
         if (i < 0 || i >= images.length) return null;
         if (images[i].getPath().isEmpty()) return null;
-//        else getTextureResourceLocation(images[i].toString(), "textures/gui/images/", ".png", "forest.png");
-//        imagesToDraw[i] = ResourceLocation.fromNamespaceAndPath(PatchouliPlus.MOD_ID, getImage(i).toString());
         return images[i];
     }
 

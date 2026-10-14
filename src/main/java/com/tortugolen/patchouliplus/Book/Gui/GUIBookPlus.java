@@ -1,6 +1,5 @@
 package com.tortugolen.patchouliplus.Book.Gui;
 
-import com.tortugolen.patchouliplus.PatchouliPlus;
 import com.tortugolen.patchouliplus.Xplat.IBookPlus;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
@@ -9,8 +8,10 @@ import vazkii.patchouli.client.book.gui.GuiBook;
 import vazkii.patchouli.common.book.Book;
 
 public abstract class GUIBookPlus extends GuiBook {
-    public static final int CRAFTING_TEXTURE_PLUS_WIDTH = 128;
-    public static final int CRAFTING_TEXTURE_PLUS_HEIGHT = 512;
+    public static final int RECIPES_TEXTURE_PLUS_WIDTH = 128;
+    public static final int RECIPES_TEXTURE_PLUS_HEIGHT = 512;
+    public static final int SPOTLIGHT_TEXTURE_PLUS_WIDTH = 256;
+    public static final int SPOTLIGHT_TEXTURE_PLUS_HEIGHT = 256;
     public static final int FILLER_TEXTURE_PLUS_WIDTH = 128;
     public static final int FILLER_TEXTURE_PLUS_HEIGHT = 128;
     public static final int SEPARATOR_TEXTURE_PLUS_WIDTH = 128;
@@ -22,8 +23,12 @@ public abstract class GUIBookPlus extends GuiBook {
         super(book, title);
     }
 
-    public static void drawCraftingTexturePlus(GuiGraphics graphics, Book book, int x, int y, int w, int h) {
-        graphics.blit(((IBookPlus) book).getCraftingTexturePlus(), x, y, 1, 1, w, h, CRAFTING_TEXTURE_PLUS_WIDTH, CRAFTING_TEXTURE_PLUS_HEIGHT);
+    public static void drawRecipesTexturePlus(GuiGraphics graphics, Book book, int x, int y, int v, int w, int h) {
+        graphics.blit(((IBookPlus) book).getRecipesTexturePlus(), x, y, 1, v, w, h, RECIPES_TEXTURE_PLUS_WIDTH, RECIPES_TEXTURE_PLUS_HEIGHT);
+    }
+
+    public static void drawSpotlightTexturePlus(GuiGraphics graphics, Book book, int x, int y, int v, int w, int h) {
+        graphics.blit(((IBookPlus) book).getSpotlightTexturePlus(), x, y, 1, v, w, h, SPOTLIGHT_TEXTURE_PLUS_WIDTH, SPOTLIGHT_TEXTURE_PLUS_HEIGHT);
     }
 
     public static void drawPageFiller(GuiGraphics graphics, ResourceLocation image, int x, int y, int u, int v, int w, int h) {
@@ -40,18 +45,5 @@ public abstract class GUIBookPlus extends GuiBook {
 
     public static void drawBorderQuarter(GuiGraphics graphics, ResourceLocation border, int x, int y, int u, int v, int w, int h) {
         graphics.blit(border, x, y, (float)u, (float)v, w, h, BORDER_TEXTURE_PLUS_WIDTH, BORDER_TEXTURE_PLUS_HEIGHT);
-    }
-
-
-    public static void drawDefaultPageFiller(GuiGraphics graphics) {
-        graphics.blit(new ResourceLocation(PatchouliPlus.MOD_ID, "textures/gui/borders/cube_page_filler.png"), 58 - 64, 78 - 74, 0, 0, 128, 128, 128, 128);
-    }
-
-    public static void drawDefaultSeparator(GuiGraphics graphics, int x, int y) {
-        graphics.blit(new ResourceLocation(PatchouliPlus.MOD_ID, "textures/gui/separators/simple_separator.png"), x, y, 1, 1, 110, 3, 128, 16);
-    }
-
-    public static void drawDefaultBorder(GuiGraphics graphics, int x, int y) {
-        graphics.blit(new ResourceLocation(PatchouliPlus.MOD_ID, "textures/gui/borders/simple_border.png"), x, y, 1, 1, 106, 106, 128, 128);
     }
 }

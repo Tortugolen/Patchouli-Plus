@@ -1,5 +1,6 @@
 package com.tortugolen.patchouliplus.Book.Pages.Abstract;
 
+import com.google.gson.annotations.SerializedName;
 import com.tortugolen.patchouliplus.Book.Pages.PageTextPlus;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -10,6 +11,25 @@ import java.util.Arrays;
 import java.util.List;
 
 public class PageWithItem extends PageTextPlus {
+    protected transient Alignment alignment = Alignment.CENTER;
+    protected enum Alignment {
+        @SerializedName("left")
+        LEFT,
+        @SerializedName("center")
+        CENTER
+    }
+
+    protected Ingredient resolveSlot(IVariable slot) {
+        if (!slot.unwrap().isJsonArray()) return resolveIngredient(slot);
+
+        List<Ingredient> options = new ArrayList<>();
+        for (IVariable option : slot.asList()) {
+            Ingredient resolved = resolveIngredient(option);
+            if (resolved != null) options.add(resolved);
+        }
+        return options.isEmpty() ? null : Ingredient.merge(options);
+    }
+
     protected Ingredient resolveIngredient(IVariable var) {
         if (var == null) return null;
 

@@ -37,7 +37,6 @@ public class PageEntityPlus extends PageWithBorder {
     transient float renderScale;
     transient float offset;
 
-    @SerializedName("pose")
     protected EEntityPose pose = EEntityPose.DEFAULT;
     @SerializedName("mouse_rotation")
     boolean mouseRotation = false;
@@ -69,9 +68,7 @@ public class PageEntityPlus extends PageWithBorder {
         RenderSystem.setShaderColor(1, 1, 1, 1);
 
         if (entity != null && !hasValidTitle()) parent.drawCenteredStringNoShadow(graphics, entity.getName().getVisualOrderText(), 58, 0, book.headerColor);
-
         if (errored) graphics.drawString(fontRenderer, I18n.get("patchouli.gui.lexicon.loading_error"), 58, 60, 16711680, true);
-
         if (entity != null) {
             float rotation;
             rotation = rotate ? ClientTicker.total : pose.y;

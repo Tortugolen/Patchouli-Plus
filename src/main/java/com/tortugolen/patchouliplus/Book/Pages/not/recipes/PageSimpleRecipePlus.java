@@ -2,7 +2,7 @@ package com.tortugolen.patchouliplus.Book.Pages.not.recipes;
 
 import com.google.gson.annotations.SerializedName;
 import com.mojang.blaze3d.systems.RenderSystem;
-import com.tortugolen.patchouliplus.Base.RecipeJsonUtils;
+import com.tortugolen.patchouliplus.Book.Pages.not.RecipeJsonUtils;
 import com.tortugolen.patchouliplus.Book.Pages.PageTextPlus;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;

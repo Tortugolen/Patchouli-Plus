@@ -12,13 +12,14 @@ import vazkii.patchouli.client.book.gui.GuiBookEntry;
 
 public class PageTextPlus extends ParentPage {
     protected IVariable text;
-    transient BookTextRenderer textRender;
+    protected transient BookTextRenderer textRender;
     @SerializedName("text_position")
-    protected TextPosition textPosition = TextPosition.LEFT;
-    @SerializedName("overflow")
+    protected transient TextPosition textPosition = TextPosition.LEFT;
     protected boolean overflow = false;
     protected enum TextPosition {
+        @SerializedName("left")
         LEFT,
+        @SerializedName("center")
         CENTER
     }
 
@@ -56,12 +57,5 @@ public class PageTextPlus extends ParentPage {
         if (hasValidTitle() && hasSeparator()) return 22;
         else if (!hasValidTitle() && !hasSeparator()) return 0;
         else return 12;
-    }
-
-    protected int getTextWidth() {
-        return switch (textPosition) {
-            case LEFT -> 0;
-            case CENTER -> 58 / 2;
-        };
     }
 }

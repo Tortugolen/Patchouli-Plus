@@ -15,16 +15,16 @@ import java.util.Collections;
 import java.util.List;
 
 public class PageRelationsPlus extends PageTextPlus {
-    List<String> entries;
-    transient List<BookEntry> entryObjs;
+    protected List<String> entries;
+    protected transient List<BookEntry> entryObjs;
 
     @Override
     public void build(Level level, BookEntry entry, BookContentsBuilder builder, int pageNum) {
         super.build(level, entry, builder, pageNum);
         entryObjs = new ArrayList<>();
 
-        for(String s : entries) {
-            ResourceLocation targetId = new ResourceLocation(s);
+        for (String string : entries) {
+            ResourceLocation targetId = new ResourceLocation(string);
             BookEntry targetEntry = builder.getEntry(targetId);
             if (targetEntry == null) throw new IllegalArgumentException("Could not find entry " + targetId);
             entryObjs.add(targetEntry);
@@ -37,7 +37,7 @@ public class PageRelationsPlus extends PageTextPlus {
         displayedEntries.removeIf(BookEntry::shouldHide);
         Collections.sort(displayedEntries);
 
-        for(int i = 0; i < displayedEntries.size(); ++i) {
+        for (int i = 0; i < displayedEntries.size(); ++i) {
             Button button = new GuiButtonEntry(parent, 0, getY() + i * 11, displayedEntries.get(i), this::handleButtonEntry);
             addButton(button);
         }
@@ -49,6 +49,11 @@ public class PageRelationsPlus extends PageTextPlus {
     public void render(GuiGraphics graphics, int mouseX, int mouseY, float pticks) {
         super.render(graphics, mouseX, mouseY, pticks);
         if (!hasValidTitle()) parent.drawCenteredStringNoShadow(graphics, I18n.get("patchouli.gui.lexicon.relations", new Object[0]), 58, 0, book.headerColor);
+    }
+
+    @Override
+    public int getTextY() {
+        return super.getTextY() + entryObjs.size() * 11;
     }
 
     public void handleButtonEntry(Button button) {

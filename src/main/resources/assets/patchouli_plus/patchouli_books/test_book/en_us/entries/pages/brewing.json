@@ -1,0 +1,26 @@
+{
+  "name": "Brewing",
+  "icon": "minecraft:paper",
+  "category": "patchouli_plus:pages",
+  "sortnum": 6,
+  "pages": [
+    {
+      "type": "patchouli_plus:brewing",
+      "title": "Patchouli++",
+      "text": "[Text]",
+      "separator": true,
+      "effect": ["minecraft:swiftness", "minecraft:strength"],
+      "variants": ["normal", "long", "strong", "splash"],
+      "invert_ingredients": true
+    },
+    {
+      "type": "patchouli_plus:brewing",
+      "title": "Patchouli++",
+      "text": "[Text]",
+      "separator": true,
+      "effect": "minecraft:swiftness,minecraft:strength",
+      "variants": "lingering_strong",
+      "station_border": true
+    }
+  ]
+}

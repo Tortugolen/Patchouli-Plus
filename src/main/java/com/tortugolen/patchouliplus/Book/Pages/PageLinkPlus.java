@@ -11,10 +11,10 @@ import vazkii.patchouli.client.book.gui.GuiBook;
 import vazkii.patchouli.client.book.gui.GuiBookEntry;
 
 public class PageLinkPlus extends PageTextPlus {
-    String url;
-    transient Component realText;
+    protected String url;
+    protected transient Component realText;
     @SerializedName("link_text")
-    IVariable linkText;
+    protected IVariable linkText;
 
     public void build(Level level, BookEntry entry, BookContentsBuilder builder, int pageNum) {
         super.build(level, entry, builder, pageNum);

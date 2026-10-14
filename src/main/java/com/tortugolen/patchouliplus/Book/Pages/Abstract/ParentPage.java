@@ -15,12 +15,10 @@ import java.util.List;
 public abstract class ParentPage extends BookPage {
     protected static final int START_X = 5;
     protected static final int SLOT_SEPARATION_Y = 4;
+
     protected String title;
-    @SerializedName("filler")
     protected boolean filler = true;
-    @SerializedName("separator")
     protected JsonElement separator;
-    @SerializedName("border")
     protected JsonElement border;
     @SerializedName("fillers")
     protected String fillerIds = null;
@@ -102,7 +100,7 @@ public abstract class ParentPage extends BookPage {
     }
 
     protected ResourceLocation getCraftingTexturePlus() {
-        return ((IBookPlus) book).getCraftingTexturePlus();
+        return ((IBookPlus) book).getRecipesTexturePlus();
     }
 
     protected ResourceLocation getFillerTexture() {

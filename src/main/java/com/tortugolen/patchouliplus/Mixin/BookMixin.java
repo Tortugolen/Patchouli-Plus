@@ -16,15 +16,24 @@ import vazkii.patchouli.xplat.XplatModContainer;
 public abstract class BookMixin implements IBookPlus {
 
     @Unique
-    private ResourceLocation craftingTexturePlus;
+    private ResourceLocation patchouliPlus$recipesTexturePlus;
+
+    @Unique
+    private ResourceLocation patchouliPlus$spotlightTexturePlus;
 
     @Inject(method = "<init>", at = @At("RETURN"))
     private void patchouliPlus$onInit(JsonObject root, XplatModContainer owner, ResourceLocation id, boolean external, CallbackInfo ci) {
-        this.craftingTexturePlus = SerializationUtil.getAsResourceLocation(root, "crafting_texture_plus", (ResourceLocation) null);
+        patchouliPlus$recipesTexturePlus = SerializationUtil.getAsResourceLocation(root, "recipes_texture_plus", null);
+        patchouliPlus$spotlightTexturePlus = SerializationUtil.getAsResourceLocation(root, "spotlight_texture_plus", null);
     }
 
     @Override
-    public ResourceLocation getCraftingTexturePlus() {
-        return this.craftingTexturePlus;
+    public ResourceLocation getRecipesTexturePlus() {
+        return patchouliPlus$recipesTexturePlus;
+    }
+
+    @Override
+    public ResourceLocation getSpotlightTexturePlus() {
+        return patchouliPlus$spotlightTexturePlus;
     }
 }

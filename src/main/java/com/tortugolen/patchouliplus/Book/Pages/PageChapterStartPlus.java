@@ -9,16 +9,18 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.util.FormattedCharSequence;
 
 import java.util.List;
-import java.util.Objects;
 
-public class ChapterStartPlusPage extends ParentPage {
+public class PageChapterStartPlus extends ParentPage {
     private static final int PAGE_CENTER_X = 58;
     private static final int PAGE_CENTER_Y = 78;
     private static final int MAX_WIDTH = 104;
+
     @SerializedName("title_position")
     protected TitlePosition titlePosition = TitlePosition.TOP;
     protected enum TitlePosition {
+        @SerializedName("top")
         TOP,
+        @SerializedName("center")
         CENTER
     }
 
@@ -32,11 +34,13 @@ public class ChapterStartPlusPage extends ParentPage {
         List<FormattedCharSequence> lines = font.split(Component.literal(i18n(title)), (int) (MAX_WIDTH / scale));
 
         int lineHeight = font.lineHeight + 2;
-        int totalHeight = Objects.equals(title, "Text Values Display") ? lines.size() * lineHeight + 8 : lines.size() * lineHeight;
-
+        int totalHeight = lines.size() * lineHeight;
         int startY = 0;
-        if (titlePosition == TitlePosition.TOP) startY = -39;
-        if (titlePosition == TitlePosition.CENTER) startY = -totalHeight / 2;
+
+        switch (titlePosition) {
+            case TOP -> startY = -39;
+            case CENTER -> startY = -totalHeight / 2;
+        }
 
         PoseStack ms = graphics.pose();
         ms.pushPose();

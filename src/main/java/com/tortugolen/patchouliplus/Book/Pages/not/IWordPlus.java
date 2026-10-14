@@ -1,4 +1,4 @@
-package com.tortugolen.patchouliplus.Xplat;
+package com.tortugolen.patchouliplus.Book.Pages.not;
 
 public interface IWordPlus {
     void setX(int x);

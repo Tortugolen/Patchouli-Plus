@@ -50,28 +50,36 @@ import java.util.Set;
 import java.util.WeakHashMap;
 
 public class PageMultiblockPlus extends PageWithBorder {
-    private static final RandomSource RAND = RandomSource.createNewThreadLocalInstance();
-    String name = "";
+    protected static final RandomSource RAND = RandomSource.createNewThreadLocalInstance();
+    protected String name = "";
     @SerializedName("multiblock_id")
-    ResourceLocation multiblockId;
+    protected ResourceLocation multiblockId;
     @SerializedName("multiblock")
-    JsonObject serializedMultiblock;
+    protected JsonObject serializedMultiblock;
     @SerializedName("enable_visualize")
-    boolean showVisualizeButton = true;
+    protected boolean showVisualizeButton = true;
     @SerializedName("visualize_button_position")
     protected VisualizeButtonPosition visualizeButtonPosition = VisualizeButtonPosition.BOTTOM_LEFT;
-    private transient AbstractMultiblock multiblockObj;
-    private final transient Set<Object> erroredTiles = Collections.newSetFromMap(new WeakHashMap<>());
-    private static final Gson GSON = new Gson();
-    private static final String PREMADE_KEY = "id";
+    protected transient AbstractMultiblock multiblockObj;
+    protected final transient Set<Object> erroredTiles = Collections.newSetFromMap(new WeakHashMap<>());
+    protected static final Gson GSON = new Gson();
+    protected static final String PREMADE_KEY = "id";
     protected enum VisualizeButtonPosition {
+        @SerializedName("top_left")
         TOP_LEFT,
+        @SerializedName("top_center")
         TOP_CENTER,
+        @SerializedName("top_right")
         TOP_RIGHT,
+        @SerializedName("middle_left")
         MIDDLE_LEFT,
+        @SerializedName("middle_left")
         MIDDLE_RIGHT,
+        @SerializedName("bottom_right")
         BOTTOM_LEFT,
+        @SerializedName("bottom_center")
         BOTTOM_CENTER,
+        @SerializedName("bottom_right")
         BOTTOM_RIGHT,
     }
 
@@ -106,9 +114,6 @@ public class PageMultiblockPlus extends PageWithBorder {
 
     @Override
     public void render(GuiGraphics graphics, int mouseX, int mouseY, float pticks) {
-        int x = 5;
-        int y = getY();
-
         RenderSystem.enableBlend();
         graphics.setColor(1, 1, 1, 1);
 
@@ -218,7 +223,7 @@ public class PageMultiblockPlus extends PageWithBorder {
                     if (renderer != null) renderer.render(te, ClientTicker.partialTicks, graphics.pose(), buffers, 15728880, OverlayTexture.NO_OVERLAY);
                 } catch (Exception e) {
                     erroredTiles.add(te);
-                    PatchouliPlus.LOGGER.error("An exception occured rendering tile entity", e);
+                    PatchouliPlus.LOGGER.error("An exception occurred rendering tile entity", e);
                 } finally {
                     graphics.pose().popPose();
                 }
