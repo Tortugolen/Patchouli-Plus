@@ -1,9 +1,10 @@
 package com.tortugolen.patchouliplus.Book.Pages.Recipes;
 
+import com.google.gson.JsonElement;
 import com.google.gson.annotations.SerializedName;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.tortugolen.patchouliplus.Book.Gui.GUIBookPlus;
-import com.tortugolen.patchouliplus.Book.Pages.Abstract.Recipes.PageMultiProcessingSimpleRecipe;
+import com.tortugolen.patchouliplus.Book.Pages.Abstract.Recipes.PageProcessingPlus;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.world.item.crafting.*;
@@ -11,16 +12,15 @@ import net.minecraft.world.level.Level;
 import vazkii.patchouli.mixin.AccessorSmithingTransformRecipe;
 import vazkii.patchouli.mixin.AccessorSmithingTrimRecipe;
 
-public class PageSmithingPlus extends PageMultiProcessingSimpleRecipe<SmithingRecipe> {
+public class PageSmithingPlus extends PageProcessingPlus<SmithingRecipe> {
     @SerializedName("invert_ingredients")
-    protected boolean invertIngredients = false;
+    protected JsonElement invertIngredients;
     @SerializedName("ingredient_smithing_template")
-    protected boolean smithingTemplateAsIngredient = false;
+    protected JsonElement smithingTemplateAsIngredient;
 
     public PageSmithingPlus() {
         super(RecipeType.SMITHING);
     }
-
 
     @Override
     protected void drawRecipe(GuiGraphics graphics, SmithingRecipe recipe, int x, int y, int mouseX, int mouseY, boolean second) {
@@ -31,8 +31,8 @@ public class PageSmithingPlus extends PageMultiProcessingSimpleRecipe<SmithingRe
 
         switch (alignment) {
             case LEFT -> {
-                if (stationBorder) {
-                    if (smithingTemplateAsIngredient) {
+                if (hasBooleanFeature(stationBorder, false)) {
+                    if (hasBooleanFeature(smithingTemplateAsIngredient, false)) {
                         GUIBookPlus.drawRecipesTexturePlus(graphics, book, x - 12, y, 315, 121, 43);
                         parent.renderIngredient(graphics, x - 8, y + 4, mouseX, mouseY, getBase(recipe));
                         parent.renderIngredient(graphics, x - 8, y + 23, mouseX, mouseY, getAddition(recipe));
@@ -48,7 +48,7 @@ public class PageSmithingPlus extends PageMultiProcessingSimpleRecipe<SmithingRe
                         parent.renderItemStack(graphics, x + 79, y + 13, mouseX, mouseY, recipe.getResultItem(level.registryAccess()));
                     }
                 } else {
-                    if (smithingTemplateAsIngredient) {
+                    if (hasBooleanFeature(smithingTemplateAsIngredient, false)) {
                         GUIBookPlus.drawRecipesTexturePlus(graphics, book, x - 9, y, 271, 115, 43);
                         parent.renderIngredient(graphics, x - 5, y + 4, mouseX, mouseY, getBase(recipe));
                         parent.renderIngredient(graphics, x - 5, y + 23, mouseX, mouseY, getAddition(recipe));
@@ -72,17 +72,17 @@ public class PageSmithingPlus extends PageMultiProcessingSimpleRecipe<SmithingRe
 //                parent.renderItemStack(graphics, x + 82, y + 13, mouseX, mouseY, recipe.getResultItem(level.registryAccess()));
             }
             case CENTER -> {
-                if (stationBorder) {
-                    if (invertIngredients) {
-                        if (smithingTemplateAsIngredient) {
-                            GUIBookPlus.drawRecipesTexturePlus(graphics, book, x - 12, y, 271, 121, 43);
+                if (hasBooleanFeature(stationBorder, false)) {
+                    if (hasBooleanFeature(invertIngredients, false)) {
+                        if (hasBooleanFeature(smithingTemplateAsIngredient, false)) {
+                            GUIBookPlus.drawRecipesTexturePlus(graphics, book, x - 12, y, 315, 121, 43);
                             parent.renderIngredient(graphics, x - 8, y + 23, mouseX, mouseY, getBase(recipe));
                             parent.renderIngredient(graphics, x - 8, y + 4, mouseX, mouseY, getAddition(recipe));
                             parent.renderIngredient(graphics, x + 11, y + 13, mouseX, mouseY, getTemplate(recipe));
                             parent.renderItemStack(graphics, x + 50, y + 13, mouseX, mouseY, recipe.getToastSymbol());
                             parent.renderItemStack(graphics, x + 89, y + 13, mouseX, mouseY, recipe.getResultItem(level.registryAccess()));
                         } else {
-                            GUIBookPlus.drawRecipesTexturePlus(graphics, book, x - 3, y, 183, 102, 43);
+                            GUIBookPlus.drawRecipesTexturePlus(graphics, book, x - 3, y, 227, 102, 43);
                             parent.renderIngredient(graphics, x + 1, y + 23, mouseX, mouseY, getBase(recipe));
                             parent.renderIngredient(graphics, x + 1, y + 4, mouseX, mouseY, getAddition(recipe));
                             parent.renderIngredient(graphics, x + 40, y + 4, mouseX, mouseY, getTemplate(recipe));
@@ -90,15 +90,15 @@ public class PageSmithingPlus extends PageMultiProcessingSimpleRecipe<SmithingRe
                             parent.renderItemStack(graphics, x + 79, y + 13, mouseX, mouseY, recipe.getResultItem(level.registryAccess()));
                         }
                     } else {
-                        if (smithingTemplateAsIngredient) {
-                            GUIBookPlus.drawRecipesTexturePlus(graphics, book, x - 12, y, 271, 121, 43);
+                        if (hasBooleanFeature(smithingTemplateAsIngredient, false)) {
+                            GUIBookPlus.drawRecipesTexturePlus(graphics, book, x - 12, y, 315, 121, 43);
                             parent.renderIngredient(graphics, x - 8, y + 4, mouseX, mouseY, getBase(recipe));
                             parent.renderIngredient(graphics, x - 8, y + 23, mouseX, mouseY, getAddition(recipe));
                             parent.renderIngredient(graphics, x + 11, y + 13, mouseX, mouseY, getTemplate(recipe));
                             parent.renderItemStack(graphics, x + 50, y + 13, mouseX, mouseY, recipe.getToastSymbol());
                             parent.renderItemStack(graphics, x + 89, y + 13, mouseX, mouseY, recipe.getResultItem(level.registryAccess()));
                         } else {
-                            GUIBookPlus.drawRecipesTexturePlus(graphics, book, x - 3, y, 183, 102, 43);
+                            GUIBookPlus.drawRecipesTexturePlus(graphics, book, x - 3, y, 227, 102, 43);
                             parent.renderIngredient(graphics, x + 1, y + 4, mouseX, mouseY, getBase(recipe));
                             parent.renderIngredient(graphics, x + 1, y + 23, mouseX, mouseY, getAddition(recipe));
                             parent.renderIngredient(graphics, x + 40, y + 4, mouseX, mouseY, getTemplate(recipe));
@@ -107,9 +107,9 @@ public class PageSmithingPlus extends PageMultiProcessingSimpleRecipe<SmithingRe
                         }
                     }
                 } else {
-                    if (invertIngredients) {
-                        if (smithingTemplateAsIngredient) {
-                            GUIBookPlus.drawRecipesTexturePlus(graphics, book, x - 9, y, 227, 115, 43);
+                    if (hasBooleanFeature(invertIngredients, false)) {
+                        if (hasBooleanFeature(smithingTemplateAsIngredient, false)) {
+                            GUIBookPlus.drawRecipesTexturePlus(graphics, book, x - 9, y, 271, 115, 43);
                             parent.renderIngredient(graphics, x - 5, y + 23, mouseX, mouseY, getBase(recipe));
                             parent.renderIngredient(graphics, x - 5, y + 4, mouseX, mouseY, getAddition(recipe));
                             parent.renderIngredient(graphics, x + 14, y + 13, mouseX, mouseY, getTemplate(recipe));
@@ -124,8 +124,8 @@ public class PageSmithingPlus extends PageMultiProcessingSimpleRecipe<SmithingRe
                             parent.renderItemStack(graphics, x + 76, y + 13, mouseX, mouseY, recipe.getResultItem(level.registryAccess()));
                         }
                     } else {
-                        if (smithingTemplateAsIngredient) {
-                            GUIBookPlus.drawRecipesTexturePlus(graphics, book, x - 9, y, 227, 115, 43);
+                        if (hasBooleanFeature(smithingTemplateAsIngredient, false)) {
+                            GUIBookPlus.drawRecipesTexturePlus(graphics, book, x - 9, y, 271, 115, 43);
                             parent.renderIngredient(graphics, x - 5, y + 4, mouseX, mouseY, getBase(recipe));
                             parent.renderIngredient(graphics, x - 5, y + 23, mouseX, mouseY, getAddition(recipe));
                             parent.renderIngredient(graphics, x + 14, y + 13, mouseX, mouseY, getTemplate(recipe));

@@ -1,0 +1,26 @@
+{
+  "name": "Text",
+  "icon": "minecraft:ink_sac",
+  "category": "patchouli_plus:pages",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli_plus:text",
+      "title": "Text Position",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "text_position: $(l)$(6)left$()",
+      "text_position": "left"
+    },
+    {
+      "type": "patchouli_plus:text",
+      "title": "Text Position",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "text_position: $(l)$(6)center$()",
+      "text_position": "center"
+    }
+  ]
+}

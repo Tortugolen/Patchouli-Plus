@@ -1,0 +1,28 @@
+{
+  "name": "Quest",
+  "icon": "minecraft:ender_eye",
+  "category": "patchouli_plus:pages",
+  "sortnum": 5,
+  "pages": [
+    {
+      "type": "patchouli_plus:quest",
+      "title": "Trigger",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "trigger: $(l)[empty]$()",
+      "text_position": "center",
+      "trigger": ""
+    },
+    {
+      "type": "patchouli_plus:quest",
+      "title": "Trigger",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "trigger: $(l)minecraft:recipes/misc/diamond$()",
+      "text_position": "center",
+      "trigger": "minecraft:recipes/misc/diamond"
+    }
+  ]
+}

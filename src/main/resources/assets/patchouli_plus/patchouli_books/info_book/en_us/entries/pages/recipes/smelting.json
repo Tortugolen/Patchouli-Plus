@@ -1,0 +1,66 @@
+{
+  "name": "Smelting",
+  "icon": "minecraft:furnace",
+  "category": "patchouli_plus:recipes",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli_plus:smelting",
+      "title": "Recipe",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "recipe: $(l)[$(3)1$()$(l)]$()",
+      "text_position": "center",
+      "recipe": [
+        "minecraft:glass"
+      ],
+      "station_border": false
+    },
+    {
+      "type": "patchouli_plus:smelting",
+      "title": "Recipe",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "recipe: $(l)[$(3)2$()$(l)]$()",
+      "text_position": "center",
+      "recipe": [
+        "minecraft:glass",
+        "minecraft:stone"
+      ],
+      "station_border": false
+    },
+    {
+      "type": "patchouli_plus:smelting",
+      "title": "Recipe",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "recipe: $(l)[$(3)3$()$(l)]$()",
+      "text_position": "center",
+      "recipe": [
+        "minecraft:glass",
+        "minecraft:stone",
+        "minecraft:nether_brick"
+      ],
+      "station_border": false
+    },
+    {
+      "type": "patchouli_plus:smelting",
+      "title": "Recipe",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "recipe: $(l)[$(3)4$()$(l)]$()",
+      "text_position": "center",
+      "recipe": [
+        "minecraft:glass",
+        "minecraft:stone",
+        "minecraft:nether_brick",
+        "minecraft:green_dye"
+      ],
+      "station_border": false
+    }
+  ]
+}

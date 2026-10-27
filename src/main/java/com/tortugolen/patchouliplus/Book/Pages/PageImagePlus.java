@@ -2,31 +2,37 @@ package com.tortugolen.patchouliplus.Book.Pages;
 
 import com.google.gson.annotations.SerializedName;
 import com.mojang.blaze3d.systems.RenderSystem;
-import com.tortugolen.patchouliplus.Book.Pages.Abstract.PageWithBorder;
+import com.tortugolen.patchouliplus.Book.Pages.Abstract.PageWithFrame;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.resources.ResourceLocation;
 import vazkii.patchouli.client.book.gui.GuiBookEntry;
 import vazkii.patchouli.client.book.gui.button.GuiButtonBookArrowSmall;
 
-public class PageImagePlus extends PageWithBorder {
-    protected ResourceLocation[] images;
-    protected transient int index;
-    protected float quality = 1;
+public class PageImagePlus extends PageWithFrame {
+    protected ResourceLocation[] images; // Hacer que se pueda solo poner el nombre y no toda la ruta
+    protected transient float quality = 1;
     @SerializedName("arrow_position")
     protected ArrowButtonPosition arrowButtonPosition = ArrowButtonPosition.BOTTOM_RIGHT;
     protected enum ArrowButtonPosition {
         @SerializedName("top_left")
         TOP_LEFT,
+        @SerializedName("top_center")
         TOP_CENTER,
+        @SerializedName("top_right")
         TOP_RIGHT,
-//        MIDDLE_LEFT,
-//        MIDDLE_CENTER,
-//        MIDDLE_RIGHT,
+        @SerializedName("bottom_left")
         BOTTOM_LEFT,
+        @SerializedName("bottom_center")
         BOTTOM_CENTER,
+        @SerializedName("bottom_right")
         BOTTOM_RIGHT,
+        @SerializedName("horizontal")
+        HORIZONTAL,
+        @SerializedName("vertical")
+        VERTICAL;
     }
+    protected transient int index;
 
     @Override
     public void onDisplayed(GuiBookEntry parent, int left, int top) {
@@ -47,7 +53,7 @@ public class PageImagePlus extends PageWithBorder {
         drawImages(graphics, x, y);
         graphics.pose().popPose();
 
-        if (images.length > 1 && hasBorder()) drawButtonArrowBackground(graphics, x, y);
+        if (images.length > 1 && hasFrame()) drawButtonArrowBackground(graphics, x, y);
 
         super.render(graphics, mouseX, mouseY, pticks);
     }
@@ -104,34 +110,41 @@ public class PageImagePlus extends PageWithBorder {
 
     protected void drawButtonArrow() {
         if (quadruple) return;
+        if (arrowButtonPosition == null) arrowButtonPosition = ArrowButtonPosition.BOTTOM_RIGHT;
 
-        int x = 0;
+        int x = START_X;
         int y = getY();
+
+        if (arrowButtonPosition == ArrowButtonPosition.HORIZONTAL) {
+            addButton(new GuiButtonBookArrowSmall(parent, x + 6, y + 49, true, () -> index > 0, this::handleButtonArrow));
+            addButton(new GuiButtonBookArrowSmall(parent, x + 85 + 10, y + 49, false, () -> index < images.length - 1, this::handleButtonArrow));
+            return;
+        }
 
         switch (arrowButtonPosition) {
             case TOP_LEFT -> {
-                x = x;
-                y = y;
+                x = x + 6;
+                y = y + 5;
             }
             case TOP_CENTER -> {
-                x = x + 45;
-                y = y;
+                x = x + 46;
+                y = y + 5;
             }
             case TOP_RIGHT -> {
-                x = x + 90;
-                y = y;
+                x = x + 85;
+                y = y + 5;
             }
             case BOTTOM_LEFT -> {
-                x = x;
-                y = y + 100 - 6;
+                x = x + 6;
+                y = y + 93;
             }
             case BOTTOM_CENTER -> {
-                x = x + 45;
-                y = y + 100 - 6;
+                x = x + 46;
+                y = y + 93;
             }
-            case BOTTOM_RIGHT -> {
-                x = x + 90;
-                y = y + 100 - 6;
+            default -> {
+                x = x + 85;
+                y = y + 93;
             }
         }
 
@@ -141,38 +154,43 @@ public class PageImagePlus extends PageWithBorder {
 
     protected void drawButtonArrowBackground(GuiGraphics graphics, int x, int y) {
         if (quadruple) return;
+        if (arrowButtonPosition == null) arrowButtonPosition = ArrowButtonPosition.BOTTOM_RIGHT;
 
-        int bgx = x;
-        int bgy = y;
+        int color = 1140850688;
+
+        if (arrowButtonPosition == ArrowButtonPosition.HORIZONTAL) {
+            graphics.fill(x + 5 - 2, y + 49 - 2, x + 5 + 8, y + 49 + 10, color);
+            graphics.fill(x + 5 - 2, y + 49 - 3, x + 5 + 9, y + 49 + 11, color);
+            graphics.fill(x + 85 + 10 - 2, y + 49 - 2, x + 85 + 10 + 8, y + 49 + 10, color);
+            graphics.fill(x + 85 + 10 - 3, y + 49 - 3, x + 85 + 10 + 8, y + 49 + 11, color);
+            return;
+        }
 
         switch (arrowButtonPosition) {
             case TOP_LEFT -> {
-                bgx = x;
-                bgy = y;
+                graphics.fill(x + 3, y + 3, x + 4 + 20 - 1, y + 3 + 11, color);
+                graphics.fill(x + 3, y + 3, x + 4 + 20 + 1 - 1, y + 3 + 11 + 1, color);
             }
             case TOP_CENTER -> {
-                bgx = x;
-                bgy = y;
+                graphics.fill(x + 43, y + 3, x + 44 + 20, y + 3 + 11, color);
+                graphics.fill(x + 43 - 1, y + 3, x + 44 + 20 + 1, y + 3 + 11 + 1, color);
             }
             case TOP_RIGHT -> {
-                bgx = x;
-                bgy = y;
+                graphics.fill(x + 83, y + 3, x + 83 + 20, y + 3 + 11, color);
+                graphics.fill(x + 83 - 1, y + 3, x + 83 + 20, y + 3 + 11 + 1, color);
             }
             case BOTTOM_LEFT -> {
-                bgx = x;
-                bgy = y;
+                graphics.fill(x + 3, y + 92, x + 4 + 20 - 1, y + 92 + 11, color);
+                graphics.fill(x + 3, y + 92 - 1, x + 4 + 20 + 1 - 1, y + 92 + 11, color);
             }
             case BOTTOM_CENTER -> {
-                bgx = x;
-                bgy = y;
+                graphics.fill(x + 43, y + 92, x + 44 + 20, y + 92 + 11, color);
+                graphics.fill(x + 43 - 1, y + 92 - 1, x + 44 + 20 + 1, y + 92 + 11, color);
             }
-            case BOTTOM_RIGHT -> {
-                bgx = x + 83;
-                bgy = y + 92;
+            default -> {
+                graphics.fill(x + 83, y + 92, x + 83 + 20, y + 92 + 11, color);
+                graphics.fill(x + 83 - 1, y + 92 - 1, x + 83 + 20, y + 92 + 11, color);
             }
         }
-
-        graphics.fill(bgx, bgy, bgx + 20, bgy + 11, 1140850688);
-        graphics.fill(bgx - 1, bgy - 1, bgx + 20, bgy + 11, 1140850688);
     }
 }

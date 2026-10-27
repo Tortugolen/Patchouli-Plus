@@ -1,0 +1,557 @@
+{
+  "name": "Image",
+  "icon": "minecraft:painting",
+  "category": "patchouli_plus:pages",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli_plus:image",
+      "title": "Frame",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "frame: $(false)",
+      "text_position": "center",
+      "frame": false,
+      "frames": null,
+      "quadruple": false,
+      "images": [
+        "patchouli_plus:textures/gui/images/forest.png"
+      ],
+      "quality": 1,
+      "arrow_position": null
+    },
+    {
+      "type": "patchouli_plus:image",
+      "title": "Frame",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "frame: $(true)",
+      "text_position": "center",
+      "frame": true,
+      "frames": null,
+      "quadruple": false,
+      "images": [
+        "patchouli_plus:textures/gui/images/forest.png"
+      ],
+      "quality": 1,
+      "arrow_position": null
+    },
+    {
+      "type": "patchouli_plus:image",
+      "title": "Frame",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "frame: $(false)",
+      "text_position": "center",
+      "frame": false,
+      "frames": null,
+      "quadruple": false,
+      "images": [
+        "patchouli_plus:textures/gui/images/forest.png",
+        "patchouli_plus:textures/gui/images/taiga.png",
+        "patchouli_plus:textures/gui/images/jungle.png",
+        "patchouli_plus:textures/gui/images/desert.png"
+      ],
+      "quality": 1,
+      "arrow_position": null
+    },
+    {
+      "type": "patchouli_plus:image",
+      "title": "Frame",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "frame: $(true)",
+      "text_position": "center",
+      "frame": true,
+      "frames": null,
+      "quadruple": false,
+      "images": [
+        "patchouli_plus:textures/gui/images/forest.png",
+        "patchouli_plus:textures/gui/images/taiga.png",
+        "patchouli_plus:textures/gui/images/jungle.png",
+        "patchouli_plus:textures/gui/images/desert.png"
+      ],
+      "quality": 1,
+      "arrow_position": null
+    },
+    {
+      "type": "patchouli_plus:image",
+      "title": "Frame",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "frame: $(false)",
+      "text_position": "center",
+      "frame": false,
+      "frames": null,
+      "quadruple": true,
+      "images": [
+        "patchouli_plus:textures/gui/images/forest.png"
+      ],
+      "quality": 1,
+      "arrow_position": null
+    },
+    {
+      "type": "patchouli_plus:image",
+      "title": "Frame",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "frame: $(true)",
+      "text_position": "center",
+      "frame": true,
+      "frames": null,
+      "quadruple": true,
+      "images": [
+        "patchouli_plus:textures/gui/images/forest.png"
+      ],
+      "quality": 1,
+      "arrow_position": null
+    },
+    {
+      "type": "patchouli_plus:image",
+      "title": "Frame",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "frame: $(false)",
+      "text_position": "center",
+      "frame": false,
+      "frames": null,
+      "quadruple": true,
+      "images": [
+        "patchouli_plus:textures/gui/images/forest.png",
+        "patchouli_plus:textures/gui/images/taiga.png"
+      ],
+      "quality": 1,
+      "arrow_position": null
+    },
+    {
+      "type": "patchouli_plus:image",
+      "title": "Frame",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "frame: $(true)",
+      "text_position": "center",
+      "frame": true,
+      "frames": null,
+      "quadruple": true,
+      "images": [
+        "patchouli_plus:textures/gui/images/forest.png",
+        "patchouli_plus:textures/gui/images/taiga.png"
+      ],
+      "quality": 1,
+      "arrow_position": null
+    },
+    {
+      "type": "patchouli_plus:image",
+      "title": "Frame",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "frame: $(false)",
+      "text_position": "center",
+      "frame": false,
+      "frames": null,
+      "quadruple": true,
+      "images": [
+        "patchouli_plus:textures/gui/images/forest.png",
+        "patchouli_plus:textures/gui/images/taiga.png",
+        "patchouli_plus:textures/gui/images/jungle.png"
+      ],
+      "quality": 1,
+      "arrow_position": null
+    },
+    {
+      "type": "patchouli_plus:image",
+      "title": "Frame",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "frame: $(true)",
+      "text_position": "center",
+      "frame": true,
+      "frames": null,
+      "quadruple": true,
+      "images": [
+        "patchouli_plus:textures/gui/images/forest.png",
+        "patchouli_plus:textures/gui/images/taiga.png",
+        "patchouli_plus:textures/gui/images/jungle.png"
+      ],
+      "quality": 1,
+      "arrow_position": null
+    },
+    {
+      "type": "patchouli_plus:image",
+      "title": "Frame",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "frame: $(false)",
+      "text_position": "center",
+      "frame": false,
+      "frames": null,
+      "quadruple": true,
+      "images": [
+        "patchouli_plus:textures/gui/images/forest.png",
+        "patchouli_plus:textures/gui/images/taiga.png",
+        "patchouli_plus:textures/gui/images/jungle.png",
+        "patchouli_plus:textures/gui/images/desert.png"
+      ],
+      "quality": 1,
+      "arrow_position": null
+    },
+    {
+      "type": "patchouli_plus:image",
+      "title": "Frame",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "frame: $(true)",
+      "text_position": "center",
+      "frame": true,
+      "frames": null,
+      "quadruple": true,
+      "images": [
+        "patchouli_plus:textures/gui/images/forest.png",
+        "patchouli_plus:textures/gui/images/taiga.png",
+        "patchouli_plus:textures/gui/images/jungle.png",
+        "patchouli_plus:textures/gui/images/desert.png"
+      ],
+      "quality": 1,
+      "arrow_position": null
+    },
+    {
+      "type": "patchouli_plus:image",
+      "title": "Frames",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "frames: $(l)$(5)simple$()",
+      "text_position": "center",
+      "frame": true,
+      "frames": "simple",
+      "quadruple": false,
+      "images": [
+        "patchouli_plus:textures/gui/images/forest.png"
+      ],
+      "quality": 1,
+      "arrow_position": null
+    },
+    {
+      "type": "patchouli_plus:image",
+      "title": "Frames",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "frames: $(l)$(5)corner$()",
+      "text_position": "center",
+      "frame": true,
+      "frames": "corner",
+      "quadruple": false,
+      "images": [
+        "patchouli_plus:textures/gui/images/forest.png"
+      ],
+      "quality": 1,
+      "arrow_position": null
+    },
+    {
+      "type": "patchouli_plus:image",
+      "title": "Quadruple",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "quadruple: $(false)",
+      "text_position": "center",
+      "frame": true,
+      "frames": null,
+      "quadruple": false,
+      "images": [
+        "patchouli_plus:textures/gui/images/forest.png"
+      ],
+      "quality": 1,
+      "arrow_position": null
+    },
+    {
+      "type": "patchouli_plus:image",
+      "title": "Quadruple",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "quadruple: $(true)",
+      "text_position": "center",
+      "frame": true,
+      "frames": null,
+      "quadruple": true,
+      "images": [
+        "patchouli_plus:textures/gui/images/forest.png"
+      ],
+      "quality": 1,
+      "arrow_position": null
+    },
+    {
+      "type": "patchouli_plus:image",
+      "title": "Quadruple",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "quadruple: $(false)",
+      "text_position": "center",
+      "frame": true,
+      "frames": null,
+      "quadruple": false,
+      "images": [
+        "patchouli_plus:textures/gui/images/forest.png",
+        "patchouli_plus:textures/gui/images/taiga.png"
+      ],
+      "quality": 1,
+      "arrow_position": null
+    },
+    {
+      "type": "patchouli_plus:image",
+      "title": "Quadruple",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "quadruple: $(true)",
+      "text_position": "center",
+      "frame": true,
+      "frames": null,
+      "quadruple": true,
+      "images": [
+        "patchouli_plus:textures/gui/images/forest.png",
+        "patchouli_plus:textures/gui/images/taiga.png"
+      ],
+      "quality": 1,
+      "arrow_position": null
+    },
+    {
+      "type": "patchouli_plus:image",
+      "title": "Quadruple",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "quadruple: $(false)",
+      "text_position": "center",
+      "frame": true,
+      "frames": null,
+      "quadruple": false,
+      "images": [
+        "patchouli_plus:textures/gui/images/forest.png",
+        "patchouli_plus:textures/gui/images/taiga.png",
+        "patchouli_plus:textures/gui/images/jungle.png"
+      ],
+      "quality": 1,
+      "arrow_position": null
+    },
+    {
+      "type": "patchouli_plus:image",
+      "title": "Quadruple",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "quadruple: $(true)",
+      "text_position": "center",
+      "frame": true,
+      "frames": null,
+      "quadruple": true,
+      "images": [
+        "patchouli_plus:textures/gui/images/forest.png",
+        "patchouli_plus:textures/gui/images/taiga.png",
+        "patchouli_plus:textures/gui/images/jungle.png"
+      ],
+      "quality": 1,
+      "arrow_position": null
+    },
+    {
+      "type": "patchouli_plus:image",
+      "title": "Quadruple",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "quadruple: $(false)",
+      "text_position": "center",
+      "frame": true,
+      "frames": null,
+      "quadruple": false,
+      "images": [
+        "patchouli_plus:textures/gui/images/forest.png",
+        "patchouli_plus:textures/gui/images/taiga.png",
+        "patchouli_plus:textures/gui/images/jungle.png",
+        "patchouli_plus:textures/gui/images/desert.png"
+      ],
+      "quality": 1,
+      "arrow_position": null
+    },
+    {
+      "type": "patchouli_plus:image",
+      "title": "Quadruple",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "quadruple: $(true)",
+      "text_position": "center",
+      "frame": true,
+      "frames": null,
+      "quadruple": true,
+      "images": [
+        "patchouli_plus:textures/gui/images/forest.png",
+        "patchouli_plus:textures/gui/images/taiga.png",
+        "patchouli_plus:textures/gui/images/jungle.png",
+        "patchouli_plus:textures/gui/images/desert.png"
+      ],
+      "quality": 1,
+      "arrow_position": null
+    },
+    {
+      "type": "patchouli_plus:image",
+      "title": "Frame",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "arrow_position: $(l)$(6)top_left$()",
+      "text_position": "center",
+      "frame": true,
+      "frames": null,
+      "quadruple": false,
+      "images": [
+        "patchouli_plus:textures/gui/images/forest.png",
+        "patchouli_plus:textures/gui/images/taiga.png",
+        "patchouli_plus:textures/gui/images/jungle.png",
+        "patchouli_plus:textures/gui/images/desert.png"
+      ],
+      "quality": 1,
+      "arrow_position": "top_left"
+    },
+    {
+      "type": "patchouli_plus:image",
+      "title": "Frame",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "arrow_position: $(l)$(6)bottom_left$()",
+      "text_position": "center",
+      "frame": true,
+      "frames": null,
+      "quadruple": false,
+      "images": [
+        "patchouli_plus:textures/gui/images/forest.png",
+        "patchouli_plus:textures/gui/images/taiga.png",
+        "patchouli_plus:textures/gui/images/jungle.png",
+        "patchouli_plus:textures/gui/images/desert.png"
+      ],
+      "quality": 1,
+      "arrow_position": "bottom_left"
+    },
+    {
+      "type": "patchouli_plus:image",
+      "title": "Frame",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "arrow_position: $(l)$(6)top_center$()",
+      "text_position": "center",
+      "frame": true,
+      "frames": null,
+      "quadruple": false,
+      "images": [
+        "patchouli_plus:textures/gui/images/forest.png",
+        "patchouli_plus:textures/gui/images/taiga.png",
+        "patchouli_plus:textures/gui/images/jungle.png",
+        "patchouli_plus:textures/gui/images/desert.png"
+      ],
+      "quality": 1,
+      "arrow_position": "top_center"
+    },
+    {
+      "type": "patchouli_plus:image",
+      "title": "Frame",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "arrow_position: $(l)$(6)bottom_center$()",
+      "text_position": "center",
+      "frame": true,
+      "frames": null,
+      "quadruple": false,
+      "images": [
+        "patchouli_plus:textures/gui/images/forest.png",
+        "patchouli_plus:textures/gui/images/taiga.png",
+        "patchouli_plus:textures/gui/images/jungle.png",
+        "patchouli_plus:textures/gui/images/desert.png"
+      ],
+      "quality": 1,
+      "arrow_position": "bottom_center"
+    },
+    {
+      "type": "patchouli_plus:image",
+      "title": "Frame",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "arrow_position: $(l)$(6)top_right$()",
+      "text_position": "center",
+      "frame": true,
+      "frames": null,
+      "quadruple": false,
+      "images": [
+        "patchouli_plus:textures/gui/images/forest.png",
+        "patchouli_plus:textures/gui/images/taiga.png",
+        "patchouli_plus:textures/gui/images/jungle.png",
+        "patchouli_plus:textures/gui/images/desert.png"
+      ],
+      "quality": 1,
+      "arrow_position": "top_right"
+    },
+    {
+      "type": "patchouli_plus:image",
+      "title": "Frame",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "arrow_position: $(l)$(6)bottom_right$()",
+      "text_position": "center",
+      "frame": true,
+      "frames": null,
+      "quadruple": false,
+      "images": [
+        "patchouli_plus:textures/gui/images/forest.png",
+        "patchouli_plus:textures/gui/images/taiga.png",
+        "patchouli_plus:textures/gui/images/jungle.png",
+        "patchouli_plus:textures/gui/images/desert.png"
+      ],
+      "quality": 1,
+      "arrow_position": "bottom_right"
+    },
+    {
+      "type": "patchouli_plus:image",
+      "title": "Frame",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "arrow_position: $(l)$(6)horizontal$()",
+      "text_position": "center",
+      "frame": true,
+      "frames": null,
+      "quadruple": false,
+      "images": [
+        "patchouli_plus:textures/gui/images/forest.png",
+        "patchouli_plus:textures/gui/images/taiga.png",
+        "patchouli_plus:textures/gui/images/jungle.png",
+        "patchouli_plus:textures/gui/images/desert.png"
+      ],
+      "quality": 1,
+      "arrow_position": "horizontal"
+    },
+    {
+      "type": "patchouli_plus:empty",
+      "filler": false,
+      "fillers": null
+    }
+  ]
+}

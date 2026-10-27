@@ -6,8 +6,8 @@ import com.google.gson.annotations.SerializedName;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Axis;
+import com.tortugolen.patchouliplus.Book.Pages.Abstract.PageWithFrame;
 import com.tortugolen.patchouliplus.PatchouliPlus;
-import com.tortugolen.patchouliplus.Book.Pages.Abstract.PageWithBorder;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
@@ -30,6 +30,7 @@ import org.jetbrains.annotations.NotNull;
 import org.joml.Matrix4f;
 import org.joml.Vector4f;
 import vazkii.patchouli.api.IMultiblock;
+import vazkii.patchouli.api.PatchouliAPI;
 import vazkii.patchouli.client.base.ClientTicker;
 import vazkii.patchouli.client.base.PersistentData;
 import vazkii.patchouli.client.book.BookContentsBuilder;
@@ -49,21 +50,22 @@ import java.util.Collections;
 import java.util.Set;
 import java.util.WeakHashMap;
 
-public class PageMultiblockPlus extends PageWithBorder {
+public class PageMultiblockPlus extends PageWithFrame {
     protected static final RandomSource RAND = RandomSource.createNewThreadLocalInstance();
+    protected static final Gson GSON = new Gson();
+    protected static final String PREMADE_KEY = "id";
+
     protected String name = "";
     @SerializedName("multiblock_id")
     protected ResourceLocation multiblockId;
     @SerializedName("multiblock")
     protected JsonObject serializedMultiblock;
+    @SerializedName("offset")
+    protected float extraOffset = 0;
     @SerializedName("enable_visualize")
     protected boolean showVisualizeButton = true;
     @SerializedName("visualize_button_position")
-    protected VisualizeButtonPosition visualizeButtonPosition = VisualizeButtonPosition.BOTTOM_LEFT;
-    protected transient AbstractMultiblock multiblockObj;
-    protected final transient Set<Object> erroredTiles = Collections.newSetFromMap(new WeakHashMap<>());
-    protected static final Gson GSON = new Gson();
-    protected static final String PREMADE_KEY = "id";
+    protected VisualizeButtonPosition visualizeButtonPosition = null;
     protected enum VisualizeButtonPosition {
         @SerializedName("top_left")
         TOP_LEFT,
@@ -73,22 +75,24 @@ public class PageMultiblockPlus extends PageWithBorder {
         TOP_RIGHT,
         @SerializedName("middle_left")
         MIDDLE_LEFT,
-        @SerializedName("middle_left")
+        @SerializedName("middle_right")
         MIDDLE_RIGHT,
-        @SerializedName("bottom_right")
+        @SerializedName("bottom_left")
         BOTTOM_LEFT,
         @SerializedName("bottom_center")
         BOTTOM_CENTER,
         @SerializedName("bottom_right")
         BOTTOM_RIGHT,
     }
+    protected transient AbstractMultiblock multiblockObj;
+    protected final transient Set<Object> erroredTiles = Collections.newSetFromMap(new WeakHashMap<>());
 
     @Override
     public void build(Level level, BookEntry entry, BookContentsBuilder builder, int pageNum) {
         super.build(level, entry, builder, pageNum);
         if (multiblockId != null) {
-            IMultiblock mb = MultiblockRegistry.MULTIBLOCKS.get(multiblockId);
-            if (mb instanceof AbstractMultiblock) multiblockObj = (AbstractMultiblock) mb;
+            IMultiblock multiblock = MultiblockRegistry.MULTIBLOCKS.get(multiblockId);
+            if (multiblock instanceof AbstractMultiblock) multiblockObj = (AbstractMultiblock) multiblock;
         }
         if (multiblockObj == null && serializedMultiblock != null) multiblockObj = createMultiblock(serializedMultiblock);
         if (multiblockObj == null) throw new IllegalArgumentException("No multiblock located for " + multiblockId);
@@ -99,6 +103,7 @@ public class PageMultiblockPlus extends PageWithBorder {
         super.onDisplayed(parent, left, top);
 
         if (showVisualizeButton) {
+            if (visualizeButtonPosition == null) visualizeButtonPosition = VisualizeButtonPosition.BOTTOM_LEFT;
             switch (visualizeButtonPosition) {
                 case TOP_LEFT ->        addButton(new GuiButtonBookEye(parent, 12, getY() + 5,  this::handleButtonVisualize));
                 case TOP_CENTER ->      addButton(new GuiButtonBookEye(parent, 53, getY() + 5,  this::handleButtonVisualize));
@@ -223,7 +228,7 @@ public class PageMultiblockPlus extends PageWithBorder {
                     if (renderer != null) renderer.render(te, ClientTicker.partialTicks, graphics.pose(), buffers, 15728880, OverlayTexture.NO_OVERLAY);
                 } catch (Exception e) {
                     erroredTiles.add(te);
-                    PatchouliPlus.LOGGER.error("An exception occurred rendering tile entity", e);
+                    PatchouliAPI.LOGGER.error("An exception occurred rendering tile entity", e);
                 } finally {
                     graphics.pose().popPose();
                 }
@@ -234,9 +239,22 @@ public class PageMultiblockPlus extends PageWithBorder {
     private static AbstractMultiblock createMultiblock(JsonObject data) {
         String premade = readPremadeId(data);
 
-        if (premade != null) return loadPremade(premade).toMultiblock();
+        if (premade != null) {
+            ResourceLocation key = parseId(premade);
+            SerializedMultiblock loaded = loadPremade(key);
+
+            if (loaded != null) return loaded.toMultiblock();
+            if (MultiblockRegistry.MULTIBLOCKS.get(key) instanceof AbstractMultiblock registered) return registered;
+            if (!data.has("pattern")) throw new IllegalArgumentException("No multiblock found for id: " + key);
+        }
 
         return GSON.fromJson(data, SerializedMultiblock.class).toMultiblock();
+    }
+
+    private static ResourceLocation parseId(String id) {
+        ResourceLocation key = ResourceLocation.tryParse(id.contains(":") ? id : PatchouliPlus.MOD_ID + ":" + id);
+        if (key == null) throw new IllegalArgumentException("Invalid multiblock id: " + id);
+        return key;
     }
 
     private static String readPremadeId(JsonObject data) {
@@ -248,13 +266,10 @@ public class PageMultiblockPlus extends PageWithBorder {
         return id.isEmpty() ? null : id;
     }
 
-    private static SerializedMultiblock loadPremade(String id) {
-        ResourceLocation key = ResourceLocation.tryParse(id.contains(":") ? id : PatchouliPlus.MOD_ID + ":" + id);
-        if (key == null) throw new IllegalArgumentException("Invalid id multiblock id: " + id);
-
+    private static SerializedMultiblock loadPremade(ResourceLocation key) {
         ResourceLocation file = new ResourceLocation(key.getNamespace(), "patchouli_books/multiblocks/" + key.getPath() + ".json");
         var resource = Minecraft.getInstance().getResourceManager().getResource(file);
-        if (resource.isEmpty()) throw new IllegalArgumentException("Id multiblock file not found: " + file);
+        if (resource.isEmpty()) return null;
 
         try (BufferedReader reader = resource.get().openAsReader()) {
             SerializedMultiblock loaded = GSON.fromJson(reader, SerializedMultiblock.class);
@@ -268,6 +283,6 @@ public class PageMultiblockPlus extends PageWithBorder {
     protected int getMultiBlockY() {
         if (hasValidTitle() && hasSeparator()) return 75;
         else if (!hasValidTitle() && !hasSeparator()) return 60;
-        else return 75 - 19;
+        else return 63;
     }
 }

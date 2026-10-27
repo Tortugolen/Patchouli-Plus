@@ -1,0 +1,35 @@
+{
+  "name": "Text",
+  "icon": "minecraft:ink_sac",
+  "category": "patchouli_plus:max_extension",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli_plus:text",
+      "title": "[Title]",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "$(Li)",
+      "text_position": "left"
+    },
+    {
+      "type": "patchouli_plus:text",
+      "title": "[Title]",
+      "title_position": null,
+      "separator": false,
+      "separators": null,
+      "text": "$(Li)",
+      "text_position": "left"
+    },
+    {
+      "type": "patchouli_plus:text",
+      "title": "",
+      "title_position": null,
+      "separator": false,
+      "separators": null,
+      "text": "$(Li)",
+      "text_position": "left"
+    }
+  ]
+}

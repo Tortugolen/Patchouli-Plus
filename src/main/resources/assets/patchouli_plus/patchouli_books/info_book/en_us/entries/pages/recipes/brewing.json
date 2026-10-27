@@ -1,0 +1,279 @@
+{
+  "name": "Brewing",
+  "icon": "minecraft:brewing_stand",
+  "category": "patchouli_plus:recipes",
+  "sortnum": 8,
+  "pages": [
+    {
+      "type": "patchouli_plus:brewing",
+      "title": "Effect",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "potion: $(l)[$(3)1$()$(l)]$()",
+      "text_position": "center",
+      "potion": [
+        "minecraft:swiftness"
+      ],
+      "variants": [
+        "normal"
+      ],
+      "station_border": false,
+      "invert_ingredients": false
+    },
+    {
+      "type": "patchouli_plus:brewing",
+      "title": "Effect",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "potion: $(l)[$(3)2$()$(l)]$()",
+      "text_position": "center",
+      "potion": [
+        "minecraft:swiftness",
+        "minecraft:slowness"
+      ],
+      "variants": [
+        "normal", "normal"
+      ],
+      "station_border": false,
+      "invert_ingredients": false
+    },
+    {
+      "type": "patchouli_plus:chapter_opening",
+      "title": "Potion",
+      "title_position_chapter_opening": "center"
+    },
+    {
+      "type": "patchouli_plus:brewing",
+      "title": "Effect",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "variants: $(l)$(6)normal$()",
+      "text_position": "center",
+      "potion": [
+        "minecraft:swiftness"
+      ],
+      "variants": [
+        "normal"
+      ],
+      "station_border": false,
+      "invert_ingredients": false
+    },
+    {
+      "type": "patchouli_plus:brewing",
+      "title": "Effect",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "variants: $(l)$(6)long$()",
+      "text_position": "center",
+      "potion": [
+        "minecraft:swiftness"
+      ],
+      "variants": [
+        "long"
+      ],
+      "station_border": false,
+      "invert_ingredients": false
+    },
+    {
+      "type": "patchouli_plus:brewing",
+      "title": "Effect",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "variants: $(l)$(6)strong$()",
+      "text_position": "center",
+      "potion": [
+        "minecraft:swiftness"
+      ],
+      "variants": [
+        "strong"
+      ],
+      "station_border": false,
+      "invert_ingredients": false
+    },
+    {
+      "type": "patchouli_plus:chapter_opening",
+      "title": "Splash Potion",
+      "title_position_chapter_opening": "center"
+    },
+    {
+      "type": "patchouli_plus:brewing",
+      "title": "Effect",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "variants: $(l)$(6)splash$()",
+      "text_position": "center",
+      "potion": [
+        "minecraft:swiftness"
+      ],
+      "variants": [
+        "splash"
+      ],
+      "station_border": false,
+      "invert_ingredients": false
+    },
+    {
+      "type": "patchouli_plus:brewing",
+      "title": "Effect",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "variants: $(l)$(6)splash_long$()",
+      "text_position": "center",
+      "potion": [
+        "minecraft:swiftness"
+      ],
+      "variants": [
+        "splash_long"
+      ],
+      "station_border": false,
+      "invert_ingredients": false
+    },
+    {
+      "type": "patchouli_plus:brewing",
+      "title": "Effect",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "variants: $(l)$(6)splash_strong$()",
+      "text_position": "center",
+      "potion": [
+        "minecraft:swiftness"
+      ],
+      "variants": [
+        "splash_strong"
+      ],
+      "station_border": false,
+      "invert_ingredients": false
+    },
+    {
+      "type": "patchouli_plus:chapter_opening",
+      "title": "Lingering Potion",
+      "title_position_chapter_opening": "center"
+    },
+    {
+      "type": "patchouli_plus:brewing",
+      "title": "Effect",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "variants: $(l)$(6)lingering$()",
+      "text_position": "center",
+      "potion": [
+        "minecraft:swiftness"
+      ],
+      "variants": [
+        "lingering"
+      ],
+      "station_border": false,
+      "invert_ingredients": false
+    },
+    {
+      "type": "patchouli_plus:brewing",
+      "title": "Effect",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "variants: $(l)$(6)lingering_long$()",
+      "text_position": "center",
+      "potion": [
+        "minecraft:swiftness"
+      ],
+      "variants": [
+        "lingering_long"
+      ],
+      "station_border": false,
+      "invert_ingredients": false
+    },
+    {
+      "type": "patchouli_plus:brewing",
+      "title": "Effect",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "variants: $(l)$(6)lingering_strong$()",
+      "text_position": "center",
+      "potion": [
+        "minecraft:swiftness"
+      ],
+      "variants": [
+        "lingering_strong"
+      ],
+      "station_border": false,
+      "invert_ingredients": false
+    },
+    {
+      "type": "patchouli_plus:brewing",
+      "title": "Parameters",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "station_border: $(false)$(br)invert_ingredients: $(false)",
+      "text_position": "center",
+      "potion": [
+        "minecraft:swiftness"
+      ],
+      "variants": [
+        "normal"
+      ],
+      "station_border": false,
+      "invert_ingredients": false
+    },
+    {
+      "type": "patchouli_plus:brewing",
+      "title": "Parameters",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "station_border: $(false)$(br)invert_ingredients: $(true)",
+      "text_position": "center",
+      "potion": [
+        "minecraft:swiftness"
+      ],
+      "variants": [
+        "normal"
+      ],
+      "station_border": false,
+      "invert_ingredients": true
+    },
+    {
+      "type": "patchouli_plus:brewing",
+      "title": "Parameters",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "station_border: $(true)$(br)invert_ingredients: $(false)",
+      "text_position": "center",
+      "potion": [
+        "minecraft:swiftness"
+      ],
+      "variants": [
+        "normal"
+      ],
+      "station_border": true,
+      "invert_ingredients": false
+    },
+    {
+      "type": "patchouli_plus:brewing",
+      "title": "Parameters",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "station_border: $(true)$(br)invert_ingredients: $(true)",
+      "text_position": "center",
+      "potion": [
+        "minecraft:swiftness"
+      ],
+      "variants": [
+        "normal"
+      ],
+      "station_border": true,
+      "invert_ingredients": true
+    }
+  ]
+}

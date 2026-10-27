@@ -4,12 +4,12 @@ import com.google.gson.annotations.SerializedName;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.tortugolen.patchouliplus.Book.Gui.GUIBookPlus;
 import com.tortugolen.patchouliplus.Book.Pages.Abstract.PageWithItem;
-import com.tortugolen.patchouliplus.PatchouliPlus;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
 import vazkii.patchouli.api.IVariable;
+import vazkii.patchouli.api.PatchouliAPI;
 import vazkii.patchouli.client.book.BookContentsBuilder;
 import vazkii.patchouli.client.book.BookEntry;
 
@@ -22,11 +22,12 @@ public class PageSpotlightPlus extends PageWithItem {
     protected static final int MAX_SLOTS_PER_ROW = 4;
 
     protected IVariable item;
-    @SerializedName("link_recipe")
-    protected boolean linkRecipe = true;
-    @SerializedName("slots_per_row")
+    @SerializedName("row_slots")
     protected int slotsPerRow = 1;
     protected boolean separated = true;
+    @SerializedName("link_recipe")
+    protected boolean linkRecipe = false;
+
     protected transient List<Ingredient> items = new ArrayList<>();
 
     @Override
@@ -39,17 +40,13 @@ public class PageSpotlightPlus extends PageWithItem {
         for (IVariable itemVar : item.asListOrSingleton()) {
             Ingredient ingredient = resolveSlot(itemVar);
             if (ingredient == null) {
-                PatchouliPlus.LOGGER.warn("Could not resolve item '{}' in entry {}", itemVar.unwrap(), entry.getId());
+                PatchouliAPI.LOGGER.warn("Could not resolve item '{}' in entry {}", itemVar.unwrap(), entry.getId());
                 continue;
             }
 
             items.add(ingredient);
 
-            if (linkRecipe) {
-                for (ItemStack stack : ingredient.getItems()) {
-                    entry.addRelevantStack(builder, stack, pageNum);
-                }
-            }
+            if (linkRecipe) for (ItemStack stack : ingredient.getItems()) entry.addRelevantStack(builder, stack, pageNum);
         }
     }
 
@@ -147,33 +144,33 @@ public class PageSpotlightPlus extends PageWithItem {
                 } else if (items.size() - i * 4 == 3) {
                     if (separated) {
                         GUIBookPlus.drawSpotlightTexturePlus(graphics, book, SPOTLIGHT_START_X - 27, y, 101, 122, 24);
-                        parent.renderIngredient(graphics, x - 27, y + 4, mouseX, mouseY, items.get(i * 3));
-                        parent.renderIngredient(graphics, x, y + 4, mouseX, mouseY, items.get(i * 3 + 1));
-                        parent.renderIngredient(graphics, x + 27, y + 4, mouseX, mouseY, items.get(i * 3 + 2));
+                        parent.renderIngredient(graphics, x - 27, y + 4, mouseX, mouseY, items.get(i * 4));
+                        parent.renderIngredient(graphics, x, y + 4, mouseX, mouseY, items.get(i * 4 + 1));
+                        parent.renderIngredient(graphics, x + 27, y + 4, mouseX, mouseY, items.get(i * 4 + 2));
                     } else {
                         GUIBookPlus.drawSpotlightTexturePlus(graphics, book, SPOTLIGHT_START_X - 19, y, 76, 102, 24);
-                        parent.renderIngredient(graphics, x - 19, y + 4, mouseX, mouseY, items.get(i * 3));
-                        parent.renderIngredient(graphics, x, y + 4, mouseX, mouseY, items.get(i * 3 + 1));
-                        parent.renderIngredient(graphics, x + 19, y + 4, mouseX, mouseY, items.get(i * 3 + 2));
+                        parent.renderIngredient(graphics, x - 19, y + 4, mouseX, mouseY, items.get(i * 4));
+                        parent.renderIngredient(graphics, x, y + 4, mouseX, mouseY, items.get(i * 4 + 1));
+                        parent.renderIngredient(graphics, x + 19, y + 4, mouseX, mouseY, items.get(i * 4 + 2));
                     }
                 } else if (items.size() - i * 4 == 2) {
                     if (separated) {
                         GUIBookPlus.drawSpotlightTexturePlus(graphics, book, SPOTLIGHT_START_X - 20, y, 51, 104, 24);
-                        parent.renderIngredient(graphics, x - 20, y + 4, mouseX, mouseY, items.get(i * 3));
-                        parent.renderIngredient(graphics, x + 20, y + 4, mouseX, mouseY, items.get(i * 3 + 1));
+                        parent.renderIngredient(graphics, x - 20, y + 4, mouseX, mouseY, items.get(i * 4));
+                        parent.renderIngredient(graphics, x + 20, y + 4, mouseX, mouseY, items.get(i * 4 + 1));
                     } else {
                         GUIBookPlus.drawSpotlightTexturePlus(graphics, book, SPOTLIGHT_START_X - 9, y, 26, 83, 24);
-                        parent.renderIngredient(graphics, x - 9, y + 4, mouseX, mouseY, items.get(i * 3));
-                        parent.renderIngredient(graphics, x + 10, y + 4, mouseX, mouseY, items.get(i * 3 + 1));
+                        parent.renderIngredient(graphics, x - 9, y + 4, mouseX, mouseY, items.get(i * 4));
+                        parent.renderIngredient(graphics, x + 10, y + 4, mouseX, mouseY, items.get(i * 4 + 1));
                     }
                 } else {
                     GUIBookPlus.drawSpotlightTexturePlus(graphics, book, SPOTLIGHT_START_X, y, 1, 64, 24);
-                    parent.renderIngredient(graphics, x, y + 4, mouseX, mouseY, items.get(i * 3));
+                    parent.renderIngredient(graphics, x, y + 4, mouseX, mouseY, items.get(i * 4));
                 }
             }
         }
         if (slotsPerRow < 1 || slotsPerRow > MAX_SLOTS_PER_ROW) {
-            PatchouliPlus.LOGGER.warn("Invalid 'slots_per_row' value {} in entry {}, using 4", slotsPerRow, entry.getId());
+            PatchouliAPI.LOGGER.warn("Invalid 'row_slots' value {} in entry {}, using 4", slotsPerRow, entry.getId());
         }
     }
 

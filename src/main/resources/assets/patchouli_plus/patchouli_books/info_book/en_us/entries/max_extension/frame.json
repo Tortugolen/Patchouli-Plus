@@ -1,0 +1,59 @@
+{
+  "name": "Page With Frame",
+  "icon": "minecraft:item_frame",
+  "category": "patchouli_plus:max_extension",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli_plus:image",
+      "title": "[Title]",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "$(Li)",
+      "text_position": "left",
+      "frame": true,
+      "frames": null,
+      "quadruple": false,
+      "images": [
+        "patchouli_plus:textures/gui/images/empty.png"
+      ],
+      "quality": 1,
+      "arrow_position": null
+    },
+    {
+      "type": "patchouli_plus:image",
+      "title": "[Title]",
+      "title_position": null,
+      "separator": false,
+      "separators": null,
+      "text": "$(Li)",
+      "text_position": "left",
+      "frame": true,
+      "frames": null,
+      "quadruple": false,
+      "images": [
+        "patchouli_plus:textures/gui/images/empty.png"
+      ],
+      "quality": 1,
+      "arrow_position": null
+    },
+    {
+      "type": "patchouli_plus:image",
+      "title": "",
+      "title_position": null,
+      "separator": false,
+      "separators": null,
+      "text": "$(Li)",
+      "text_position": "left",
+      "frame": true,
+      "frames": null,
+      "quadruple": false,
+      "images": [
+        "patchouli_plus:textures/gui/images/empty.png"
+      ],
+      "quality": 1,
+      "arrow_position": null
+    }
+  ]
+}

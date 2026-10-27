@@ -1,0 +1,66 @@
+{
+  "name": "Smoking",
+  "icon": "minecraft:smoker",
+  "category": "patchouli_plus:recipes",
+  "sortnum": 5,
+  "pages": [
+    {
+      "type": "patchouli_plus:smoking",
+      "title": "Recipe",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "recipe: $(l)[$(3)1$()$(l)]$()",
+      "text_position": "center",
+      "recipe": [
+        "minecraft:cooked_beef_from_smoking"
+      ],
+      "station_border": false
+    },
+    {
+      "type": "patchouli_plus:smoking",
+      "title": "Recipe",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "recipe: $(l)[$(3)2$()$(l)]$()",
+      "text_position": "center",
+      "recipe": [
+        "minecraft:cooked_beef_from_smoking",
+        "minecraft:cooked_porkchop_from_smoking"
+      ],
+      "station_border": false
+    },
+    {
+      "type": "patchouli_plus:smoking",
+      "title": "Recipe",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "recipe: $(l)[$(3)3$()$(l)]$()",
+      "text_position": "center",
+      "recipe": [
+        "minecraft:cooked_beef_from_smoking",
+        "minecraft:cooked_porkchop_from_smoking",
+        "minecraft:cooked_mutton_from_smoking"
+      ],
+      "station_border": false
+    },
+    {
+      "type": "patchouli_plus:smoking",
+      "title": "Recipe",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "recipe: $(l)[$(3)4$()$(l)]$()",
+      "text_position": "center",
+      "recipe": [
+        "minecraft:cooked_beef_from_smoking",
+        "minecraft:cooked_porkchop_from_smoking",
+        "minecraft:cooked_mutton_from_smoking",
+        "minecraft:cooked_chicken_from_smoking"
+      ],
+      "station_border": false
+    }
+  ]
+}

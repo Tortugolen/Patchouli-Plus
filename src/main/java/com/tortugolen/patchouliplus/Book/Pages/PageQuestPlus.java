@@ -44,7 +44,7 @@ public class PageQuestPlus extends PageTextPlus {
         if (!isManual) {
             if (hasSeparator(1)) GUIBookPlus.drawSeparator(graphics, getSeparatorTexture(1), 3, 131, 110, 3);
             boolean completed = isCompleted(parent.book);
-            String s = I18n.get(completed ? "patchouli.gui.lexicon.complete" : "patchouli.gui.lexicon.incomplete", new Object[0]);
+            String s = I18n.get(completed ? "patchouli.gui.lexicon.complete" : "patchouli.gui.lexicon.incomplete");
             int color = completed ? '謚' : book.headerColor;
             parent.drawCenteredStringNoShadow(graphics, s, 58, 139, color);
         }

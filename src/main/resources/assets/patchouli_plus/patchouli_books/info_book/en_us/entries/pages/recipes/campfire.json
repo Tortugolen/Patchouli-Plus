@@ -1,0 +1,66 @@
+{
+  "name": "Campfire Cooking",
+  "icon": "minecraft:campfire",
+  "category": "patchouli_plus:recipes",
+  "sortnum": 6,
+  "pages": [
+    {
+      "type": "patchouli_plus:campfire",
+      "title": "Recipe",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "recipe: $(l)[$(3)1$()$(l)]$()",
+      "text_position": "center",
+      "recipe": [
+        "minecraft:cooked_beef_from_campfire_cooking"
+      ],
+      "station_border": false
+    },
+    {
+      "type": "patchouli_plus:campfire",
+      "title": "Recipe",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "recipe: $(l)[$(3)2$()$(l)]$()",
+      "text_position": "center",
+      "recipe": [
+        "minecraft:cooked_beef_from_campfire_cooking",
+        "minecraft:cooked_porkchop_from_campfire_cooking"
+      ],
+      "station_border": false
+    },
+    {
+      "type": "patchouli_plus:campfire",
+      "title": "Recipe",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "recipe: $(l)[$(3)3$()$(l)]$()",
+      "text_position": "center",
+      "recipe": [
+        "minecraft:cooked_beef_from_campfire_cooking",
+        "minecraft:cooked_porkchop_from_campfire_cooking",
+        "minecraft:cooked_mutton_from_campfire_cooking"
+      ],
+      "station_border": false
+    },
+    {
+      "type": "patchouli_plus:campfire",
+      "title": "Recipe",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "recipe: $(l)[$(3)4$()$(l)]$()",
+      "text_position": "center",
+      "recipe": [
+        "minecraft:cooked_beef_from_campfire_cooking",
+        "minecraft:cooked_porkchop_from_campfire_cooking",
+        "minecraft:cooked_mutton_from_campfire_cooking",
+        "minecraft:cooked_chicken_from_campfire_cooking"
+      ],
+      "station_border": false
+    }
+  ]
+}

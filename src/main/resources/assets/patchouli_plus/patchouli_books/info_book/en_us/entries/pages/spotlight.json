@@ -1,0 +1,284 @@
+{
+  "name": "Spotlight",
+  "icon": "minecraft:glow_item_frame",
+  "category": "patchouli_plus:pages",
+  "sortnum": 9,
+  "pages": [
+    {
+      "type": "patchouli_plus:spotlight",
+      "title": "Item",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "item: $(l)[$(3)1$()$(l)]$()",
+      "text_position": "center",
+      "item": [
+        "minecraft:diamond_sword"
+      ],
+      "row_slots": 1,
+      "separated": true,
+      "link_recipe": false
+    },
+    {
+      "type": "patchouli_plus:spotlight",
+      "title": "Item",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "item: $(l)[$(3)2$()$(l)]$()",
+      "text_position": "center",
+      "item": [
+        "minecraft:diamond_sword",
+        "minecraft:diamond_sword"
+      ],
+      "row_slots": 1,
+      "separated": true,
+      "link_recipe": false
+    },
+    {
+      "type": "patchouli_plus:spotlight",
+      "title": "Item",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "item: $(l)[$(3)3$()$(l)]$()",
+      "text_position": "center",
+      "item": [
+        "minecraft:diamond_sword",
+        "minecraft:diamond_sword",
+        "minecraft:diamond_sword"
+      ],
+      "row_slots": 1,
+      "separated": true,
+      "link_recipe": false
+    },
+    {
+      "type": "patchouli_plus:spotlight",
+      "title": "Item",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "item: $(l)[$(3)4$()$(l)]$()",
+      "text_position": "center",
+      "item": [
+        "minecraft:diamond_sword",
+        "minecraft:diamond_sword",
+        "minecraft:diamond_sword",
+        "minecraft:diamond_sword"
+      ],
+      "row_slots": 1,
+      "separated": true,
+      "link_recipe": false
+    },
+    {
+      "type": "patchouli_plus:spotlight",
+      "title": "Slots Per Row",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "row_slots: $(l)$(3)1$()",
+      "text_position": "center",
+      "item": [
+        "minecraft:diamond_sword"
+      ],
+      "row_slots": 1,
+      "separated": true,
+      "link_recipe": false
+    },
+    {
+      "type": "patchouli_plus:spotlight",
+      "title": "Slots Per Row",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "row_slots: $(l)$(3)2$()",
+      "text_position": "center",
+      "item": [
+        "minecraft:diamond_sword", "minecraft:diamond_sword"
+      ],
+      "row_slots": 2,
+      "separated": true,
+      "link_recipe": false
+    },
+    {
+      "type": "patchouli_plus:spotlight",
+      "title": "Slots Per Row",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "row_slots: $(l)$(3)3$()",
+      "text_position": "center",
+      "item": [
+        "minecraft:diamond_sword", "minecraft:diamond_sword", "minecraft:diamond_sword"
+      ],
+      "row_slots": 3,
+      "separated": true,
+      "link_recipe": false
+    },
+    {
+      "type": "patchouli_plus:spotlight",
+      "title": "Slots Per Row",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "row_slots: $(l)$(3)4$()",
+      "text_position": "center",
+      "item": [
+        "minecraft:diamond_sword", "minecraft:diamond_sword", "minecraft:diamond_sword", "minecraft:diamond_sword"
+      ],
+      "row_slots": 4,
+      "separated": true,
+      "link_recipe": false
+    },
+    {
+      "type": "patchouli_plus:spotlight",
+      "title": "Separated",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "separated: $(false)",
+      "text_position": "center",
+      "item": [
+        "minecraft:diamond_sword"
+      ],
+      "row_slots": 1,
+      "separated": false,
+      "link_recipe": false
+    },
+    {
+      "type": "patchouli_plus:spotlight",
+      "title": "Separated",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "separated: $(true)",
+      "text_position": "center",
+      "item": [
+        "minecraft:diamond_sword"
+      ],
+      "row_slots": 1,
+      "separated": true,
+      "link_recipe": false
+    },
+    {
+      "type": "patchouli_plus:spotlight",
+      "title": "Separated",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "separated: $(false)",
+      "text_position": "center",
+      "item": [
+        "minecraft:diamond_sword", "minecraft:diamond_sword"
+      ],
+      "row_slots": 2,
+      "separated": false,
+      "link_recipe": false
+    },
+    {
+      "type": "patchouli_plus:spotlight",
+      "title": "Separated",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "separated: $(true)",
+      "text_position": "center",
+      "item": [
+        "minecraft:diamond_sword", "minecraft:diamond_sword"
+      ],
+      "row_slots": 2,
+      "separated": true,
+      "link_recipe": false
+    },
+    {
+      "type": "patchouli_plus:spotlight",
+      "title": "Separated",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "separated: $(false)",
+      "text_position": "center",
+      "item": [
+        "minecraft:diamond_sword", "minecraft:diamond_sword", "minecraft:diamond_sword"
+      ],
+      "row_slots": 3,
+      "separated": false,
+      "link_recipe": false
+    },
+    {
+      "type": "patchouli_plus:spotlight",
+      "title": "Separated",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "separated: $(true)",
+      "text_position": "center",
+      "item": [
+        "minecraft:diamond_sword", "minecraft:diamond_sword", "minecraft:diamond_sword"
+      ],
+      "row_slots": 3,
+      "separated": true,
+      "link_recipe": false
+    },
+    {
+      "type": "patchouli_plus:spotlight",
+      "title": "Separated",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "separated: $(false)",
+      "text_position": "center",
+      "item": [
+        "minecraft:diamond_sword", "minecraft:diamond_sword", "minecraft:diamond_sword", "minecraft:diamond_sword"
+      ],
+      "row_slots": 4,
+      "separated": false,
+      "link_recipe": false
+    },
+    {
+      "type": "patchouli_plus:spotlight",
+      "title": "Separated",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "separated: $(true)",
+      "text_position": "center",
+      "item": [
+        "minecraft:diamond_sword", "minecraft:diamond_sword", "minecraft:diamond_sword", "minecraft:diamond_sword"
+      ],
+      "row_slots": 4,
+      "separated": true,
+      "link_recipe": false
+    },
+    {
+      "type": "patchouli_plus:spotlight",
+      "title": "Link Recipe",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "link_recipe: $(false)",
+      "text_position": "center",
+      "item": [
+        "minecraft:diamond_sword"
+      ],
+      "row_slots": 1,
+      "separated": true,
+      "link_recipe": false
+    },
+    {
+      "type": "patchouli_plus:spotlight",
+      "title": "Link Recipe",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "link_recipe: $(true)",
+      "text_position": "center",
+      "item": [
+        "minecraft:diamond_sword"
+      ],
+      "row_slots": 1,
+      "separated": true,
+      "link_recipe": true
+    }
+  ]
+}

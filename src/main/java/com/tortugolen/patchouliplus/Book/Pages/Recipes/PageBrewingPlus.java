@@ -1,11 +1,11 @@
 package com.tortugolen.patchouliplus.Book.Pages.Recipes;
 
+import com.google.gson.JsonElement;
 import com.google.gson.annotations.SerializedName;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.tortugolen.patchouliplus.Base.EBrewingRecipeVariant;
 import com.tortugolen.patchouliplus.Book.Gui.GUIBookPlus;
 import com.tortugolen.patchouliplus.Book.Pages.Abstract.PageWithItem;
-import com.tortugolen.patchouliplus.PatchouliPlus;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
@@ -19,6 +19,7 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
 import vazkii.patchouli.api.IVariable;
+import vazkii.patchouli.api.PatchouliAPI;
 import vazkii.patchouli.client.book.BookContentsBuilder;
 import vazkii.patchouli.client.book.BookEntry;
 
@@ -28,6 +29,7 @@ import java.util.List;
 public class PageBrewingPlus extends PageWithItem {
     protected static final int RECIPE_START_X = START_X + 4;
 
+    @SerializedName("potion")
     protected IVariable effect;
     @SerializedName("variants")
     protected IVariable brewingRecipeTypes;
@@ -42,22 +44,49 @@ public class PageBrewingPlus extends PageWithItem {
         protected ItemStack output = ItemStack.EMPTY;
     }
 
-    protected transient List<Step> steps = new ArrayList<>();
+    protected transient List<List<Step>> slots = new ArrayList<>();
 
     @Override
     public void build(Level level, BookEntry entry, BookContentsBuilder builder, int pageNum) {
         super.build(level, entry, builder, pageNum);
 
-        steps = new ArrayList<>();
-        List<String> effectIds = parseList(effect);
-
-        if (effectIds.isEmpty()) {
-            PatchouliPlus.LOGGER.warn("Brewing page without 'effect'");
+        slots = new ArrayList<>();
+        if (effect == null) {
+            PatchouliAPI.LOGGER.warn("Brewing page without 'potion'");
             return;
         }
 
         List<EBrewingRecipeVariant> selected = parseBrewingRecipeTypes();
         List<ItemStack> validIngredients = collectValidIngredients();
+
+        JsonElement root = effect.unwrap();
+        Iterable<JsonElement> topLevel = root.isJsonArray() ? root.getAsJsonArray() : List.of(root);
+
+        for (JsonElement element : topLevel) {
+            List<String> ids = new ArrayList<>();
+            collectIds(element, ids);
+
+            List<Step> alternatives = buildSteps(ids, selected, validIngredients);
+            if (!alternatives.isEmpty()) slots.add(alternatives);
+        }
+
+        if (slots.isEmpty()) {
+            PatchouliAPI.LOGGER.warn("Invalid brewing page: nothing could be resolved (potion={}, variants={})", effect, brewingRecipeTypes);
+            return;
+        }
+
+        for (List<Step> alternatives : slots)
+            for (Step step : alternatives) entry.addRelevantStack(builder, step.output, pageNum);
+    }
+
+    private void collectIds(JsonElement element, List<String> result) {
+        if (element == null || element.isJsonNull()) return;
+        if (element.isJsonArray()) for (JsonElement child : element.getAsJsonArray()) collectIds(child, result);
+        else if (element.isJsonPrimitive()) addParts(result, element.getAsString());
+    }
+
+    private List<Step> buildSteps(List<String> effectIds, List<EBrewingRecipeVariant> selected, List<ItemStack> validIngredients) {
+        List<Step> result = new ArrayList<>();
 
         for (String effectId : effectIds) {
             try {
@@ -67,30 +96,23 @@ public class PageBrewingPlus extends PageWithItem {
                     ResourceLocation id = new ResourceLocation(base.getNamespace(), recipeVariant.prefix + base.getPath());
 
                     if (!BuiltInRegistries.POTION.containsKey(id)) {
-                        PatchouliPlus.LOGGER.warn("Brewing variant '{}' skipped: potion {} does not exist", recipeVariant.id, id);
+                        PatchouliAPI.LOGGER.warn("Brewing variant '{}' skipped: potion {} does not exist", recipeVariant.id, id);
                         continue;
                     }
 
                     Step step = new Step();
                     step.output = PotionUtils.setPotion(new ItemStack(recipeVariant.container), BuiltInRegistries.POTION.get(id));
 
-                    if (findStep(step, validIngredients)) steps.add(step);
-                    else PatchouliPlus.LOGGER.warn("Brewing variant '{}' skipped: no brewing recipe produces {}", recipeVariant.id, step.output);
+                    if (findStep(step, validIngredients)) result.add(step);
+                    else PatchouliAPI.LOGGER.warn("Brewing variant '{}' skipped: no brewing recipe produces {}", recipeVariant.id, step.output);
                 }
             } catch (Exception ex) {
-                PatchouliPlus.LOGGER.warn("Invalid brewing effect '{}'", effectId, ex);
+                PatchouliAPI.LOGGER.warn("Invalid brewing effect '{}'", effectId, ex);
             }
         }
-
-        if (steps.isEmpty()) {
-            PatchouliPlus.LOGGER.warn("Invalid brewing page: nothing could be resolved (effect={}, variants={})", effect, brewingRecipeTypes);
-            return;
-        }
-
-        for (Step step : steps) {
-            entry.addRelevantStack(builder, step.output, pageNum);
-        }
+        return result;
     }
+
     private List<EBrewingRecipeVariant> parseBrewingRecipeTypes() {
         List<EBrewingRecipeVariant> result = new ArrayList<>();
         List<String> ids = parseList(brewingRecipeTypes);
@@ -103,7 +125,7 @@ public class PageBrewingPlus extends PageWithItem {
         for (String id : ids) {
             EBrewingRecipeVariant recipeType = EBrewingRecipeVariant.byId(id);
             if (recipeType == null) {
-                PatchouliPlus.LOGGER.warn("Unknown brewing EBrewingRecipeType '{}'", id);
+                PatchouliAPI.LOGGER.warn("Unknown brewing EBrewingRecipeType '{}'", id);
                 continue;
             }
             if (!result.contains(recipeType)) result.add(recipeType);
@@ -159,20 +181,28 @@ public class PageBrewingPlus extends PageWithItem {
         return result;
     }
 
-    private Step currentStep() {
-        return steps.get((parent.ticksInBook / 20) % steps.size());
+    private Step currentStep(List<Step> alternatives) {
+        return alternatives.get((parent.ticksInBook / 20) % alternatives.size());
     }
 
     @Override
     public void render(GuiGraphics graphics, int mouseX, int mouseY, float pticks) {
-        if (steps.isEmpty()) return;
+        if (slots.isEmpty()) return;
 
         int x = RECIPE_START_X;
         int y = getY();
-        Step step = currentStep();
 
         RenderSystem.enableBlend();
 
+        for (List<Step> alternatives : slots) {
+            drawStep(graphics, currentStep(alternatives), x, y, mouseX, mouseY);
+            y += getRecipeHeight() + SLOT_SEPARATION_Y;
+        }
+
+        super.render(graphics, mouseX, mouseY, pticks);
+    }
+
+    private void drawStep(GuiGraphics graphics, Step step, int x, int y, int mouseX, int mouseY) {
         if (stationBorder) {
             GUIBookPlus.drawRecipesTexturePlus(graphics, book, x - 3, y, 183, 102, 43);
             parent.renderItemStack(graphics, x + 40, y + 13, mouseX, mouseY, getToastSymbol());
@@ -196,13 +226,12 @@ public class PageBrewingPlus extends PageWithItem {
                 parent.renderIngredient(graphics, x + 4, y + 23, mouseX, mouseY, step.ingredient);
             }
         }
-
-        super.render(graphics, mouseX, mouseY, pticks);
     }
 
     @Override
     public int getTextY() {
-        return super.getTextY() + (steps.isEmpty() ? 0 : getRecipeHeight()) + SLOT_SEPARATION_Y;
+        int total = slots.size() * (getRecipeHeight() + SLOT_SEPARATION_Y);
+        return super.getTextY() + (slots.isEmpty() ? SLOT_SEPARATION_Y : total);
     }
 
     protected ItemStack getToastSymbol() {
