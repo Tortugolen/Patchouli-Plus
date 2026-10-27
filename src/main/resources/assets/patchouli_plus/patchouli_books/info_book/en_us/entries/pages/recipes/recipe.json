@@ -1,0 +1,59 @@
+{
+  "name": "Recipe",
+  "icon": "minecraft:book",
+  "category": "patchouli_plus:recipes",
+  "sortnum": 0,
+  "flag": "hidden",
+  "pages": [
+    {
+      "type": "patchouli_plus:text",
+      "title": "Recipe",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "Combinations",
+      "text_position": "center"
+    },
+    {
+      "type": "patchouli_plus:recipe",
+      "title": "Recipe",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "station_border: $(true)$(br)crafting_toast_symbol: $(true)$(br)invert_ingredients: $(false)$(br)ingredient_smithing_template: $(true)$(br)",
+      "text_position": "center",
+      "recipe": [
+        "minecraft:diamond_sword",
+        "minecraft:netherite_sword_smithing",
+        "minecraft:cooked_chicken_from_campfire_cooking"
+      ],
+      "station_border": true,
+      "crafting_toast_symbol": true,
+      "invert_ingredients": false,
+      "ingredient_smithing_template": true
+    },
+    {
+      "type": "patchouli_plus:chapter_opening",
+      "title": "Custom",
+      "title_position_chapter_opening": "center"
+    },
+    {
+      "type": "patchouli_plus:recipe",
+      "title": "Recipe",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "station_border: $(true)$(br)crafting_toast_symbol: $(true)$(br)invert_ingredients: $(false)$(br)ingredient_smithing_template: $(true)$(br)",
+      "text_position": "center",
+      "recipe": [
+        "minecraft:diamond_sword",
+        "minecraft:netherite_sword_smithing",
+        "minecraft:cooked_chicken_from_campfire_cooking"
+      ],
+      "station_border": true,
+      "crafting_toast_symbol": true,
+      "invert_ingredients": false,
+      "ingredient_smithing_template": true
+    }
+  ]
+}

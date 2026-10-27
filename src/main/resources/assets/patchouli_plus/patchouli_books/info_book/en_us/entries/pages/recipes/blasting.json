@@ -1,0 +1,66 @@
+{
+  "name": "Blasting",
+  "icon": "minecraft:blast_furnace",
+  "category": "patchouli_plus:recipes",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli_plus:blasting",
+      "title": "Recipe",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "recipe: $(l)[$(3)1$()$(l)]$()",
+      "text_position": "center",
+      "recipe": [
+        "minecraft:iron_ingot_from_blasting_iron_ore"
+      ],
+      "station_border": false
+    },
+    {
+      "type": "patchouli_plus:blasting",
+      "title": "Recipe",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "recipe: $(l)[$(3)2$()$(l)]$()",
+      "text_position": "center",
+      "recipe": [
+        "minecraft:iron_ingot_from_blasting_iron_ore",
+        "minecraft:copper_ingot_from_blasting_copper_ore"
+      ],
+      "station_border": false
+    },
+    {
+      "type": "patchouli_plus:blasting",
+      "title": "Recipe",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "recipe: $(l)[$(3)3$()$(l)]$()",
+      "text_position": "center",
+      "recipe": [
+        "minecraft:iron_ingot_from_blasting_iron_ore",
+        "minecraft:copper_ingot_from_blasting_copper_ore",
+        "minecraft:gold_ingot_from_blasting_gold_ore"
+      ],
+      "station_border": false
+    },
+    {
+      "type": "patchouli_plus:blasting",
+      "title": "Recipe",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "recipe: $(l)[$(3)4$()$(l)]$()",
+      "text_position": "center",
+      "recipe": [
+        "minecraft:iron_ingot_from_blasting_iron_ore",
+        "minecraft:copper_ingot_from_blasting_copper_ore",
+        "minecraft:gold_ingot_from_blasting_gold_ore",
+        "minecraft:netherite_scrap_from_blasting"
+      ],
+      "station_border": false
+    }
+  ]
+}

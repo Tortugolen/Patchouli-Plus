@@ -1,0 +1,18 @@
+{
+  "name": "Chapter Opening",
+  "icon": "minecraft:glow_ink_sac",
+  "category": "patchouli_plus:pages",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli_plus:chapter_opening",
+      "title": "Top",
+      "title_position_chapter_opening": "top"
+    },
+    {
+      "type": "patchouli_plus:chapter_opening",
+      "title": "Center",
+      "title_position_chapter_opening": "center"
+    }
+  ]
+}

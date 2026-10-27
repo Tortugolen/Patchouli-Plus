@@ -33,6 +33,8 @@ public class PageRelationsPlus extends PageTextPlus {
 
     @Override
     public void onDisplayed(GuiBookEntry parent, int left, int top) {
+        super.onDisplayed(parent, left, top);
+
         List<BookEntry> displayedEntries = new ArrayList<>(entryObjs);
         displayedEntries.removeIf(BookEntry::shouldHide);
         Collections.sort(displayedEntries);
@@ -41,8 +43,6 @@ public class PageRelationsPlus extends PageTextPlus {
             Button button = new GuiButtonEntry(parent, 0, getY() + i * 11, displayedEntries.get(i), this::handleButtonEntry);
             addButton(button);
         }
-
-        super.onDisplayed(parent, left, top);
     }
 
     @Override

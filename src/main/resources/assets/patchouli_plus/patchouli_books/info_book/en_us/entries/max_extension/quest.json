@@ -1,0 +1,39 @@
+{
+  "name": "Quest",
+  "icon": "minecraft:ender_eye",
+  "category": "patchouli_plus:max_extension",
+  "sortnum": 3,
+  "flag": "hidden",
+  "pages": [
+    {
+      "type": "patchouli_plus:quest",
+      "title": "[Title]",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "$(Li)",
+      "text_position": "left",
+      "trigger": ""
+    },
+    {
+      "type": "patchouli_plus:quest",
+      "title": "[Title]",
+      "title_position": null,
+      "separator": false,
+      "separators": null,
+      "text": "$(Li)",
+      "text_position": "left",
+      "trigger": ""
+    },
+    {
+      "type": "patchouli_plus:quest",
+      "title": "",
+      "title_position": null,
+      "separator": false,
+      "separators": null,
+      "text": "$(Li)",
+      "text_position": "left",
+      "trigger": ""
+    }
+  ]
+}

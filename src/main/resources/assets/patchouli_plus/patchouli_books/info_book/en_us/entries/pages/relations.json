@@ -1,0 +1,25 @@
+{
+  "name": "Relations",
+  "icon": "minecraft:name_tag",
+  "category": "patchouli_plus:pages",
+  "sortnum": 6,
+  "pages": [
+    {
+      "type": "patchouli_plus:relations",
+      "title": "Entries",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "",
+      "text_position": "center",
+      "entries": [
+        "patchouli_plus:pages/relations"
+      ]
+    },
+    {
+      "type": "patchouli_plus:empty",
+      "filler": false,
+      "fillers": null
+    }
+  ]
+}

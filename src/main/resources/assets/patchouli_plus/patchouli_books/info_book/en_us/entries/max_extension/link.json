@@ -1,0 +1,42 @@
+{
+  "name": "Link",
+  "icon": "minecraft:string",
+  "category": "patchouli_plus:max_extension",
+  "sortnum": 2,
+  "flag": "hidden",
+  "pages": [
+    {
+      "type": "patchouli_plus:link",
+      "title": "[Title]",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "$(Li)",
+      "text_position": "left",
+      "url": "https://www.curseforge.com/minecraft/mc-mods/patchouli-plus",
+      "link_text": "[Link]"
+    },
+    {
+      "type": "patchouli_plus:link",
+      "title": "[Title]",
+      "title_position": null,
+      "separator": false,
+      "separators": null,
+      "text": "$(Li)",
+      "text_position": "left",
+      "url": "https://www.curseforge.com/minecraft/mc-mods/patchouli-plus",
+      "link_text": "[Link]"
+    },
+    {
+      "type": "patchouli_plus:link",
+      "title": "",
+      "title_position": null,
+      "separator": false,
+      "separators": null,
+      "text": "$(Li)",
+      "text_position": "left",
+      "url": "https://www.curseforge.com/minecraft/mc-mods/patchouli-plus",
+      "link_text": "[Link]"
+    }
+  ]
+}

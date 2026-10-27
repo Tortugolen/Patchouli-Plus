@@ -17,31 +17,37 @@ public abstract class ParentPage extends BookPage {
     protected static final int SLOT_SEPARATION_Y = 4;
 
     protected String title;
+    @SerializedName("title_position")
+    protected TitlePosition titlePosition = null;
+    protected enum TitlePosition {
+        @SerializedName("top")
+        TOP,
+        @SerializedName("high")
+        HIGH,
+    }
     protected boolean filler = true;
     protected JsonElement separator;
-    protected JsonElement border;
+    protected JsonElement frame;
     @SerializedName("fillers")
     protected String fillerIds = null;
     @SerializedName("separators")
-    protected String separatorIds = null;
-    @SerializedName("borders")
-    protected String borderIds = null;
-//    protected enum TextureTypes {
-//        FILLER,
-//        SEPARATOR,
-//        BORDER,
-//        QUARTER_BORDER
-//    }
+    protected JsonElement separatorIds = null;
+    @SerializedName("frames")
+    protected JsonElement frameIds = null;
 
-//    protected ResourceLocation getPath(String id, TextureTypes type) {
-//        String folder = "";
-//        if (type == TextureTypes.FILLER) folder = "filler";
-//        if (type == TextureTypes.SEPARATOR) folder = "separator";
-//        if (type == TextureTypes.BORDER) folder = "border";
-//        if (type == TextureTypes.QUARTER_BORDER) folder = "quarter_border";
-//        folder = folder + "s/";
-//        return new ResourceLocation(PatchouliPlus.MOD_ID, "textures/gui/" + folder + id + ".png");
-//    }
+    protected boolean hasBooleanFeature(JsonElement jsonElement, boolean defaultValue) {
+        if (jsonElement == null) return defaultValue;
+
+        if (jsonElement.isJsonPrimitive()) return jsonElement.getAsBoolean();
+
+        if (jsonElement.isJsonArray()) {
+            JsonArray array = jsonElement.getAsJsonArray();
+            if (0 >= array.size()) return defaultValue;
+            JsonElement item = array.get(0);
+            return item.isJsonPrimitive() && item.getAsBoolean();
+        }
+        return defaultValue;
+    }
 
     protected boolean hasSeparator() {
         if (separator == null) return false;
@@ -55,20 +61,6 @@ public abstract class ParentPage extends BookPage {
             return item.isJsonPrimitive() && item.getAsBoolean();
         }
         return false;
-    }
-
-    protected boolean hasBorder() {
-        if (border == null) return true;
-
-        if (border.isJsonPrimitive()) return border.getAsBoolean();
-
-        if (border.isJsonArray()) {
-            JsonArray array = border.getAsJsonArray();
-            if (0 >= array.size()) return true;
-            JsonElement item = array.get(0);
-            return item.isJsonPrimitive() && item.getAsBoolean();
-        }
-        return true;
     }
 
     protected boolean hasSeparator(int slot) {
@@ -85,13 +77,27 @@ public abstract class ParentPage extends BookPage {
         return false;
     }
 
-    protected boolean hasBorder(int slot) {
-        if (border == null) return true;
+    protected boolean hasFrame() {
+        if (frame == null) return true;
 
-        if (border.isJsonPrimitive()) return border.getAsBoolean();
+        if (frame.isJsonPrimitive()) return frame.getAsBoolean();
 
-        if (border.isJsonArray()) {
-            JsonArray array = border.getAsJsonArray();
+        if (frame.isJsonArray()) {
+            JsonArray array = frame.getAsJsonArray();
+            if (0 >= array.size()) return true;
+            JsonElement item = array.get(0);
+            return item.isJsonPrimitive() && item.getAsBoolean();
+        }
+        return true;
+    }
+
+    protected boolean hasFrame(int slot) {
+        if (frame == null) return true;
+
+        if (frame.isJsonPrimitive()) return frame.getAsBoolean();
+
+        if (frame.isJsonArray()) {
+            JsonArray array = frame.getAsJsonArray();
             if (slot >= array.size()) return true;
             JsonElement item = array.get(slot);
             return item.isJsonPrimitive() && item.getAsBoolean();
@@ -111,12 +117,12 @@ public abstract class ParentPage extends BookPage {
         return getTextureResourceLocation(getIdAt(separatorIds, 0), "textures/gui/separators/", "_separator.png", "simple_separator.png");
     }
 
-    protected ResourceLocation getBorderTexture() {
-        return getTextureResourceLocation(getIdAt(borderIds, 0), "textures/gui/borders/", "_border.png", "simple_border.png");
+    protected ResourceLocation getFrameTexture() {
+        return getTextureResourceLocation(getIdAt(frameIds, 0), "textures/gui/frames/", "_frame.png", "simple_frame.png");
     }
 
-    protected ResourceLocation getQuarterBorderTexture() {
-        return getTextureResourceLocation(getIdAt(borderIds, 0), "textures/gui/borders/", "_border_quarter.png", "simple_border_quarter.png");
+    protected ResourceLocation getQuarterFrameTexture() {
+        return getTextureResourceLocation(getIdAt(frameIds, 0), "textures/gui/frames/quarter/", "_frame_quarter.png", "simple_frame_quarter.png");
     }
 
     protected ResourceLocation getFillerTexture(int slot) {
@@ -127,12 +133,12 @@ public abstract class ParentPage extends BookPage {
         return getTextureResourceLocation(getIdAt(separatorIds, slot), "textures/gui/separators/", "_separator.png", "simple_separator.png");
     }
 
-    protected ResourceLocation getBorderTexture(int slot) {
-        return getTextureResourceLocation(getIdAt(borderIds, slot), "textures/gui/borders/", "_border.png", "simple_border.png");
+    protected ResourceLocation getFrameTexture(int slot) {
+        return getTextureResourceLocation(getIdAt(frameIds, slot), "textures/gui/frames/", "_frame.png", "simple_frame.png");
     }
 
-    protected ResourceLocation getQuarterBorderTexture(int slot) {
-        return getTextureResourceLocation(getIdAt(borderIds, slot), "textures/gui/borders/", "_border_quarter.png", "simple_border_quarter.png");
+    protected ResourceLocation getQuarterFrameTexture(int slot) {
+        return getTextureResourceLocation(getIdAt(frameIds, slot), "textures/gui/frames/quarter/", "_frame_quarter.png", "simple_frame_quarter.png");
     }
 
     protected static List<String> splitIds(String raw) {
@@ -146,6 +152,26 @@ public abstract class ParentPage extends BookPage {
     }
 
     protected static String getIdAt(String raw, int index) {
+        List<String> ids = splitIds(raw);
+        if (ids.isEmpty()) return null;
+        return ids.get(Math.min(Math.max(index, 0), ids.size() - 1));
+    }
+
+    protected static List<String> splitIds(JsonElement raw) {
+        List<String> result = new ArrayList<>();
+        if (raw == null || raw.isJsonNull()) return result;
+
+        if (raw.isJsonPrimitive()) return splitIds(raw.getAsString());
+
+        if (raw.isJsonArray()) {
+            for (JsonElement item : raw.getAsJsonArray()) {
+                result.add(item.isJsonPrimitive() ? item.getAsString().trim() : "");
+            }
+        }
+        return result;
+    }
+
+    protected static String getIdAt(JsonElement raw, int index) {
         List<String> ids = splitIds(raw);
         if (ids.isEmpty()) return null;
         return ids.get(Math.min(Math.max(index, 0), ids.size() - 1));
@@ -167,13 +193,26 @@ public abstract class ParentPage extends BookPage {
         return title != null && !title.isEmpty();
     }
 
-    protected int getY() {
-        if (hasValidTitle() && hasSeparator(0)) return 22;
-        else if (!hasValidTitle() && !hasSeparator(0)) return 0;
-        else return 10;
+    protected int getTitleY() {
+        if (titlePosition == null) return 0;
+        switch (titlePosition) {
+            case TOP -> {
+                return -6;
+            }
+            case HIGH -> {
+                return -3;
+            }
+        }
+        return 0;
     }
 
-    protected int getMaxComponentNumber() {
-        return 0;
+    protected int getY() {
+        int y;
+
+        if (hasValidTitle() && hasSeparator(0)) y = 22;
+        else if (!hasValidTitle() && !hasSeparator(0)) y = 0;
+        else y = 10;
+
+        return titlePosition == TitlePosition.TOP ? y - 3 : y;
     }
 }

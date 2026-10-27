@@ -1,0 +1,17 @@
+{
+  "name": "Extras",
+  "icon": "minecraft:paper",
+  "category": "patchouli_plus:info",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli_plus:text",
+      "title": "Crafting Texture",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "$(l)assets/patchouli_plus/textures/gui/crafting_improved.png$()$(br)is a texture that replaces the default visual appearance of the recipes in the Patchouli entries with that of Patchouli Plus. You can use it by placing it in the $(l)crafting_texture$() section of your book's $(l)book.json$() file.",
+      "text_position": "left"
+    }
+  ]
+}

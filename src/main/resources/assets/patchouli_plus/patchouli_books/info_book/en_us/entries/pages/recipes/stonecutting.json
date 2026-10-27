@@ -1,0 +1,66 @@
+{
+  "name": "Stonecutting",
+  "icon": "minecraft:stonecutter",
+  "category": "patchouli_plus:recipes",
+  "sortnum": 7,
+  "pages": [
+    {
+      "type": "patchouli_plus:stonecutting",
+      "title": "Recipe",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "recipe: $(l)[$(3)1$()$(l)]$()",
+      "text_position": "center",
+      "recipe": [
+        "minecraft:stone_bricks_from_stone_stonecutting"
+      ],
+      "station_border": false
+    },
+    {
+      "type": "patchouli_plus:stonecutting",
+      "title": "Recipe",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "recipe: $(l)[$(3)2$()$(l)]$()",
+      "text_position": "center",
+      "recipe": [
+        "minecraft:stone_bricks_from_stone_stonecutting",
+        "minecraft:stone_brick_slab_from_stone_stonecutting"
+      ],
+      "station_border": false
+    },
+    {
+      "type": "patchouli_plus:stonecutting",
+      "title": "Recipe",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "recipe: $(l)[$(3)3$()$(l)]$()",
+      "text_position": "center",
+      "recipe": [
+        "minecraft:stone_bricks_from_stone_stonecutting",
+        "minecraft:stone_brick_slab_from_stone_stonecutting",
+        "minecraft:stone_brick_stairs_from_stone_stonecutting"
+      ],
+      "station_border": false
+    },
+    {
+      "type": "patchouli_plus:stonecutting",
+      "title": "Recipe",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "recipe: $(l)[$(3)4$()$(l)]$()",
+      "text_position": "center",
+      "recipe": [
+        "minecraft:stone_bricks_from_stone_stonecutting",
+        "minecraft:stone_brick_slab_from_stone_stonecutting",
+        "minecraft:stone_brick_stairs_from_stone_stonecutting",
+        "minecraft:stone_brick_walls_from_stone_stonecutting"
+      ],
+      "station_border": false
+    }
+  ]
+}

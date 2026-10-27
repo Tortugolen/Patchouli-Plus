@@ -1,0 +1,87 @@
+{
+  "name": "Crafting",
+  "icon": "minecraft:crafting_table",
+  "category": "patchouli_plus:recipes",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli_plus:crafting",
+      "title": "Recipe",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "recipe: $(l)[$(3)1$()$(l)]$()",
+      "text_position": "center",
+      "recipe": [
+        "minecraft:diamond_sword"
+      ],
+      "crafting_toast_symbol": true
+    },
+    {
+      "type": "patchouli_plus:crafting",
+      "title": "Recipe",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "recipe: $(l)[$(3)2$()$(l)]$()",
+      "text_position": "center",
+      "recipe": [
+        "minecraft:diamond_sword",
+        "minecraft:diamond_pickaxe"
+      ],
+      "crafting_toast_symbol": true
+    },
+    {
+      "type": "patchouli_plus:crafting",
+      "title": "Recipe",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "crafting_toast_symbol: $(false)",
+      "text_position": "center",
+      "recipe": [
+        "minecraft:diamond_sword"
+      ],
+      "crafting_toast_symbol": false
+    },
+    {
+      "type": "patchouli_plus:crafting",
+      "title": "Recipe",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "crafting_toast_symbol: $(true)",
+      "text_position": "center",
+      "recipe": [
+        "minecraft:diamond_sword"
+      ],
+      "crafting_toast_symbol": true
+    },
+    {
+      "type": "patchouli_plus:crafting",
+      "title": "Recipe",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "recipe: $(l)[Shaped]$()",
+      "text_position": "center",
+      "recipe": [
+        "minecraft:diamond_block"
+      ],
+      "crafting_toast_symbol": true
+    },
+    {
+      "type": "patchouli_plus:crafting",
+      "title": "Recipe",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "recipe: $(l)[Shapeless]$()",
+      "text_position": "center",
+      "recipe": [
+        "minecraft:diamond"
+      ],
+      "crafting_toast_symbol": true
+    }
+  ]
+}

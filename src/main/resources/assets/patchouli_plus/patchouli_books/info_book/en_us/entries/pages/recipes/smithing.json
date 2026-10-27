@@ -1,0 +1,159 @@
+{
+  "name": "Smithing",
+  "icon": "minecraft:smithing_table",
+  "category": "patchouli_plus:recipes",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli_plus:smithing",
+      "title": "Recipe",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "recipe: $(l)[$(3)1$()$(l)]$()",
+      "text_position": "center",
+      "recipe": [
+        "minecraft:netherite_sword_smithing"
+      ],
+      "station_border": false,
+      "invert_ingredients": false,
+      "ingredient_smithing_template": false
+    },
+    {
+      "type": "patchouli_plus:smithing",
+      "title": "Recipe",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "recipe: $(l)[$(3)2$()$(l)]$()",
+      "text_position": "center",
+      "recipe": [
+        "minecraft:netherite_sword_smithing",
+        "minecraft:netherite_pickaxe_smithing"
+      ],
+      "station_border": false,
+      "invert_ingredients": false,
+      "ingredient_smithing_template": false
+    },
+    {
+      "type": "patchouli_plus:smithing",
+      "title": "Parameters",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "station_border: $(false)$(br)invert_ingredients: $(false)$(br)ingredient_smithing_template: $(false)",
+      "text_position": "center",
+      "recipe": [
+        "minecraft:netherite_sword_smithing"
+      ],
+      "station_border": false,
+      "invert_ingredients": false,
+      "ingredient_smithing_template": false
+    },
+    {
+      "type": "patchouli_plus:smithing",
+      "title": "Parameters",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "station_border: $(false)$(br)invert_ingredients: $(false)$(br)ingredient_smithing_template: $(true)",
+      "text_position": "center",
+      "recipe": [
+        "minecraft:netherite_sword_smithing"
+      ],
+      "station_border": false,
+      "invert_ingredients": false,
+      "ingredient_smithing_template": true
+    },
+    {
+      "type": "patchouli_plus:smithing",
+      "title": "Parameters",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "station_border: $(false)$(br)invert_ingredients: $(true)$(br)ingredient_smithing_template: $(false)",
+      "text_position": "center",
+      "recipe": [
+        "minecraft:netherite_sword_smithing"
+      ],
+      "station_border": false,
+      "invert_ingredients": true,
+      "ingredient_smithing_template": false
+    },
+    {
+      "type": "patchouli_plus:smithing",
+      "title": "Parameters",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "station_border: $(false)$(br)invert_ingredients: $(true)$(br)ingredient_smithing_template: $(true)",
+      "text_position": "center",
+      "recipe": [
+        "minecraft:netherite_sword_smithing"
+      ],
+      "station_border": false,
+      "invert_ingredients": true,
+      "ingredient_smithing_template": true
+    },
+    {
+      "type": "patchouli_plus:smithing",
+      "title": "Parameters",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "station_border: $(true)$(br)invert_ingredients: $(false)$(br)ingredient_smithing_template: $(false)",
+      "text_position": "center",
+      "recipe": [
+        "minecraft:netherite_sword_smithing"
+      ],
+      "station_border": true,
+      "invert_ingredients": false,
+      "ingredient_smithing_template": false
+    },
+    {
+      "type": "patchouli_plus:smithing",
+      "title": "Parameters",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "station_border: $(true)$(br)invert_ingredients: $(false)$(br)ingredient_smithing_template: $(true)",
+      "text_position": "center",
+      "recipe": [
+        "minecraft:netherite_sword_smithing"
+      ],
+      "station_border": true,
+      "invert_ingredients": false,
+      "ingredient_smithing_template": true
+    },
+    {
+      "type": "patchouli_plus:smithing",
+      "title": "Parameters",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "station_border: $(true)$(br)invert_ingredients: $(true)$(br)ingredient_smithing_template: $(false)",
+      "text_position": "center",
+      "recipe": [
+        "minecraft:netherite_sword_smithing"
+      ],
+      "station_border": true,
+      "invert_ingredients": true,
+      "ingredient_smithing_template": false
+    },
+    {
+      "type": "patchouli_plus:smithing",
+      "title": "Parameters",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "station_border: $(true)$(br)invert_ingredients: $(true)$(br)ingredient_smithing_template: $(true)",
+      "text_position": "center",
+      "recipe": [
+        "minecraft:netherite_sword_smithing"
+      ],
+      "station_border": true,
+      "invert_ingredients": true,
+      "ingredient_smithing_template": true
+    }
+  ]
+}

@@ -1,0 +1,372 @@
+{
+  "name": "Multiblock",
+  "icon": "minecraft:map",
+  "category": "patchouli_plus:pages",
+  "sortnum": 7,
+  "pages": [
+    {
+      "type": "patchouli_plus:multiblock",
+      "title": "Frame",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "frame: $(false)",
+      "text_position": "center",
+      "frame": false,
+      "frames": null,
+      "name": "Plains House",
+      "multiblock_id": null,
+      "multiblock": {
+        "id": "plains_house",
+        "pattern": [
+          [
+          ],
+          [
+          ]
+        ],
+        "mapping": {
+        }
+      },
+      "enable_visualize": true,
+      "visualize_button_position": "bottom_left"
+    },
+    {
+      "type": "patchouli_plus:multiblock",
+      "title": "Frame",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "frame: $(true)",
+      "text_position": "center",
+      "frame": true,
+      "frames": null,
+      "name": "Plains House",
+      "multiblock_id": null,
+      "multiblock": {
+        "id": "plains_house",
+        "pattern": [
+          [
+          ],
+          [
+          ]
+        ],
+        "mapping": {
+        }
+      },
+      "enable_visualize": true,
+      "visualize_button_position": "bottom_left"
+    },
+    {
+      "type": "patchouli_plus:multiblock",
+      "title": "Frames",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "frames: $(l)$(5)simple$()",
+      "text_position": "center",
+      "frame": true,
+      "frames": "simple",
+      "name": "Plains House",
+      "multiblock_id": null,
+      "multiblock": {
+        "id": "plains_house",
+        "pattern": [
+          [
+          ],
+          [
+          ]
+        ],
+        "mapping": {
+        }
+      },
+      "enable_visualize": true,
+      "visualize_button_position": "bottom_left"
+    },
+    {
+      "type": "patchouli_plus:multiblock",
+      "title": "Frames",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "frames: $(l)$(5)corner$()",
+      "text_position": "center",
+      "frame": true,
+      "frames": "corner",
+      "name": "Plains House",
+      "multiblock_id": null,
+      "multiblock": {
+        "id": "plains_house",
+        "pattern": [
+          [
+          ],
+          [
+          ]
+        ],
+        "mapping": {
+        }
+      },
+      "enable_visualize": true,
+      "visualize_button_position": "bottom_left"
+    },
+    {
+      "type": "patchouli_plus:multiblock",
+      "title": "Button Display",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "enable_visualize: $(false)",
+      "text_position": "center",
+      "frame": true,
+      "frames": null,
+      "name": "Plains House",
+      "multiblock_id": null,
+      "multiblock": {
+        "id": "plains_house",
+        "pattern": [
+          [
+          ],
+          [
+          ]
+        ],
+        "mapping": {
+        }
+      },
+      "enable_visualize": false,
+      "visualize_button_position": "bottom_left"
+    },
+    {
+      "type": "patchouli_plus:multiblock",
+      "title": "Button Display",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "enable_visualize: $(true)",
+      "text_position": "center",
+      "frame": true,
+      "frames": null,
+      "name": "Plains House",
+      "multiblock_id": null,
+      "multiblock": {
+        "id": "plains_house",
+        "pattern": [
+          [
+          ],
+          [
+          ]
+        ],
+        "mapping": {
+        }
+      },
+      "enable_visualize": true,
+      "visualize_button_position": "bottom_left"
+    },
+    {
+      "type": "patchouli_plus:multiblock",
+      "title": "Button Position",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "visualize_button_position: $(l)$(6)top_left$()",
+      "text_position": "center",
+      "frame": true,
+      "frames": null,
+      "name": "Plains House",
+      "multiblock_id": null,
+      "multiblock": {
+        "id": "plains_house",
+        "pattern": [
+          [
+          ],
+          [
+          ]
+        ],
+        "mapping": {
+        }
+      },
+      "enable_visualize": true,
+      "visualize_button_position": "top_left"
+    },
+    {
+      "type": "patchouli_plus:multiblock",
+      "title": "Button Position",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "visualize_button_position: $(l)$(6)bottom_left$()",
+      "text_position": "center",
+      "frame": true,
+      "frames": null,
+      "name": "Plains House",
+      "multiblock_id": null,
+      "multiblock": {
+        "id": "plains_house",
+        "pattern": [
+          [
+          ],
+          [
+          ]
+        ],
+        "mapping": {
+        }
+      },
+      "enable_visualize": true,
+      "visualize_button_position": "bottom_left"
+    },
+    {
+      "type": "patchouli_plus:multiblock",
+      "title": "Button Position",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "visualize_button_position: $(l)$(6)top_center$()",
+      "text_position": "center",
+      "frame": true,
+      "frames": null,
+      "name": "Plains House",
+      "multiblock_id": null,
+      "multiblock": {
+        "id": "plains_house",
+        "pattern": [
+          [
+          ],
+          [
+          ]
+        ],
+        "mapping": {
+        }
+      },
+      "enable_visualize": true,
+      "visualize_button_position": "top_center"
+    },
+    {
+      "type": "patchouli_plus:multiblock",
+      "title": "Button Position",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "visualize_button_position: $(l)$(6)bottom_center$()",
+      "text_position": "center",
+      "frame": true,
+      "frames": null,
+      "name": "Plains House",
+      "multiblock_id": null,
+      "multiblock": {
+        "id": "plains_house",
+        "pattern": [
+          [
+          ],
+          [
+          ]
+        ],
+        "mapping": {
+        }
+      },
+      "enable_visualize": true,
+      "visualize_button_position": "bottom_center"
+    },
+    {
+      "type": "patchouli_plus:multiblock",
+      "title": "Button Position",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "visualize_button_position: $(l)$(6)top_right$()",
+      "text_position": "center",
+      "frame": true,
+      "frames": null,
+      "name": "Plains House",
+      "multiblock_id": null,
+      "multiblock": {
+        "id": "plains_house",
+        "pattern": [
+          [
+          ],
+          [
+          ]
+        ],
+        "mapping": {
+        }
+      },
+      "enable_visualize": true,
+      "visualize_button_position": "top_right"
+    },
+    {
+      "type": "patchouli_plus:multiblock",
+      "title": "Button Position",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "visualize_button_position: $(l)$(6)bottom_right$()",
+      "text_position": "center",
+      "frame": true,
+      "frames": null,
+      "name": "Plains House",
+      "multiblock_id": null,
+      "multiblock": {
+        "id": "plains_house",
+        "pattern": [
+          [
+          ],
+          [
+          ]
+        ],
+        "mapping": {
+        }
+      },
+      "enable_visualize": true,
+      "visualize_button_position": "bottom_right"
+    },
+    {
+      "type": "patchouli_plus:multiblock",
+      "title": "Button Position",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "visualize_button_position: $(l)$(6)middle_left$()",
+      "text_position": "center",
+      "frame": true,
+      "frames": null,
+      "name": "Plains House",
+      "multiblock_id": null,
+      "multiblock": {
+        "id": "plains_house",
+        "pattern": [
+          [
+          ],
+          [
+          ]
+        ],
+        "mapping": {
+        }
+      },
+      "enable_visualize": true,
+      "visualize_button_position": "middle_left"
+    },
+    {
+      "type": "patchouli_plus:multiblock",
+      "title": "Button Position",
+      "title_position": null,
+      "separator": true,
+      "separators": null,
+      "text": "visualize_button_position: $(l)$(6)middle_right$()",
+      "text_position": "center",
+      "frame": true,
+      "frames": null,
+      "name": "Plains House",
+      "multiblock_id": null,
+      "multiblock": {
+        "id": "plains_house",
+        "pattern": [
+          [
+          ],
+          [
+          ]
+        ],
+        "mapping": {
+        }
+      },
+      "enable_visualize": true,
+      "visualize_button_position": "middle_right"
+    }
+  ]
+}

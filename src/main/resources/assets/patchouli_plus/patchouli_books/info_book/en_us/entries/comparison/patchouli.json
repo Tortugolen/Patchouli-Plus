@@ -1,0 +1,274 @@
+{
+  "name": "Patchouli VS Patchouli++",
+  "icon": "minecraft:item_frame",
+  "category": "patchouli_plus:comparison",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:empty"
+    },
+    {
+      "type": "patchouli_plus:empty"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Patchouli",
+      "text": "[Text]"
+    },
+    {
+      "type": "patchouli_plus:text",
+      "title": "Patchouli++",
+      "text": "[Text]"
+    },
+    {
+      "type": "patchouli:image",
+      "title": "Patchouli",
+      "text": "[Text]",
+      "images": [
+        "patchouli_plus:textures/gui/images/forest.png",
+        "patchouli_plus:textures/gui/images/jungle.png",
+        "patchouli_plus:textures/gui/images/desert.png"
+      ]
+    },
+    {
+      "type": "patchouli_plus:image",
+      "title": "Patchouli++",
+      "text": "[Text]",
+      "frame": false,
+      "images": [
+        "patchouli_plus:textures/gui/images/forest.png",
+        "patchouli_plus:textures/gui/images/jungle.png",
+        "patchouli_plus:textures/gui/images/desert.png"
+      ]
+    },
+    {
+      "type": "patchouli:link",
+      "title": "Patchouli",
+      "text": "[Text]",
+      "url": "https://www.curseforge.com/minecraft/mc-mods/patchouli-plus",
+      "link_text": "[Link]"
+    },
+    {
+      "type": "patchouli_plus:link",
+      "title": "Patchouli++",
+      "text": "[Text]",
+      "url": "https://www.curseforge.com/minecraft/mc-mods/patchouli-plus",
+      "link_text": "[Link]"
+    },
+    {
+      "type": "patchouli:quest",
+      "title": "Patchouli",
+      "text": "[Text]",
+      "trigger": ""
+    },
+    {
+      "type": "patchouli_plus:quest",
+      "title": "Patchouli++",
+      "text": "[Text]",
+      "separator": true,
+      "trigger": ""
+    },
+    {
+      "type": "patchouli:relations",
+      "title": "Patchouli",
+      "text": "[Text]",
+      "entries": [
+        "patchouli_plus:comparison/patchouli"
+      ]
+    },
+    {
+      "type": "patchouli_plus:relations",
+      "title": "Patchouli++",
+      "text": "[Text]",
+      "separator": true,
+      "entries": [
+        "patchouli_plus:comparison/patchouli"
+      ]
+    },
+    {
+      "type": "patchouli:multiblock",
+      "title": "Patchouli",
+      "text": "[Text]",
+      "name": "[Name]",
+      "multiblock": {
+        "pattern": [
+          ["       ", "       ", "  3E2  ", "  SON  ", "  4W1  ", "       ", "       "],
+          ["       ", " 3EEE2 ", " SEEEN ", " SEEEN ", " SEEEN ", " 4WWW1 ", "       "],
+          ["3EEEEE2", "SOOOOON", "SOOOOON", "SOOOOON", "SOOOOON", "SOOOOON", "4WWWWW1"],
+          ["   T   ", " YCCCY ", " C   C ", " C   C ", " C   C ", " YCCCY ", "       "],
+          ["       ", " YCUCY ", " X   X ", " P   P ", " X   X ", " YCGCY ", "       "],
+          ["       ", " YCLCY ", " C   C ", " C   C ", " C   C ", " YCCCY ", "       "],
+          ["   E   ", " YCCCY ", " COOOC ", " CO0OC ", " COOOC ", " YCCCY ", "       "]
+        ],
+        "mapping": {
+          "0": "minecraft:oak_planks",
+          "O": "minecraft:oak_planks",
+          "C": "minecraft:cobblestone",
+          "T": "minecraft:wall_torch[facing=west]",
+          "X": "minecraft:oak_log[axis=x]",
+          "Y": "minecraft:oak_log[axis=y]",
+          "L": "minecraft:oak_door[facing=east,half=lower]",
+          "U": "minecraft:oak_door[facing=east,half=upper]",
+          "G": "minecraft:glass_pane[north=true,south=true]",
+          "P": "minecraft:glass_pane[east=true,west=true]",
+          "N": "minecraft:oak_stairs[facing=north]",
+          "E": "minecraft:oak_stairs[facing=east]",
+          "S": "minecraft:oak_stairs[facing=south]",
+          "W": "minecraft:oak_stairs[facing=west]",
+          "1": "minecraft:oak_stairs[facing=north,shape=outer_left]",
+          "2": "minecraft:oak_stairs[facing=north,shape=outer_right]",
+          "3": "minecraft:oak_stairs[facing=south,shape=outer_left]",
+          "4": "minecraft:oak_stairs[facing=south,shape=outer_right]"
+        },
+        "symmetrical": true
+      }
+    },
+    {
+      "type": "patchouli_plus:multiblock",
+      "title": "Patchouli++",
+      "text": "[Text]",
+      "name": "[Name]",
+      "multiblock": {
+        "pattern": [
+          ["       ", "       ", "  3E2  ", "  SON  ", "  4W1  ", "       ", "       "],
+          ["       ", " 3EEE2 ", " SEEEN ", " SEEEN ", " SEEEN ", " 4WWW1 ", "       "],
+          ["3EEEEE2", "SOOOOON", "SOOOOON", "SOOOOON", "SOOOOON", "SOOOOON", "4WWWWW1"],
+          ["   T   ", " YCCCY ", " C   C ", " C   C ", " C   C ", " YCCCY ", "       "],
+          ["       ", " YCUCY ", " X   X ", " P   P ", " X   X ", " YCGCY ", "       "],
+          ["       ", " YCLCY ", " C   C ", " C   C ", " C   C ", " YCCCY ", "       "],
+          ["   E   ", " YCCCY ", " COOOC ", " CO0OC ", " COOOC ", " YCCCY ", "       "]
+        ],
+        "mapping": {
+          "0": "minecraft:oak_planks",
+          "O": "minecraft:oak_planks",
+          "C": "minecraft:cobblestone",
+          "T": "minecraft:wall_torch[facing=west]",
+          "X": "minecraft:oak_log[axis=x]",
+          "Y": "minecraft:oak_log[axis=y]",
+          "L": "minecraft:oak_door[facing=east,half=lower]",
+          "U": "minecraft:oak_door[facing=east,half=upper]",
+          "G": "minecraft:glass_pane[north=true,south=true]",
+          "P": "minecraft:glass_pane[east=true,west=true]",
+          "N": "minecraft:oak_stairs[facing=north]",
+          "E": "minecraft:oak_stairs[facing=east]",
+          "S": "minecraft:oak_stairs[facing=south]",
+          "W": "minecraft:oak_stairs[facing=west]",
+          "1": "minecraft:oak_stairs[facing=north,shape=outer_left]",
+          "2": "minecraft:oak_stairs[facing=north,shape=outer_right]",
+          "3": "minecraft:oak_stairs[facing=south,shape=outer_left]",
+          "4": "minecraft:oak_stairs[facing=south,shape=outer_right]"
+        },
+        "symmetrical": true
+      }
+    },
+    {
+      "type": "patchouli:entity",
+      "title": "Patchouli",
+      "text": "[Text]",
+      "name": "[Name]",
+      "entity": "minecraft:creeper"
+    },
+    {
+      "type": "patchouli_plus:entity",
+      "title": "Patchouli++",
+      "text": "[Text]",
+      "entity": "minecraft:creeper"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "title": "Patchouli",
+      "text": "[Text]",
+      "item": "minecraft:diamond,minecraft:diamond_sword"
+    },
+    {
+      "type": "patchouli_plus:spotlight",
+      "title": "Patchouli++",
+      "text": "[Text]",
+      "item": "minecraft:diamond,minecraft:diamond_sword"
+    },
+    {
+      "type": "patchouli:smelting",
+      "title": "Patchouli",
+      "text": "[Text]",
+      "recipe": "minecraft:iron_ingot_from_smelting_raw_iron"
+    },
+    {
+      "type": "patchouli_plus:smelting",
+      "title": "Patchouli++",
+      "text": "[Text]",
+      "recipe": "minecraft:iron_ingot_from_smelting_raw_iron"
+    },
+    {
+      "type": "patchouli:blasting",
+      "title": "Patchouli",
+      "text": "[Text]",
+      "recipe": "minecraft:iron_ingot_from_blasting_raw_iron"
+    },
+    {
+      "type": "patchouli_plus:blasting",
+      "title": "Patchouli++",
+      "text": "[Text]",
+      "recipe": "minecraft:iron_ingot_from_blasting_raw_iron"
+    },
+    {
+      "type": "patchouli:smoking",
+      "title": "Patchouli",
+      "text": "[Text]",
+      "recipe": "minecraft:cooked_beef_from_smoking"
+    },
+    {
+      "type": "patchouli_plus:smoking",
+      "title": "Patchouli++",
+      "text": "[Text]",
+      "recipe": "minecraft:cooked_beef_from_smoking"
+    },
+    {
+      "type": "patchouli:campfire",
+      "title": "Patchouli",
+      "text": "[Text]",
+      "recipe": "minecraft:cooked_beef_from_campfire_cooking"
+    },
+    {
+      "type": "patchouli_plus:campfire",
+      "title": "Patchouli++",
+      "text": "[Text]",
+      "recipe": "minecraft:cooked_beef_from_campfire_cooking"
+    },
+    {
+      "type": "patchouli:stonecutting",
+      "title": "Patchouli",
+      "text": "[Text]",
+      "recipe": "minecraft:stone_bricks_from_stone_stonecutting"
+    },
+    {
+      "type": "patchouli_plus:stonecutting",
+      "title": "Patchouli++",
+      "text": "[Text]",
+      "recipe": "minecraft:stone_bricks_from_stone_stonecutting"
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Patchouli",
+      "text": "[Text]",
+      "recipe": "minecraft:diamond_sword"
+    },
+    {
+      "type": "patchouli_plus:crafting",
+      "title": "Patchouli++",
+      "text": "[Text]",
+      "recipe": "minecraft:diamond_sword"
+    },
+    {
+      "type": "patchouli:smithing",
+      "title": "Patchouli",
+      "text": "[Text]",
+      "recipe": "minecraft:netherite_sword_smithing"
+    },
+    {
+      "type": "patchouli_plus:smithing",
+      "title": "Patchouli++",
+      "text": "[Text]",
+      "recipe": "minecraft:netherite_sword_smithing"
+    }
+  ]
+}

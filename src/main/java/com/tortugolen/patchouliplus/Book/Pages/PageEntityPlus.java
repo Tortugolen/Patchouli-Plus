@@ -4,9 +4,8 @@ import com.google.gson.annotations.SerializedName;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
-import com.tortugolen.patchouliplus.PatchouliPlus;
 import com.tortugolen.patchouliplus.Base.EEntityPose;
-import com.tortugolen.patchouliplus.Book.Pages.Abstract.PageWithBorder;
+import com.tortugolen.patchouliplus.Book.Pages.Abstract.PageWithFrame;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.renderer.MultiBufferSource;
@@ -15,6 +14,7 @@ import net.minecraft.client.resources.language.I18n;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.Level;
 import org.lwjgl.glfw.GLFW;
+import vazkii.patchouli.api.PatchouliAPI;
 import vazkii.patchouli.client.base.ClientTicker;
 import vazkii.patchouli.client.book.BookContentsBuilder;
 import vazkii.patchouli.client.book.BookEntry;
@@ -23,24 +23,24 @@ import vazkii.patchouli.common.util.EntityUtil;
 
 import java.util.function.Function;
 
-public class PageEntityPlus extends PageWithBorder {
+public class PageEntityPlus extends PageWithFrame {
     @SerializedName("entity")
-    public String entityId;
-    float scale = 1;
+    protected String entityId;
+    protected float scale = 1;
     @SerializedName("offset")
-    float extraOffset = 0;
-    boolean rotate = true;
-    @SerializedName("default_rotation")
-    transient boolean errored;
-    transient Entity entity;
-    transient Function<Level, Entity> creator;
-    transient float renderScale;
-    transient float offset;
+    protected float extraOffset = 0;
+    protected boolean rotate = true;
+//    @SerializedName("default_rotation")
+    protected transient boolean errored;
+    protected transient Entity entity;
+    protected transient Function<Level, Entity> creator;
+    protected transient float renderScale;
+    protected transient float offset;
 
-    protected EEntityPose pose = EEntityPose.DEFAULT;
+    protected EEntityPose pose = null;
     @SerializedName("mouse_rotation")
-    boolean mouseRotation = false;
-    float mouseSensitivity = 1;
+    protected transient boolean mouseRotation = false;
+    protected transient float mouseSensitivity = 1;
 
     protected transient float userRotation = 0;
     protected transient float lastMouseX;
@@ -67,6 +67,7 @@ public class PageEntityPlus extends PageWithBorder {
         RenderSystem.enableBlend();
         RenderSystem.setShaderColor(1, 1, 1, 1);
 
+        if (pose == null) pose = EEntityPose.DEFAULT;
         if (entity != null && !hasValidTitle()) parent.drawCenteredStringNoShadow(graphics, entity.getName().getVisualOrderText(), 58, 0, book.headerColor);
         if (errored) graphics.drawString(fontRenderer, I18n.get("patchouli.gui.lexicon.loading_error"), 58, 60, 16711680, true);
         if (entity != null) {
@@ -99,25 +100,20 @@ public class PageEntityPlus extends PageWithBorder {
                 float height = entity.getBbHeight();
                 float entitySize = Math.max(1, Math.max(width, height));
                 renderScale = 100 / entitySize * 0.8F * scale;
-                offset = Math.max(height, entitySize) * 0.5F + getEntityY() + extraOffset;
+                offset = Math.max(height, entitySize) * 0.5F + extraOffset;
             } catch (Exception e) {
                 errored = true;
-                PatchouliPlus.LOGGER.error("Failed to load entity", e);
+                PatchouliAPI.LOGGER.error("Failed to load entity", e);
             }
         }
     }
 
-    protected float getEntityY() {
-        if (hasValidTitle() && hasSeparator()) return ((float) 58 / 188);
-        else if (!hasValidTitle() && !hasSeparator()) return 58;
-        else return (float) (58 - 12) / 188;
-    }
-
     protected void drawEntities(GuiGraphics graphics, float rotation) {
-        renderEntity(graphics, entity, 58, 60, rotate, rotation, renderScale, offset, pose);
+        renderEntity(graphics, entity, 58, getEntityY(), rotate, rotation, renderScale, offset, pose);
     }
 
     public static void renderEntity(GuiGraphics graphics, Entity entity, float x, float y, boolean rotate, float rotation, float renderScale, float offset, EEntityPose pose) {
+        if (pose == null) pose = EEntityPose.DEFAULT;
         PoseStack ms = graphics.pose();
         ms.pushPose();
         ms.translate(x, y, 50);
@@ -151,5 +147,12 @@ public class PageEntityPlus extends PageWithBorder {
             lastMouseX = mouseX;
         }
         wasDown = down;
+    }
+
+    protected float getEntityY() {
+        if (hasValidTitle() && hasSeparator()) return 75;
+        else if (!hasValidTitle() && !hasSeparator()) return 58;
+//        else return (float) (58 - 12) / 188;
+        else return 63;
     }
 }

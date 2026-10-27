@@ -1,0 +1,7 @@
+{
+  "name": "Recipes",
+  "description": "Recipes",
+  "icon": "minecraft:crafting_table",
+  "parent": "patchouli_plus:pages",
+  "sortnum": 0
+}
